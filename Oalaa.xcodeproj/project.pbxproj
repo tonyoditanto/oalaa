@@ -58,6 +58,7 @@
 		5A15FC322474DA4E0029E2F0 /* Oalaa */ = {
 			isa = PBXGroup;
 			children = (
+				BAB3DE762474E13D00378046 /* Training */,
 				5A15FC332474DA4E0029E2F0 /* AppDelegate.swift */,
 				5A15FC352474DA4E0029E2F0 /* SceneDelegate.swift */,
 				5A15FC372474DA4E0029E2F0 /* ViewController.swift */,
@@ -68,6 +69,13 @@
 				5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */,
 			);
 			path = Oalaa;
+			sourceTree = "<group>";
+		};
+		BAB3DE762474E13D00378046 /* Training */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Training;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
