@@ -14,6 +14,7 @@
 		5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */; };
 		5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC3F2474DA510029E2F0 /* Assets.xcassets */; };
 		5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */; };
+		BA4B609F2476E97300644B8F /* mainCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B609E2476E97300644B8F /* mainCategoryCollectionViewCell.swift */; };
 		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
@@ -30,6 +31,7 @@
 		5A15FC3F2474DA510029E2F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A15FC422474DA510029E2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A15FC442474DA510029E2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA4B609E2476E97300644B8F /* mainCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D049C1CB2474E918002D436B /* TrainingVC.swift */,
+				BA4B609E2476E97300644B8F /* mainCategoryCollectionViewCell.swift */,
 			);
 			path = Training;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */,
 				D049C1CE2474E933002D436B /* TaskVC.swift in Sources */,
 				5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */,
+				BA4B609F2476E97300644B8F /* mainCategoryCollectionViewCell.swift in Sources */,
 				D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */,
 				D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */,
 			);
@@ -329,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QCV3MFRTR4;
+				DEVELOPMENT_TEAM = T896KBRFKX;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,7 +351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QCV3MFRTR4;
+				DEVELOPMENT_TEAM = T896KBRFKX;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

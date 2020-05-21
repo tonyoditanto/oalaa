@@ -8,23 +8,32 @@
 
 import UIKit
 
-class TrainingVC: UIViewController {
+class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var mainCollectionView: UICollectionView!
+    
+    let mainImage = [UIImage(named: "fruitsIcon"),
+                     UIImage(named: "fruitsIcon"),
+                     UIImage(named: "fruitsIcon")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        mainCollectionView.delegate = self
+        mainCollectionView.dataSource = self
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return mainImage.count
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! mainCategoryCollectionViewCell
+        
+        cell.mainImageCategory.image = self.mainImage[indexPath.item]
+        
+        return cell
+    }
+    
 }
