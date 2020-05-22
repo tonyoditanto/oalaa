@@ -21,6 +21,8 @@
 		8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */; };
 		8508A6492478108A00A340A9 /* PreCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A6472478108A00A340A9 /* PreCaptureTableViewCell.swift */; };
 		8508A64A2478108A00A340A9 /* PreCaptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6482478108A00A340A9 /* PreCaptureTableViewCell.xib */; };
+		8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */; };
+		8508A64E247810F400A340A9 /* PostCaptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */; };
 		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
@@ -44,6 +46,8 @@
 		8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		8508A6472478108A00A340A9 /* PreCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreCaptureTableViewCell.swift; sourceTree = "<group>"; };
 		8508A6482478108A00A340A9 /* PreCaptureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreCaptureTableViewCell.xib; sourceTree = "<group>"; };
+		8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptureTableViewCell.swift; sourceTree = "<group>"; };
+		8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCaptureTableViewCell.xib; sourceTree = "<group>"; };
 		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 		8508A64224780CB800A340A9 /* Post Capture */ = {
 			isa = PBXGroup;
 			children = (
+				8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */,
+				8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */,
 			);
 			path = "Post Capture";
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */,
+				8508A64E247810F400A340A9 /* PostCaptureTableViewCell.xib in Resources */,
 				8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */,
 				8508A64A2478108A00A340A9 /* PreCaptureTableViewCell.xib in Resources */,
 				5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */,
@@ -268,6 +275,7 @@
 				8508A6492478108A00A340A9 /* PreCaptureTableViewCell.swift in Sources */,
 				5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */,
 				D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */,
+				8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */,
 				D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
