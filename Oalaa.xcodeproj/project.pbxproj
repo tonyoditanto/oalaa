@@ -78,7 +78,7 @@
 				5A15FC3F2474DA510029E2F0 /* Assets.xcassets */,
 				5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */,
 				5A15FC442474DA510029E2F0 /* Info.plist */,
-				5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */,
+				D04C7A07247767A6004ED785 /* Model */,
 				D049C1D32474E961002D436B /* Training */,
 				D049C1D42474E96B002D436B /* Task */,
 				D049C1D52474E976002D436B /* Soundcard */,
@@ -113,6 +113,14 @@
 				5AB3E8272477610500BC791B /* AddSoundCard.storyboard */,
 			);
 			path = Soundcard;
+			sourceTree = "<group>";
+		};
+		D04C7A07247767A6004ED785 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
