@@ -23,6 +23,8 @@
 		8508A64A2478108A00A340A9 /* PreCaptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6482478108A00A340A9 /* PreCaptureTableViewCell.xib */; };
 		8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */; };
 		8508A64E247810F400A340A9 /* PostCaptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */; };
+		8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64F2478114500A340A9 /* ObjectRecognitionTableViewCell.swift */; };
+		8508A6522478114500A340A9 /* ObjectRecognitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6502478114500A340A9 /* ObjectRecognitionTableViewCell.xib */; };
 		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
@@ -48,6 +50,8 @@
 		8508A6482478108A00A340A9 /* PreCaptureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreCaptureTableViewCell.xib; sourceTree = "<group>"; };
 		8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptureTableViewCell.swift; sourceTree = "<group>"; };
 		8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCaptureTableViewCell.xib; sourceTree = "<group>"; };
+		8508A64F2478114500A340A9 /* ObjectRecognitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRecognitionTableViewCell.swift; sourceTree = "<group>"; };
+		8508A6502478114500A340A9 /* ObjectRecognitionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectRecognitionTableViewCell.xib; sourceTree = "<group>"; };
 		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		8508A63F24780AB400A340A9 /* Object Recognition */ = {
 			isa = PBXGroup;
 			children = (
+				8508A64F2478114500A340A9 /* ObjectRecognitionTableViewCell.swift */,
+				8508A6502478114500A340A9 /* ObjectRecognitionTableViewCell.xib */,
 			);
 			path = "Object Recognition";
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 				5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */,
 				5AB3E82424775E2400BC791B /* Task.storyboard in Resources */,
 				5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */,
+				8508A6522478114500A340A9 /* ObjectRecognitionTableViewCell.xib in Resources */,
 				5A15FC3B2474DA4E0029E2F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +279,7 @@
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,
 				D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */,
 				D049C1CE2474E933002D436B /* TaskVC.swift in Sources */,
+				8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */,
 				8508A6492478108A00A340A9 /* PreCaptureTableViewCell.swift in Sources */,
 				5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */,
 				D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */,
