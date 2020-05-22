@@ -17,6 +17,8 @@
 		5AB3E82424775E2400BC791B /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82324775E2400BC791B /* Task.storyboard */; };
 		5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82524775EBE00BC791B /* Training.storyboard */; };
 		5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E8272477610500BC791B /* AddSoundCard.storyboard */; };
+		8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */; };
+		8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */; };
 		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
@@ -36,6 +38,8 @@
 		5AB3E82324775E2400BC791B /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		5AB3E82524775EBE00BC791B /* Training.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
 		5AB3E8272477610500BC791B /* AddSoundCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSoundCard.storyboard; sourceTree = "<group>"; };
+		8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 		8508A63E24780A9E00A340A9 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */,
+				8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */,
+				8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */,
 				5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */,
 				5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */,
 				5AB3E82424775E2400BC791B /* Task.storyboard in Resources */,
@@ -246,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */,
+				8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */,
 				5A15FC382474DA4E0029E2F0 /* SoundCardVC.swift in Sources */,
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,
 				D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */,
