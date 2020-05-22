@@ -116,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				8508A63E24780A9E00A340A9 /* Header */,
-				8508A64024780ACD00A340A9 /* Action Button */,
 				8508A63F24780AB400A340A9 /* Object Recognition */,
+				8508A64024780ACD00A340A9 /* Action Button */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
