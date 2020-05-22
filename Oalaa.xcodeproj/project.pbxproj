@@ -86,6 +86,63 @@
 			path = Oalaa;
 			sourceTree = "<group>";
 		};
+		8508A63C24780A1200A340A9 /* Add Sound Card Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8508A63D24780A6100A340A9 /* Cells */,
+				D049C1CF2474E945002D436B /* AddSoundCardVC.swift */,
+				5AB3E8272477610500BC791B /* AddSoundCard.storyboard */,
+			);
+			path = "Add Sound Card Scene";
+			sourceTree = "<group>";
+		};
+		8508A63D24780A6100A340A9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8508A63E24780A9E00A340A9 /* Header */,
+				8508A64024780ACD00A340A9 /* Action Button */,
+				8508A63F24780AB400A340A9 /* Object Recognition */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8508A63E24780A9E00A340A9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		8508A63F24780AB400A340A9 /* Object Recognition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Object Recognition";
+			sourceTree = "<group>";
+		};
+		8508A64024780ACD00A340A9 /* Action Button */ = {
+			isa = PBXGroup;
+			children = (
+				8508A64124780CA900A340A9 /* Pre Capture */,
+				8508A64224780CB800A340A9 /* Post Capture */,
+			);
+			path = "Action Button";
+			sourceTree = "<group>";
+		};
+		8508A64124780CA900A340A9 /* Pre Capture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Pre Capture";
+			sourceTree = "<group>";
+		};
+		8508A64224780CB800A340A9 /* Post Capture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Post Capture";
+			sourceTree = "<group>";
+		};
 		D049C1D32474E961002D436B /* Training */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				5A15FC372474DA4E0029E2F0 /* SoundCardVC.swift */,
-				D049C1CF2474E945002D436B /* AddSoundCardVC.swift */,
 				D049C1D12474E954002D436B /* AddCategoryVC.swift */,
-				5AB3E8272477610500BC791B /* AddSoundCard.storyboard */,
+				8508A63C24780A1200A340A9 /* Add Sound Card Scene */,
 			);
 			path = Soundcard;
 			sourceTree = "<group>";

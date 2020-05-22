@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddSoundCardVC: UIViewController {
+class AddSoundCardVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
