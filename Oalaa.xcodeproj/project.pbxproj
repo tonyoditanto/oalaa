@@ -14,7 +14,9 @@
 		5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */; };
 		5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC3F2474DA510029E2F0 /* Assets.xcassets */; };
 		5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */; };
-		BA4B609F2476E97300644B8F /* mainCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B609E2476E97300644B8F /* mainCategoryCollectionViewCell.swift */; };
+		5AB3E82424775E2400BC791B /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82324775E2400BC791B /* Task.storyboard */; };
+		5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82524775EBE00BC791B /* Training.storyboard */; };
+		5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E8272477610500BC791B /* AddSoundCard.storyboard */; };
 		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
@@ -31,7 +33,9 @@
 		5A15FC3F2474DA510029E2F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A15FC422474DA510029E2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A15FC442474DA510029E2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA4B609E2476E97300644B8F /* mainCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		5AB3E82324775E2400BC791B /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
+		5AB3E82524775EBE00BC791B /* Training.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
+		5AB3E8272477610500BC791B /* AddSoundCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSoundCard.storyboard; sourceTree = "<group>"; };
 		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
@@ -74,7 +78,7 @@
 				5A15FC3F2474DA510029E2F0 /* Assets.xcassets */,
 				5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */,
 				5A15FC442474DA510029E2F0 /* Info.plist */,
-				5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */,
+				D04C7A07247767A6004ED785 /* Model */,
 				D049C1D32474E961002D436B /* Training */,
 				D049C1D42474E96B002D436B /* Task */,
 				D049C1D52474E976002D436B /* Soundcard */,
@@ -86,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D049C1CB2474E918002D436B /* TrainingVC.swift */,
-				BA4B609E2476E97300644B8F /* mainCategoryCollectionViewCell.swift */,
+				5AB3E82524775EBE00BC791B /* Training.storyboard */,
 			);
 			path = Training;
 			sourceTree = "<group>";
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D049C1CD2474E933002D436B /* TaskVC.swift */,
+				5AB3E82324775E2400BC791B /* Task.storyboard */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -105,8 +110,17 @@
 				5A15FC372474DA4E0029E2F0 /* SoundCardVC.swift */,
 				D049C1CF2474E945002D436B /* AddSoundCardVC.swift */,
 				D049C1D12474E954002D436B /* AddCategoryVC.swift */,
+				5AB3E8272477610500BC791B /* AddSoundCard.storyboard */,
 			);
 			path = Soundcard;
+			sourceTree = "<group>";
+		};
+		D04C7A07247767A6004ED785 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +181,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */,
+				5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */,
 				5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */,
+				5AB3E82424775E2400BC791B /* Task.storyboard in Resources */,
 				5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */,
 				5A15FC3B2474DA4E0029E2F0 /* Main.storyboard in Resources */,
 			);
