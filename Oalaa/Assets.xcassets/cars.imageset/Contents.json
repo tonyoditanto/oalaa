@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "fruitsIcon.png",
+      "filename" : "cars.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "cars@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

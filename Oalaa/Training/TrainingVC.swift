@@ -12,9 +12,9 @@ class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
-    let mainImage = [UIImage(named: "fruitsIcon"),
-                     UIImage(named: "fruitsIcon"),
-                     UIImage(named: "fruitsIcon")]
+    let mainImage = [UIImage(named: "sports"),
+                     UIImage(named: "fruits"),
+                     UIImage(named: "cars")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

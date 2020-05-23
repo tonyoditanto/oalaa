@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "coreVocab.png",
+      "filename" : "fruits.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "fruits@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
