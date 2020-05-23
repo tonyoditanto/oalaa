@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var trainingDefaultImage: UIImageView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     let mainImage = [UIImage(named: "sports"),
@@ -36,4 +39,13 @@ class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+    
+    @IBAction func playTrainingButton(_ sender: UIButton) {
+        let utterance = AVSpeechUtterance(string: "Hello Dion , please select the category to play")
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        utterance.rate = 0.5
+
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
+    }
 }
