@@ -26,6 +26,7 @@
 		8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64F2478114500A340A9 /* ObjectRecognitionTableViewCell.swift */; };
 		8508A6522478114500A340A9 /* ObjectRecognitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6502478114500A340A9 /* ObjectRecognitionTableViewCell.xib */; };
 		8508A654247824FD00A340A9 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8508A653247824FD00A340A9 /* Resnet50.mlmodel */; };
+		8508A656247AD78D00A340A9 /* AddSoundCardSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */; };
 		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
@@ -54,6 +55,7 @@
 		8508A64F2478114500A340A9 /* ObjectRecognitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRecognitionTableViewCell.swift; sourceTree = "<group>"; };
 		8508A6502478114500A340A9 /* ObjectRecognitionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectRecognitionTableViewCell.xib; sourceTree = "<group>"; };
 		8508A653247824FD00A340A9 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../../../../../../../../../Downloads/Resnet50.mlmodel; sourceTree = "<group>"; };
+		8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardSection.swift; sourceTree = "<group>"; };
 		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
@@ -107,9 +109,10 @@
 		8508A63C24780A1200A340A9 /* Add Sound Card Scene */ = {
 			isa = PBXGroup;
 			children = (
-				8508A63D24780A6100A340A9 /* Cells */,
 				D049C1CF2474E945002D436B /* AddSoundCardVC.swift */,
 				5AB3E8272477610500BC791B /* AddSoundCard.storyboard */,
+				8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */,
+				8508A63D24780A6100A340A9 /* Cells */,
 			);
 			path = "Add Sound Card Scene";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */,
+				8508A656247AD78D00A340A9 /* AddSoundCardSection.swift in Sources */,
 				8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */,
 				5A15FC382474DA4E0029E2F0 /* SoundCardVC.swift in Sources */,
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,
@@ -433,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QCV3MFRTR4;
+				DEVELOPMENT_TEAM = 73D6FXNB5K;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QCV3MFRTR4;
+				DEVELOPMENT_TEAM = 73D6FXNB5K;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
