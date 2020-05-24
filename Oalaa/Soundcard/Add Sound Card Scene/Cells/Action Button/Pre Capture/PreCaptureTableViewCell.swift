@@ -9,7 +9,7 @@
 import UIKit
 
 class PreCaptureTableViewCell: UITableViewCell {
-
+    static let cellID = "PreCaptureTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -9,7 +9,7 @@
 import UIKit
 
 class PostCaptureTableViewCell: UITableViewCell {
-
+    static let cellID = "PostCaptureTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

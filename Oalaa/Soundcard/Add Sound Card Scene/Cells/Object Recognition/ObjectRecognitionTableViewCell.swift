@@ -9,7 +9,7 @@
 import UIKit
 
 class ObjectRecognitionTableViewCell: UITableViewCell {
-
+    static let cellID = "ObjectRecognitionTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

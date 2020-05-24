@@ -9,7 +9,7 @@
 import UIKit
 
 class HeaderTableViewCell: UITableViewCell {
-
+    static let cellID = "HeaderTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

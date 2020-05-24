@@ -109,9 +109,9 @@
 		8508A63C24780A1200A340A9 /* Add Sound Card Scene */ = {
 			isa = PBXGroup;
 			children = (
+				8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */,
 				D049C1CF2474E945002D436B /* AddSoundCardVC.swift */,
 				5AB3E8272477610500BC791B /* AddSoundCard.storyboard */,
-				8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */,
 				8508A63D24780A6100A340A9 /* Cells */,
 			);
 			path = "Add Sound Card Scene";
