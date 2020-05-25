@@ -13,7 +13,6 @@ class PostCaptureTableViewCell: UITableViewCell {
     @IBOutlet weak var speakButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

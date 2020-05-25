@@ -60,7 +60,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cameraView" destination="Vol-OO-bF6" id="7Sy-ea-nYT"/>
                 <outlet property="captureButton" destination="Ql6-Mb-Bpw" id="e2M-mh-nwa"/>
+                <outlet property="objectNameLabel" destination="bd4-oe-fNf" id="RXF-zW-9I1"/>
             </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </tableViewCell>
