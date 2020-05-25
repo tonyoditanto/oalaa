@@ -24,7 +24,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ql6-Mb-Bpw">
                         <rect key="frame" x="12" y="476" width="390" height="80"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.58431372549019611" green="0.17254901960784313" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Ql6-Mb-Bpw" secondAttribute="height" multiplier="39:8" id="gnb-b8-fox"/>
                         </constraints>
@@ -36,6 +36,9 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             </preferredSymbolConfiguration>
                         </state>
+                        <connections>
+                            <action selector="didTapCaptureButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Iga-H1-WhV"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vol-OO-bF6">
                         <rect key="frame" x="12" y="17" width="390" height="390.5"/>

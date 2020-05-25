@@ -26,4 +26,6 @@ class PreviewCaptureTableViewCell: UITableViewCell {
          retryButton.layer.cornerRadius = 10.0
      }
     
+    @IBAction func didTapRetryButton(_ sender: Any) {
+    }
 }

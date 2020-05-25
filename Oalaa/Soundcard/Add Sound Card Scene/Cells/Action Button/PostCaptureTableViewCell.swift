@@ -31,4 +31,10 @@ class PostCaptureTableViewCell: UITableViewCell {
         saveButton.layer.cornerRadius = 10.0
     }
     
+    @IBAction func didTapSpeakButton(_ sender: Any) {
+    }
+    
+    @IBAction func didTapSaveButton(_ sender: Any) {
+    }
+    
 }

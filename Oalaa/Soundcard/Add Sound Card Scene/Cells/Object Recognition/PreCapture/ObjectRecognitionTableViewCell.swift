@@ -28,4 +28,6 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
         captureButton.layer.cornerRadius = 10.0
     }
     
+    @IBAction func didTapCaptureButton(_ sender: Any) {
+    }
 }
