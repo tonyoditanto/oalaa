@@ -10,7 +10,7 @@ import UIKit
 
 class AddSoundCardVC: UITableViewController {
 
-    let sectionTitles = ["header", "object recognition", "pre capture", "post capture"]
+    let sectionTitles = ["header", "object recognition", "post capture"]
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tableView.rowHeight = UITableView.automaticDimension
@@ -25,7 +25,7 @@ extension AddSoundCardVC {
     func setupTableView() {
          registerHeaderCell()
          registerObjectRecognitionCell()
-         registerPreCaptureCell()
+         //registerPreCaptureCell()
          registerPostCaptureCell()
      }
     
@@ -39,10 +39,10 @@ extension AddSoundCardVC {
         tableView.register(nib, forCellReuseIdentifier: ObjectRecognitionTableViewCell.cellID)
     }
 
-    func registerPreCaptureCell() {
-        let nib = UINib(nibName: PreCaptureTableViewCell.cellID, bundle: Bundle.main)
-        tableView.register(nib, forCellReuseIdentifier: PreCaptureTableViewCell.cellID)
-    }
+//    func registerPreCaptureCell() {
+//        let nib = UINib(nibName: PreCaptureTableViewCell.cellID, bundle: Bundle.main)
+//        tableView.register(nib, forCellReuseIdentifier: PreCaptureTableViewCell.cellID)
+//    }
 
     func registerPostCaptureCell() {
         let nib = UINib(nibName: PostCaptureTableViewCell.cellID, bundle: Bundle.main)
@@ -63,12 +63,12 @@ extension AddSoundCardVC {
         }
 
         if indexPath.section == AddSoundCardSection.SECTION_OBJECT_RECOGNITION {
-            return 460
+            return 564
         }
         
-        if indexPath.section == AddSoundCardSection.SECTION_PRE {
-            return 104
-        }
+//        if indexPath.section == AddSoundCardSection.SECTION_PRE {
+//            return 104
+//        }
         
         if indexPath.section == AddSoundCardSection.SECTION_POST {
             return 104
@@ -85,9 +85,9 @@ extension AddSoundCardVC {
         if section == AddSoundCardSection.SECTION_OBJECT_RECOGNITION {
             return makeObjectRecognitionCell(at: indexPath)
         }
-        if section == AddSoundCardSection.SECTION_PRE {
-            return makePreCaptureCell(at: indexPath)
-        }
+//        if section == AddSoundCardSection.SECTION_PRE {
+//            return makePreCaptureCell(at: indexPath)
+//        }
         if section == AddSoundCardSection.SECTION_POST {
             return makePostCaptureCell(at: indexPath)
         }
@@ -107,11 +107,11 @@ extension AddSoundCardVC {
         return cell
     }
     
-    func makePreCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PreCaptureTableViewCell.cellID, for: indexPath) as! PreCaptureTableViewCell
-        //Insert Delegate Action Here
-        return cell
-    }
+//    func makePreCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: PreCaptureTableViewCell.cellID, for: indexPath) as! PreCaptureTableViewCell
+//        //Insert Delegate Action Here
+//        return cell
+//    }
     
     func makePostCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCaptureTableViewCell.cellID, for: indexPath) as! PostCaptureTableViewCell
