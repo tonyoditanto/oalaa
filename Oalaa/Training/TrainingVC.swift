@@ -15,10 +15,6 @@ class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var trainingDefaultImage: UIImageView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
-    let mainImage = [UIImage(named: "sports"),
-                     UIImage(named: "fruits"),
-                     UIImage(named: "cars")]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +22,19 @@ class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         mainCollectionView.dataSource = self
         
     }
+    
+    // text to speech part
+    
+    @IBAction func playTrainingButton(_ sender: UIButton) {
+        let utterance = AVSpeechUtterance(string: textToSpeech)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        utterance.rate = 0.5
+
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
+    }
+    
+    // collection view part
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mainImage.count
@@ -39,13 +48,33 @@ class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
-    
-    @IBAction func playTrainingButton(_ sender: UIButton) {
-        let utterance = AVSpeechUtterance(string: "Hello Dion , please select the category to play")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        trainingDefaultImage.image = self.choosenCategoryImage[indexPath.row]
+        textToSpeech = self.chosenTextToSpeech[indexPath.row]
+        
+        let utterance = AVSpeechUtterance(string: textToSpeech)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
         utterance.rate = 0.5
 
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
     }
+    
+    
+    // image variable
+    let mainImage = [UIImage(named: "sports"),
+                     UIImage(named: "fruits"),
+                     UIImage(named: "cars")]
+    
+    let choosenCategoryImage = [UIImage(named: "sportSquare"),
+                                UIImage(named: "fruitsSquare"),
+                                UIImage(named: "carsSquare")]
+    
+    // text variable
+    var textToSpeech = "Hello Dion , please select the category to play"
+    
+    let chosenTextToSpeech = ["Let's Play Sports Category",
+                              "Let's Play Fruits and Vegetables Category",
+                              "Let's Play Automotive Category"]
+    
 }
