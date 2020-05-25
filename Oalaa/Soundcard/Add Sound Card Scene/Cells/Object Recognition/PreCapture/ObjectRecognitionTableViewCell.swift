@@ -44,10 +44,10 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
             captureSession = AVCaptureSession()
             captureSession?.addInput(input)
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
+            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-            videoPreviewLayer?.frame = cameraView.layer.bounds
             cameraView.layer.addSublayer(videoPreviewLayer!)
+            videoPreviewLayer?.frame = cameraView.layer.bounds
             captureSession?.startRunning()
         } catch  {
             print("error")
