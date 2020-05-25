@@ -10,14 +10,12 @@ import UIKit
 
 class AddSoundCardVC: UITableViewController {
 
-    let sectionTitles = ["header", "object recognition", "post capture"]
+    let sectionTitles = ["header", "object recognition", "post capture", "footer"]
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = 80
-//        setupNavigationBar()
-//        setTableViewContentInsetToCustom()
+        //addBackground(imageName: "Background Apps-01.jpg")
         setupTableView()
+        
     }
 }
 
@@ -25,8 +23,8 @@ extension AddSoundCardVC {
     func setupTableView() {
          registerHeaderCell()
          registerObjectRecognitionCell()
-         //registerPreCaptureCell()
          registerPostCaptureCell()
+        registerFooterCell()
      }
     
     func registerHeaderCell() {
@@ -39,14 +37,14 @@ extension AddSoundCardVC {
         tableView.register(nib, forCellReuseIdentifier: ObjectRecognitionTableViewCell.cellID)
     }
 
-//    func registerPreCaptureCell() {
-//        let nib = UINib(nibName: PreCaptureTableViewCell.cellID, bundle: Bundle.main)
-//        tableView.register(nib, forCellReuseIdentifier: PreCaptureTableViewCell.cellID)
-//    }
-
     func registerPostCaptureCell() {
         let nib = UINib(nibName: PostCaptureTableViewCell.cellID, bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: PostCaptureTableViewCell.cellID)
+    }
+    
+    func registerFooterCell() {
+        let nib = UINib(nibName: FooterTableViewCell.cellID, bundle: Bundle.main)
+        tableView.register(nib, forCellReuseIdentifier: FooterTableViewCell.cellID)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,12 +64,12 @@ extension AddSoundCardVC {
             return 564
         }
         
-//        if indexPath.section == AddSoundCardSection.SECTION_PRE {
-//            return 104
-//        }
-        
         if indexPath.section == AddSoundCardSection.SECTION_POST {
             return 104
+        }
+        
+        if indexPath.section == AddSoundCardSection.SECTION_FOOTER {
+            return 80
         }
             return UITableView.automaticDimension
         }
@@ -85,12 +83,13 @@ extension AddSoundCardVC {
         if section == AddSoundCardSection.SECTION_OBJECT_RECOGNITION {
             return makeObjectRecognitionCell(at: indexPath)
         }
-//        if section == AddSoundCardSection.SECTION_PRE {
-//            return makePreCaptureCell(at: indexPath)
-//        }
         if section == AddSoundCardSection.SECTION_POST {
             return makePostCaptureCell(at: indexPath)
         }
+        if section == AddSoundCardSection.SECTION_FOOTER {
+            return makeFooterCell(at: indexPath)
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         return cell
     }
@@ -107,18 +106,22 @@ extension AddSoundCardVC {
         return cell
     }
     
-//    func makePreCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: PreCaptureTableViewCell.cellID, for: indexPath) as! PreCaptureTableViewCell
-//        //Insert Delegate Action Here
-//        return cell
-//    }
-    
     func makePostCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCaptureTableViewCell.cellID, for: indexPath) as! PostCaptureTableViewCell
         //Insert Delegate Action Here
         return cell
     }
+    
+    func makeFooterCell(at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FooterTableViewCell.cellID, for: indexPath) as! FooterTableViewCell
+        //Insert Delegate Action Here
+        return cell
+    }
 
+}
 
-
+extension AddSoundCardVC {
+    func addBackground(imageName:String) {
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background Apps-01"))
+    }
 }

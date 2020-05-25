@@ -16,24 +16,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrR-IC-Pc3">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrR-IC-Pc3">
                         <rect key="frame" x="16" y="6" width="190" height="90"/>
                         <color key="backgroundColor" red="0.36470588235294116" green="0.36470588235294116" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="YrR-IC-Pc3" secondAttribute="height" multiplier="19:9" id="Stt-ly-Zsp"/>
                         </constraints>
-                        <state key="normal" title="VOICE">
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="speaker.3" catalog="system">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            </preferredSymbolConfiguration>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqc-Ry-d4a">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqc-Ry-d4a">
                         <rect key="frame" x="209" y="6" width="190" height="90"/>
-                        <color key="backgroundColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.59215686274509804" green="0.61568627450980395" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="sqc-Ry-d4a" secondAttribute="height" multiplier="19:9" id="25g-vQ-p9O"/>
                         </constraints>
-                        <state key="normal" title="SAVE">
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="square.and.arrow.down" catalog="system">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            </preferredSymbolConfiguration>
                         </state>
                     </button>
                 </subviews>
@@ -47,7 +55,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="saveButton" destination="sqc-Ry-d4a" id="GYB-vg-wYm"/>
+                <outlet property="speakButton" destination="YrR-IC-Pc3" id="4m8-mT-4Fi"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="speaker.3" catalog="system" width="128" height="90"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
+    </resources>
 </document>

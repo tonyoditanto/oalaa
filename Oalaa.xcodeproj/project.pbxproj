@@ -26,6 +26,8 @@
 		8508A656247AD78D00A340A9 /* AddSoundCardSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */; };
 		8508A65C247B67D300A340A9 /* PreviewCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A65A247B67D300A340A9 /* PreviewCaptureTableViewCell.swift */; };
 		8508A65D247B67D300A340A9 /* PreviewCaptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A65B247B67D300A340A9 /* PreviewCaptureTableViewCell.xib */; };
+		8508A661247B734800A340A9 /* FooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A65F247B734800A340A9 /* FooterTableViewCell.swift */; };
+		8508A662247B734800A340A9 /* FooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A660247B734800A340A9 /* FooterTableViewCell.xib */; };
 		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
@@ -55,6 +57,8 @@
 		8508A659247B65F500A340A9 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		8508A65A247B67D300A340A9 /* PreviewCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCaptureTableViewCell.swift; sourceTree = "<group>"; };
 		8508A65B247B67D300A340A9 /* PreviewCaptureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewCaptureTableViewCell.xib; sourceTree = "<group>"; };
+		8508A65F247B734800A340A9 /* FooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTableViewCell.swift; sourceTree = "<group>"; };
+		8508A660247B734800A340A9 /* FooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterTableViewCell.xib; sourceTree = "<group>"; };
 		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				8508A63E24780A9E00A340A9 /* Header */,
 				8508A63F24780AB400A340A9 /* Object Recognition */,
 				8508A64024780ACD00A340A9 /* Action Button */,
+				8508A65E247B727300A340A9 /* Footer */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -147,18 +152,10 @@
 		8508A64024780ACD00A340A9 /* Action Button */ = {
 			isa = PBXGroup;
 			children = (
-				8508A64224780CB800A340A9 /* Post Capture */,
-			);
-			path = "Action Button";
-			sourceTree = "<group>";
-		};
-		8508A64224780CB800A340A9 /* Post Capture */ = {
-			isa = PBXGroup;
-			children = (
 				8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */,
 				8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */,
 			);
-			path = "Post Capture";
+			path = "Action Button";
 			sourceTree = "<group>";
 		};
 		8508A657247B639600A340A9 /* PreCapture */ = {
@@ -178,6 +175,15 @@
 				8508A65B247B67D300A340A9 /* PreviewCaptureTableViewCell.xib */,
 			);
 			path = PostCapture;
+			sourceTree = "<group>";
+		};
+		8508A65E247B727300A340A9 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				8508A65F247B734800A340A9 /* FooterTableViewCell.swift */,
+				8508A660247B734800A340A9 /* FooterTableViewCell.xib */,
+			);
+			path = Footer;
 			sourceTree = "<group>";
 		};
 		D049C1D32474E961002D436B /* Training */ = {
@@ -275,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */,
+				8508A662247B734800A340A9 /* FooterTableViewCell.xib in Resources */,
 				8508A64E247810F400A340A9 /* PostCaptureTableViewCell.xib in Resources */,
 				8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */,
 				5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */,
@@ -296,6 +303,7 @@
 			files = (
 				5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */,
 				8508A656247AD78D00A340A9 /* AddSoundCardSection.swift in Sources */,
+				8508A661247B734800A340A9 /* FooterTableViewCell.swift in Sources */,
 				8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */,
 				5A15FC382474DA4E0029E2F0 /* SoundCardVC.swift in Sources */,
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,

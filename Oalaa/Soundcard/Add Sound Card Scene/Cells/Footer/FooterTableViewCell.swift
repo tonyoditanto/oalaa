@@ -1,15 +1,15 @@
 //
-//  PostCaptureTableViewCell.swift
+//  FooterTableViewCell.swift
 //  Oalaa
 //
-//  Created by Tony Varian Yoditanto on 22/05/20.
+//  Created by Tony Varian Yoditanto on 25/05/20.
 //  Copyright © 2020 M2-911. All rights reserved.
 //
 
 import UIKit
 
-class PostCaptureTableViewCell: UITableViewCell {
-    static let cellID = "PostCaptureTableViewCell"
+class FooterTableViewCell: UITableViewCell {
+    static let cellID = "FooterTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

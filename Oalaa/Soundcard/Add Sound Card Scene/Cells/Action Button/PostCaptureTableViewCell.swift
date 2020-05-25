@@ -1,5 +1,5 @@
 //
-//  ObjectRecognitionTableViewCell.swift
+//  PostCaptureTableViewCell.swift
 //  Oalaa
 //
 //  Created by Tony Varian Yoditanto on 22/05/20.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ObjectRecognitionTableViewCell: UITableViewCell {
-    static let cellID = "ObjectRecognitionTableViewCell"
-    @IBOutlet weak var captureButton: UIButton!
+class PostCaptureTableViewCell: UITableViewCell {
+    static let cellID = "PostCaptureTableViewCell"
+    @IBOutlet weak var speakButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +27,8 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
     }
     
     func configureComponentDesign(){
-        captureButton.layer.cornerRadius = 10.0
+        speakButton.layer.cornerRadius = 10.0
+        saveButton.layer.cornerRadius = 10.0
     }
     
 }
