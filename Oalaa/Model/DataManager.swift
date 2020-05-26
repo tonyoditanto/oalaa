@@ -10,28 +10,29 @@ import UIKit
 import CoreData
 import AVFoundation
 
+/**
+This class for managing Category and soundcard
+* category have installed key that tell if that category is installed ir not. installed mean the user will see the category in the main view.
+*/
 class DataManager{
-	var listOfCategory: [NSManagedObject] = []
-	var listOfInstalledCategory: [NSManagedObject] = []
-	var listOfActiveCategorySoundcard: [NSManagedObject] = []
 	let defaults = UserDefaults.standard
 	
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
+	// Init
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
-	// MARK: INITIALIZER
+	/**
+	Upon creating the class this will insert all preset category and soundcard into coreData
+	*/
 	init() {
-		if defaults.bool(forKey: "alreadyInstallCategory") {
-			loadAllCategory()
-			loadGeneralSoundcard()
-		} else {
+		if defaults.bool(forKey: "alreadyInstallCategory") == false {
 			initialInstallation()
-			loadAllCategory()
-			loadGeneralSoundcard()
 			defaults.set(true, forKey: "alreadyInstallCategory")
 		}
 	}
 	
-	// MARK: Insert preinstalled data to coreData
+	/**
+	this function where the preset data and will run on app first launch
+	*/
 	func initialInstallation() -> Void {
 		let categoryPreset =
 			[
@@ -100,86 +101,99 @@ class DataManager{
 	}
 	
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
-	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	// MARK: CATEGORY
+	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	
-	// MARK: CAT LOADER
-	func loadAllCategory()->Void {
-		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+	/**
+	Print all or installed caegory to the console depends the parameter
+	*/
+	func PrintCategories(installed: Bool) -> Void {
+		print(getCategoryTotal(installed: installed))
+		for index in 0 ..< getCategoryTotal(installed: installed) {
+			print("\(index)~ \(getCategory(coreVocab: false, installed: installed, index: index).value(forKey: "categoryName")!) - \(getCategory(coreVocab: false, installed: installed, index: index).value(forKey: "installed")!))")
+		}
+	}
+	
+	/**
+	Return total category count.
+	 - Parameter installed: to choose all or installed category
+	*/
+	func getCategoryTotal(installed: Bool) -> Int {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return 0}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
-		
+		if installed {
+			fetchRequest.predicate = NSPredicate(format: "installed == 1")
+		}
 		do {
 			let result = try managedContex.fetch(fetchRequest)
-			
-			for eachData in result as! [NSManagedObject] {
-				if (eachData.value(forKey: "installed") as! Bool == true) {
-					listOfInstalledCategory.append(eachData)
-					listOfCategory.append(eachData)
-				}else{
-					listOfCategory.append(eachData)
-				}
-			}
+			return result.count
 		} catch {
 			print("Failed")
 		}
+		return 0
 	}
 	
-	func reloadAllCategory() -> Void {
-		self.listOfCategory = []
-		self.listOfInstalledCategory = []
-		self.loadAllCategory()
-	}
-	
-	// MARK: CAT PRINTER
-	func PrintAllCategories() -> Void {
-		for category in listOfCategory {
-			print("\(category.value(forKey: "categoryName")!)-\(category.value(forKey: "installed")!)")
+	/**
+	Return UIImage for category.
+	- Parameter index: return image for that index
+	- Parameter installed: to choose all or installed category
+	*/
+	func getCategoryImageFor(index: Int,installed: Bool) -> UIImage {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return UIImage()}
+		let managedContex = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
+		if installed {
+			fetchRequest.predicate = NSPredicate(format: "installed == 1")
 		}
-	}
-	func PrintInstalledAllCategories() -> Void {
-		for category in listOfInstalledCategory {
-			print("\(category.value(forKey: "categoryName")!)-\(category.value(forKey: "installed")!)")
+		do {
+			let result = try managedContex.fetch(fetchRequest)
+			return UIImage(data: (result[index] as AnyObject).value(forKey: "categoryImage") as! Data)!
+		} catch {
+			print("Failed")
 		}
+		return UIImage()
 	}
 	
-	// MARK: CAT FUNC
-	func getTotalCategory() -> Int {
-		return listOfCategory.count
+	/**
+	Return Category
+	- Parameter coreVocab: return coreVocab
+	- Parameter installed: to choose all or installed category
+	- Parameter index: return Category for that index
+	*/
+	func getCategory(coreVocab: Bool, installed: Bool, index: Int) ->NSManagedObject {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return NSManagedObject()}
+		let managedContex = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
+		if coreVocab {
+			fetchRequest.predicate = NSPredicate(format: "categoryName == %@", "General")
+		}else if installed {
+			fetchRequest.predicate = NSPredicate(format: "installed == 1")
+			
+		}
+		do {
+			let result = try managedContex.fetch(fetchRequest)
+			if coreVocab {
+				return result[0] as! NSManagedObject
+			}else{
+				return result[index] as! NSManagedObject
+			}
+			
+		} catch {
+			print("Failed")
+		}
+		return NSManagedObject()
 	}
 	
-	func getTotalInstalledCategory() -> Int {
-		return listOfInstalledCategory.count
-	}
-	
-	func getInstalledCategoryImageFor(index: Int) -> UIImage {
-		return UIImage(data: listOfInstalledCategory[index].value(forKey: "categoryImage") as! Data)!
-	}
-	func getCategoryImageFor(index: Int) -> UIImage {
-		return UIImage(data: listOfCategory[index].value(forKey: "categoryImage") as! Data)!
-	}
-	
-	func getCategory(index: Int) -> NSManagedObject {
-		return listOfCategory[index]
-	}
-	
-	func getCoreVocab() ->NSManagedObject {
-		return listOfCategory[0]
-	}
-	
-	func getInstalledCategoryAtIndex(index: Int) -> NSManagedObject {
-		return listOfInstalledCategory[index]
-	}
-	
+	/**
+	to install/uninstall category
+	*/
 	func toggleCategoryActivation(index: Int) -> Void {
-		print("0")
-		let oldState:Bool = listOfCategory[index].value(forKey: "installed")! as! Bool
-		print("1")
+		let oldState:Bool = getCategory(coreVocab: false, installed: false, index: index).value(forKey: "installed")! as! Bool
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
-		fetchRequest.predicate = NSPredicate(format: "categoryName == %@", "\(String(describing: listOfCategory[index].value(forKey: "categoryName")!))")
-		print("\(String(describing: listOfCategory[index].value(forKey: "categoryName")!))")
+		fetchRequest.predicate = NSPredicate(format: "categoryName == %@", "\(String(describing: getCategory(coreVocab: false, installed: false, index: index).value(forKey: "categoryName")!))")
 		do{
 			let result = try managedContex.fetch(fetchRequest)
 			
@@ -199,74 +213,118 @@ class DataManager{
 		} catch {
 			print("Error!")
 		}
-		reloadAllCategory()
 	}
-	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
+	
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	// MARK: SOUNDCARD
+	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	
-	// MARK: SC LOADER
-	func loadGeneralSoundcard()->Void {
-		listOfActiveCategorySoundcard = []
-		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+	/**
+	Print all or Soundcard for active .
+	*/
+	func PrintAllSoundcards(category: NSManagedObject, installed: Bool) -> Void{
+		
+		for index in 0 ..< getSoundcardTotalForThisCategory(category: category){
+			print("\(getSoundcard(category:category, index:index).value(forKey:"soundcardName") ?? "-")")
+		}
+	}
+	
+	/**
+	return total soundcard that linked to category
+	- Parameter category: Current active category
+	*/
+	func getSoundcardTotalForThisCategory(category: NSManagedObject) -> Int {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return 0 }
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
-		fetchRequest.predicate = NSPredicate(format: "%K == %@", "forCategory",listOfCategory[0])
+		fetchRequest.predicate = NSPredicate(format: "forCategory == %@", category)
 		do {
-			let result = try managedContex.fetch(fetchRequest)
-			for eachData in result as! [NSManagedObject] {
-				listOfActiveCategorySoundcard.append(eachData)
-			}
+			return try managedContex.fetch(fetchRequest).count
+			//return result.count
 		} catch {
 			print("Failed")
 		}
+		
+		return 0
 	}
-	func reloadSoundcard(Category: NSManagedObject)->Void {
-		listOfActiveCategorySoundcard = []
-		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+	
+	/**
+	Return Soundcard
+	- Parameter category: Active Category
+	*/
+	func getSoundcard(category: NSManagedObject, index: Int) -> NSManagedObject{
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return NSManagedObject()}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
-		fetchRequest.predicate = NSPredicate(format: "%K == %@", "forCategory",Category)
+		
+		fetchRequest.predicate = NSPredicate(format: "forCategory == %@", category)
+		
 		do {
 			let result = try managedContex.fetch(fetchRequest)
-			for eachData in result as! [NSManagedObject] {
-				listOfActiveCategorySoundcard.append(eachData)
-			}
+			return result[index] as! NSManagedObject
 		} catch {
 			print("Failed")
 		}
+		return NSManagedObject()
 	}
 	
-	// MARK: SC PRINTER
-	func PrintAllSoundcards() -> Void{
+	/**
+	Play soundcard
+	- Parameter category: Current active category
+	- Parameter Index: soundcard index
+	*/
+	func getSoundcardImageFor(category: NSManagedObject, index: Int) -> UIImage {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return UIImage()}
+		let managedContex = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
+		fetchRequest.predicate = NSPredicate(format: "forCategory == %@", category)
 		
-		for i in listOfActiveCategorySoundcard{
-			print(i.value(forKey: "soundcardName")!)
+		do {
+		let result = try managedContex.fetch(fetchRequest)
+		return UIImage(data: (result[index] as AnyObject).value(forKey: "soundcardImage") as! Data)!
+		} catch {
+		print("Failed")
 		}
+		return UIImage()
 	}
 	
-	// MARK: SC FUNC
-	func getTotalSoundcardForThisCategory() -> Int {
-		return listOfActiveCategorySoundcard.count
-	}
-	func getInstalledSoundcardImageFor(index: Int) -> UIImage {
-		return UIImage(data: listOfActiveCategorySoundcard[index].value(forKey: "soundcardImage") as! Data)!
-	}
-	func playSoundcard(index: Int) -> Void {
-		let speakThis:String = listOfActiveCategorySoundcard[index].value(forKey: "soundcardName") as! String
+	/**
+	Play soundcard
+	- Parameter category: Current active category
+	- Parameter Index: soundcard index
+	*/
+	func playSoundcard(category: NSManagedObject, index: Int) -> Void {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+		let managedContex = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
+		fetchRequest.predicate = NSPredicate(format: "forCategory == %@", category)
 		
-		let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
-		speechUtterance.voice = AVSpeechSynthesisVoice(language: "id")
-		
-		let speechSynthesizer = AVSpeechSynthesizer()
-		speechSynthesizer.speak(speechUtterance)
+		do {
+			let result = try managedContex.fetch(fetchRequest)
+			let speakThis:String = (result[index] as AnyObject).value(forKey: "soundcardName") as! String
+			
+			let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
+			speechUtterance.voice = AVSpeechSynthesisVoice(language: "id")
+			
+			let speechSynthesizer = AVSpeechSynthesizer()
+			speechSynthesizer.speak(speechUtterance)
+		} catch {
+			print("Failed")
+		}
+		return
 	}
 	
+	/**
+	Adding new soundcard
+	- Parameter name: Name for the soundcard
+	- Parameter image: UIImage for the soundcard
+	- Parameter category: Parent category fot the soundcard
+	*/
 	func addNewSoundcard(name: String,image: UIImage, category: String){
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
-		fetchRequest.predicate = NSPredicate(format: "%K == %@", "categoryName",category)
+		fetchRequest.predicate = NSPredicate(format: "categoryName == %@", category)
 		fetchRequest.fetchLimit = 1
 		do {
 			let result = try managedContex.fetch(fetchRequest)
@@ -287,4 +345,5 @@ class DataManager{
 			print("Failed")
 		}
 	}
+	
 }
