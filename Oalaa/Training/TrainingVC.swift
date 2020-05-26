@@ -62,13 +62,13 @@ class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     
     // image variable
-    let mainImage = [UIImage(named: "sports"),
-                     UIImage(named: "fruits"),
-                     UIImage(named: "cars")]
+    let mainImage = [UIImage(named: "Animal"),
+                     UIImage(named: "Drink"),
+                     UIImage(named: "Food")]
     
-    let choosenCategoryImage = [UIImage(named: "sportSquare"),
-                                UIImage(named: "fruitsSquare"),
-                                UIImage(named: "carsSquare")]
+    let choosenCategoryImage = [UIImage(named: "Animal"),
+                                UIImage(named: "Drink"),
+                                UIImage(named: "Food")]
     
     // text variable
     var textToSpeech = "Hello Dion , please select the category to play"
