@@ -5,6 +5,9 @@
 //  Created by Steven Wijaya on 20/05/20.
 //  Copyright © 2020 M2-911. All rights reserved.
 //
+//  FOR ADDING NEW SOUNDCARD
+//  let dataManager = DataManager()
+//  var currentActiveCategory: String = ""
 
 import UIKit
 
@@ -13,7 +16,8 @@ class AddSoundCardVC: UITableViewController {
     let sectionTitles = ["header", "object recognition", "post capture", "footer"]
     var cameraActive : Bool = true
     var captureObject : UIImage!
-    
+	let dataManager = DataManager()
+	var currentActiveCategory: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         //addBackground(imageName: "Background Apps-01.jpg")

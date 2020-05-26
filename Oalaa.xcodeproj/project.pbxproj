@@ -31,6 +31,16 @@
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
 		D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1D12474E954002D436B /* AddCategoryVC.swift */; };
+		D06A6FFC247CCE07006337E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06A6FFB247CCE07006337E6 /* Main.storyboard */; };
+		D06A7002247CCE19006337E6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A6FFD247CCE19006337E6 /* DataManager.swift */; };
+		D06A7003247CCE19006337E6 /* Categories+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A6FFE247CCE19006337E6 /* Categories+CoreDataClass.swift */; };
+		D06A7004247CCE19006337E6 /* Categories+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A6FFF247CCE19006337E6 /* Categories+CoreDataProperties.swift */; };
+		D06A7005247CCE19006337E6 /* Soundcards+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7000247CCE19006337E6 /* Soundcards+CoreDataClass.swift */; };
+		D06A7006247CCE19006337E6 /* Soundcards+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7001247CCE19006337E6 /* Soundcards+CoreDataProperties.swift */; };
+		D06A700A247CCE6D006337E6 /* addCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7007247CCE6D006337E6 /* addCategoryCollectionViewCell.swift */; };
+		D06A700B247CCE6D006337E6 /* SoundcardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7008247CCE6D006337E6 /* SoundcardCollectionViewCell.swift */; };
+		D06A700C247CCE6D006337E6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7009247CCE6D006337E6 /* CategoryCollectionViewCell.swift */; };
+		D06A700E247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +71,16 @@
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
 		D049C1D12474E954002D436B /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
+		D06A6FFB247CCE07006337E6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D06A6FFD247CCE19006337E6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D06A6FFE247CCE19006337E6 /* Categories+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Categories+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D06A6FFF247CCE19006337E6 /* Categories+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Categories+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D06A7000247CCE19006337E6 /* Soundcards+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Soundcards+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D06A7001247CCE19006337E6 /* Soundcards+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Soundcards+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D06A7007247CCE6D006337E6 /* addCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D06A7008247CCE6D006337E6 /* SoundcardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundcardCollectionViewCell.swift; sourceTree = "<group>"; };
+		D06A7009247CCE6D006337E6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +115,7 @@
 			children = (
 				5A15FC332474DA4E0029E2F0 /* AppDelegate.swift */,
 				5A15FC352474DA4E0029E2F0 /* SceneDelegate.swift */,
+				D06A6FFB247CCE07006337E6 /* Main.storyboard */,
 				5A15FC3F2474DA510029E2F0 /* Assets.xcassets */,
 				5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */,
 				5A15FC442474DA510029E2F0 /* Info.plist */,
@@ -187,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				D049C1CB2474E918002D436B /* TrainingVC.swift */,
+				D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */,
 				5AB3E82524775EBE00BC791B /* Training.storyboard */,
 			);
 			path = Training;
@@ -206,6 +228,9 @@
 			children = (
 				5A15FC372474DA4E0029E2F0 /* SoundCardVC.swift */,
 				D049C1D12474E954002D436B /* AddCategoryVC.swift */,
+				D06A7007247CCE6D006337E6 /* addCategoryCollectionViewCell.swift */,
+				D06A7009247CCE6D006337E6 /* CategoryCollectionViewCell.swift */,
+				D06A7008247CCE6D006337E6 /* SoundcardCollectionViewCell.swift */,
 				8508A63C24780A1200A340A9 /* Add Sound Card Scene */,
 			);
 			path = Soundcard;
@@ -215,6 +240,11 @@
 			isa = PBXGroup;
 			children = (
 				5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */,
+				D06A6FFE247CCE19006337E6 /* Categories+CoreDataClass.swift */,
+				D06A6FFF247CCE19006337E6 /* Categories+CoreDataProperties.swift */,
+				D06A7000247CCE19006337E6 /* Soundcards+CoreDataClass.swift */,
+				D06A7001247CCE19006337E6 /* Soundcards+CoreDataProperties.swift */,
+				D06A6FFD247CCE19006337E6 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +312,7 @@
 				8508A64E247810F400A340A9 /* PostCaptureTableViewCell.xib in Resources */,
 				8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */,
 				5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */,
+				D06A6FFC247CCE07006337E6 /* Main.storyboard in Resources */,
 				5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */,
 				5AB3E82424775E2400BC791B /* Task.storyboard in Resources */,
 				5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */,
@@ -298,16 +329,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */,
+				D06A7002247CCE19006337E6 /* DataManager.swift in Sources */,
+				D06A700B247CCE6D006337E6 /* SoundcardCollectionViewCell.swift in Sources */,
 				8508A656247AD78D00A340A9 /* AddSoundCardSection.swift in Sources */,
+				D06A700E247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift in Sources */,
+				D06A7003247CCE19006337E6 /* Categories+CoreDataClass.swift in Sources */,
 				8508A661247B734800A340A9 /* FooterTableViewCell.swift in Sources */,
 				8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */,
 				5A15FC382474DA4E0029E2F0 /* SoundCardVC.swift in Sources */,
+				D06A700C247CCE6D006337E6 /* CategoryCollectionViewCell.swift in Sources */,
+				D06A7005247CCE19006337E6 /* Soundcards+CoreDataClass.swift in Sources */,
+				D06A7004247CCE19006337E6 /* Categories+CoreDataProperties.swift in Sources */,
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,
 				D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */,
 				D049C1CE2474E933002D436B /* TaskVC.swift in Sources */,
 				8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */,
+				D06A7006247CCE19006337E6 /* Soundcards+CoreDataProperties.swift in Sources */,
 				5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */,
 				D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */,
+				D06A700A247CCE6D006337E6 /* addCategoryCollectionViewCell.swift in Sources */,
 				8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */,
 				8508A65C247B67D300A340A9 /* PreviewCaptureTableViewCell.swift in Sources */,
 				D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */,
@@ -447,7 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73D6FXNB5K;
+				DEVELOPMENT_TEAM = QCV3MFRTR4;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,7 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73D6FXNB5K;
+				DEVELOPMENT_TEAM = QCV3MFRTR4;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
