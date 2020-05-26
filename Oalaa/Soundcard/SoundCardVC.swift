@@ -34,6 +34,8 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 		categoryCollection.delegate = self
 		soundcardCollection.delegate = self
 		selectedCategory.text = "General"
+		
+		dataManager.PrintAllSoundcards()
 	}
 	@objc func addCategoryDismissed() {
 		//dataManager.reloadAllCategory()
