@@ -1,5 +1,10 @@
-# Oalaa
+# Oalla
 A native iOS App that enhance user’s communication skill for ASD patients in their early ages by take input from the camera and can recognise the object and output the object name as text and voice which can also be saved as a personal dictionary of common used things. This is a solution to the challenge because ASD patient put more attention to visual than literal so AAC(Augmentative and Alternative Communication) method is more efficient  to implemented because it use symbols, selection techniques, and strategies to enhance communication.
+
+## Get this app
+![Download on testflight](testflightQR.png "Download on testflight")
+
+[TestFlight](google.com)
 
 ## Feature
 ### Soundcard
@@ -18,8 +23,8 @@ Consist of 2 part "Daily Task" and "Achievement" that help to motivate the user 
 
 ## Storyboard
 ```mermaid
-graph LR;
-    A[Navigation Controller]-->B[MainView(Soundcard)];
+graph TD;
+    A[Navigation Controller]-->B[Soundcard];
     B-->C[Manage Category];
     B-->D[Add new Soundcard];
     B-->E[Training];
@@ -38,11 +43,11 @@ graph LR;
   - Autolayout
 
 ## Created by - M2-911 
-  - [Isti](https://gitlab.com/)
-  - [Rizal](https://gitlab.com/)
+  - [Isti](https://gitlab.com/Strooberi)
+  - [Rizal](https://gitlab.com/rizalhidayat)
   - [Sw](https://gitlab.com/swrhythm95)
-  - [Taufiq](https://gitlab.com)
-  - [Tony](https://gitlab.com)
+  - [Taufiq](https://gitlab.com/taufiq.rama)
+  - [Tony](https://gitlab.com/tonyoditanto)
 
 ## Mentored by 
-  - [Jaya Pranata](https://gitlab.com)
+  - [Jaya Pranata](https://gitlab.com/jaya.pranata)
