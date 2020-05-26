@@ -11,11 +11,12 @@ import UIKit
 class AddSoundCardVC: UITableViewController {
 
     let sectionTitles = ["header", "object recognition", "post capture", "footer"]
+    var cameraActive : Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //addBackground(imageName: "Background Apps-01.jpg")
         setupTableView()
-        
     }
 }
 
@@ -23,8 +24,9 @@ extension AddSoundCardVC {
     func setupTableView() {
          registerHeaderCell()
          registerObjectRecognitionCell()
+         registerPreviewCaptureCell()
          registerPostCaptureCell()
-        registerFooterCell()
+         registerFooterCell()
      }
     
     func registerHeaderCell() {
@@ -35,6 +37,11 @@ extension AddSoundCardVC {
     func registerObjectRecognitionCell() {
         let nib = UINib(nibName: ObjectRecognitionTableViewCell.cellID, bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: ObjectRecognitionTableViewCell.cellID)
+    }
+    
+    func registerPreviewCaptureCell() {
+        let nib = UINib(nibName: PreviewCaptureTableViewCell.cellID, bundle: Bundle.main)
+        tableView.register(nib, forCellReuseIdentifier: PreviewCaptureTableViewCell.cellID)
     }
 
     func registerPostCaptureCell() {
@@ -48,6 +55,9 @@ extension AddSoundCardVC {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        if cameraActive == true {
+            return 3
+        }
         return self.sectionTitles.count
     }
 
@@ -60,11 +70,14 @@ extension AddSoundCardVC {
             return 120
         }
 
-        if indexPath.section == AddSoundCardSection.SECTION_OBJECT_RECOGNITION {
+        if indexPath.section == AddSoundCardSection.SECTION_OBJECT_RECOGNITION || indexPath.section == AddSoundCardSection.SECTION_OBJECT_CAPTURED{
             return 564
         }
         
         if indexPath.section == AddSoundCardSection.SECTION_POST {
+            if cameraActive == true {
+                return 80
+            }
             return 104
         }
         
@@ -80,10 +93,18 @@ extension AddSoundCardVC {
         if section == AddSoundCardSection.SECTION_HEADER {
             return makeHeaderCell(at: indexPath)
         }
-        if section == AddSoundCardSection.SECTION_OBJECT_RECOGNITION {
-            return makeObjectRecognitionCell(at: indexPath)
+        if section == AddSoundCardSection.SECTION_OBJECT_RECOGNITION || section == AddSoundCardSection.SECTION_OBJECT_CAPTURED{
+            if cameraActive == true {
+                return makeObjectRecognitionCell(at: indexPath)
+            }
+            if cameraActive == false {
+                return makePreviewCaptureCell(at: indexPath)
+            }
         }
         if section == AddSoundCardSection.SECTION_POST {
+            if cameraActive == true {
+                return makeFooterCell(at: indexPath)
+            }
             return makePostCaptureCell(at: indexPath)
         }
         if section == AddSoundCardSection.SECTION_FOOTER {
@@ -102,9 +123,16 @@ extension AddSoundCardVC {
     
     func makeObjectRecognitionCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ObjectRecognitionTableViewCell.cellID, for: indexPath) as! ObjectRecognitionTableViewCell
-        //Insert Delegate Action Here
+        cell.delegate = self
         return cell
     }
+    
+    func makePreviewCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PreviewCaptureTableViewCell.cellID, for: indexPath) as! PreviewCaptureTableViewCell
+        cell.delegate = self
+        return cell
+    }
+
     
     func makePostCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCaptureTableViewCell.cellID, for: indexPath) as! PostCaptureTableViewCell
@@ -127,5 +155,19 @@ extension AddSoundCardVC {
 extension AddSoundCardVC {
     func addBackground(imageName:String) {
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background Apps-01"))
+    }
+}
+
+extension AddSoundCardVC : ObjectRecognitionTableViewCellDelegate{
+    func previewCapture() {
+        cameraActive = false
+        self.tableView.reloadData()
+    }
+}
+
+extension AddSoundCardVC : PreviewCaptureTableViewCellDelegate{
+    func activateCamera() {
+        cameraActive = true
+        self.tableView.reloadData()
     }
 }

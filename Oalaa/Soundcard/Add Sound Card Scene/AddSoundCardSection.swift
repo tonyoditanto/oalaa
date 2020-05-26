@@ -10,6 +10,7 @@ import Foundation
 struct AddSoundCardSection {
     static let SECTION_HEADER = 0
     static let SECTION_OBJECT_RECOGNITION = 1
+    static let SECTION_OBJECT_CAPTURED = 1
     static let SECTION_POST = 2
     static let SECTION_FOOTER = 3
 }

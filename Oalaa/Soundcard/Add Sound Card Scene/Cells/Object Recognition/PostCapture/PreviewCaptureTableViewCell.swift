@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol PreviewCaptureTableViewCellDelegate {
+    func activateCamera()
+}
+
 class PreviewCaptureTableViewCell: UITableViewCell {
     static let cellID = "PreviewCaptureTableViewCell"
     @IBOutlet weak var retryButton: UIButton!
+    
+    var delegate : PreviewCaptureTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,5 +34,6 @@ class PreviewCaptureTableViewCell: UITableViewCell {
      }
     
     @IBAction func didTapRetryButton(_ sender: Any) {
+        delegate?.activateCamera()
     }
 }

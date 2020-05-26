@@ -9,6 +9,10 @@
 import UIKit
 import AVFoundation
 
+protocol ObjectRecognitionTableViewCellDelegate {
+  func previewCapture()
+}
+
 class ObjectRecognitionTableViewCell: UITableViewCell {
     static let cellID = "ObjectRecognitionTableViewCell"
     @IBOutlet weak var captureButton: UIButton!
@@ -19,12 +23,16 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
     var frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)
     var backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+    var capturePhotoOutput : AVCapturePhotoOutput?
+    
+    var delegate:ObjectRecognitionTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         configureComponentDesign()
         registerCamera()
+        setCaptureOutput()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,6 +62,42 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
         }
     }
     
+    func setCaptureOutput(){
+        capturePhotoOutput = AVCapturePhotoOutput()
+        capturePhotoOutput?.isHighResolutionCaptureEnabled = true
+        captureSession?.addOutput(capturePhotoOutput!)
+    }
+    
+    func capturePhoto(){
+        guard let capturePhotoOutput = self.capturePhotoOutput else {return }
+        let photoSettings = AVCapturePhotoSettings()
+        photoSettings.isAutoStillImageStabilizationEnabled = true
+        photoSettings.isHighResolutionPhotoEnabled = true
+        capturePhotoOutput.capturePhoto(with: photoSettings, delegate: self)
+    }
+    
     @IBAction func didTapCaptureButton(_ sender: Any) {
+        capturePhoto()
+        delegate?.previewCapture()
+//        delegate?.previewCapture()
+        //captureSession?.stopRunning()
+    }
+}
+
+extension ObjectRecognitionTableViewCell : AVCapturePhotoCaptureDelegate{
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings?, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+        guard error == nil,
+            let photoSampleBuffer = photoSampleBuffer else {
+                print("error")
+                return
+        }
+        guard let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) else{
+        return
+    }
+    let capturedImage = UIImage.init(data: imageData, scale: 1.0)
+    if let image = capturedImage {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    
     }
 }
