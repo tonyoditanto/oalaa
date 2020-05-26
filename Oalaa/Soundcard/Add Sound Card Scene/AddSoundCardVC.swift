@@ -22,11 +22,13 @@ class AddSoundCardVC: UITableViewController {
         super.viewDidLoad()
         //addBackground(imageName: "Background Apps-01.jpg")
         setupTableView()
+        //dataManager.addNewSoundcard(name: <#T##String#>, image: <#T##UIImage#>, category: currentActiveCategory)
     }
 }
 
 extension AddSoundCardVC {
     func setupTableView() {
+         
          registerHeaderCell()
          registerObjectRecognitionCell()
          registerPreviewCaptureCell()
