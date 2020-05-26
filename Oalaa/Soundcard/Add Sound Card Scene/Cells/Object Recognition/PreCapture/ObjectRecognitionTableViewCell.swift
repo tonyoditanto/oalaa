@@ -10,7 +10,8 @@ import UIKit
 import AVFoundation
 
 protocol ObjectRecognitionTableViewCellDelegate {
-  func previewCapture()
+    func previewCapture()
+    //func previewCapture(for captureObject : UIImage)
 }
 
 class ObjectRecognitionTableViewCell: UITableViewCell {
@@ -26,6 +27,8 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
     var capturePhotoOutput : AVCapturePhotoOutput?
     
     var delegate:ObjectRecognitionTableViewCellDelegate?
+    
+    //var captureObject : UIImage
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -79,7 +82,6 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
     @IBAction func didTapCaptureButton(_ sender: Any) {
         capturePhoto()
         delegate?.previewCapture()
-//        delegate?.previewCapture()
         //captureSession?.stopRunning()
     }
 }

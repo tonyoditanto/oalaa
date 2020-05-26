@@ -12,6 +12,7 @@ class AddSoundCardVC: UITableViewController {
 
     let sectionTitles = ["header", "object recognition", "post capture", "footer"]
     var cameraActive : Bool = true
+    var captureObject : UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,6 +124,7 @@ extension AddSoundCardVC {
     
     func makeObjectRecognitionCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ObjectRecognitionTableViewCell.cellID, for: indexPath) as! ObjectRecognitionTableViewCell
+        
         cell.delegate = self
         return cell
     }
@@ -159,6 +161,12 @@ extension AddSoundCardVC {
 }
 
 extension AddSoundCardVC : ObjectRecognitionTableViewCellDelegate{
+//    func previewCapture(for captureObject : UIImage) {
+//        self.captureObject = captureObject
+//        cameraActive = false
+//        self.tableView.reloadData()
+//    }
+    
     func previewCapture() {
         cameraActive = false
         self.tableView.reloadData()

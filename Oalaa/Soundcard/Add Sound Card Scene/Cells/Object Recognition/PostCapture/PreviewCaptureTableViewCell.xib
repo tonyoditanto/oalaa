@@ -60,6 +60,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="objectImage" destination="HOT-tL-F98" id="jld-qg-BoS"/>
                 <outlet property="retryButton" destination="wAD-Kj-GDb" id="iyq-Yt-3pT"/>
             </connections>
             <point key="canvasLocation" x="139" y="153"/>

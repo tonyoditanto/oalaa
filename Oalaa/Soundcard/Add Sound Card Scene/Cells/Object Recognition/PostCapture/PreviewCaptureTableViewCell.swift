@@ -14,9 +14,16 @@ protocol PreviewCaptureTableViewCellDelegate {
 
 class PreviewCaptureTableViewCell: UITableViewCell {
     static let cellID = "PreviewCaptureTableViewCell"
+    @IBOutlet weak var objectImage: UIImageView!
     @IBOutlet weak var retryButton: UIButton!
     
     var delegate : PreviewCaptureTableViewCellDelegate?
+    
+//    var cardImage: UIImage!{
+//        didSet{
+//            //self.objectImage.image = 
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
