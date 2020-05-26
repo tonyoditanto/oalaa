@@ -191,6 +191,7 @@
 			children = (
 				D049C1CB2474E918002D436B /* TrainingVC.swift */,
 				5AB3E82524775EBE00BC791B /* Training.storyboard */,
+				BA2326F92478CFA00024B3F2 /* mainCategoryCollectionViewCell.swift */,
 			);
 			path = Training;
 			sourceTree = "<group>";
@@ -311,6 +312,7 @@
 				D049C1CE2474E933002D436B /* TaskVC.swift in Sources */,
 				8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */,
 				5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */,
+				BA2326FA2478CFA00024B3F2 /* mainCategoryCollectionViewCell.swift in Sources */,
 				D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */,
 				8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */,
 				8508A65C247B67D300A340A9 /* PreviewCaptureTableViewCell.swift in Sources */,
