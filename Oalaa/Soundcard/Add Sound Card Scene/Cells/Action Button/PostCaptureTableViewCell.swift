@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol PostCaptureTableViewCellDelegate {
+    func saveCard()
+}
+
 class PostCaptureTableViewCell: UITableViewCell {
     static let cellID = "PostCaptureTableViewCell"
     @IBOutlet weak var speakButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
+    var delegate : PostCaptureTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        saveButton.isEnabled = true
         // Initialization code
         configureComponentDesign()
     }
@@ -31,9 +38,12 @@ class PostCaptureTableViewCell: UITableViewCell {
     }
     
     @IBAction func didTapSpeakButton(_ sender: Any) {
+        
     }
     
     @IBAction func didTapSaveButton(_ sender: Any) {
+        delegate?.saveCard()
+        //saveButton.isEnabled = false
     }
     
 }

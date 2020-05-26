@@ -8,10 +8,12 @@
 
 import UIKit
 import AVFoundation
+import CoreML
+import Vision
 
 protocol ObjectRecognitionTableViewCellDelegate {
-    func previewCapture()
-    //func previewCapture(for captureObject : UIImage)
+    //func previewCapture()
+    func previewCapture(for captureObject : UIImage!)
 }
 
 class ObjectRecognitionTableViewCell: UITableViewCell {
@@ -25,10 +27,7 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
     var frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)
     var backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
     var capturePhotoOutput : AVCapturePhotoOutput?
-    
     var delegate:ObjectRecognitionTableViewCellDelegate?
-    
-    //var captureObject : UIImage
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,12 +35,6 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
         configureComponentDesign()
         registerCamera()
         setCaptureOutput()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureComponentDesign(){
@@ -81,8 +74,10 @@ class ObjectRecognitionTableViewCell: UITableViewCell {
     
     @IBAction func didTapCaptureButton(_ sender: Any) {
         capturePhoto()
-        delegate?.previewCapture()
-        //captureSession?.stopRunning()
+    }
+    
+    func getCaptureObject(){
+        
     }
 }
 
@@ -97,9 +92,9 @@ extension ObjectRecognitionTableViewCell : AVCapturePhotoCaptureDelegate{
         return
     }
     let capturedImage = UIImage.init(data: imageData, scale: 1.0)
-    if let image = capturedImage {
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
-    
+    delegate?.previewCapture(for: capturedImage)
+//    if let image = capturedImage {
+//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//    }
     }
 }
