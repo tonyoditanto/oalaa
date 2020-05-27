@@ -10,6 +10,7 @@ import UIKit
 
 protocol PostCaptureTableViewCellDelegate {
     func saveCard()
+    func playCard()
 }
 
 class PostCaptureTableViewCell: UITableViewCell {
@@ -21,8 +22,7 @@ class PostCaptureTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        saveButton.isEnabled = true
-        // Initialization code
+        //saveButton.isEnabled = true
         configureComponentDesign()
     }
 
@@ -38,7 +38,7 @@ class PostCaptureTableViewCell: UITableViewCell {
     }
     
     @IBAction func didTapSpeakButton(_ sender: Any) {
-        
+        delegate?.playCard()
     }
     
     @IBAction func didTapSaveButton(_ sender: Any) {

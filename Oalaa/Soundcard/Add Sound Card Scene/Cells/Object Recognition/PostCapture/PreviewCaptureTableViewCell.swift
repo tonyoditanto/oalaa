@@ -28,7 +28,6 @@ class PreviewCaptureTableViewCell: UITableViewCell {
         didSet{
             self.objectImage.image = cardImage
             updateClassifications(for: cardImage)
-            storedCaptureObjectNameToAddSoundCardVC()
         }
     }
     
@@ -37,7 +36,7 @@ class PreviewCaptureTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureComponentDesign()
-        storedCaptureObjectNameToAddSoundCardVC()
+        //storedCaptureObjectNameToAddSoundCardVC()
         //updateClassifications(for: cardImage)
     }
     
@@ -49,7 +48,7 @@ class PreviewCaptureTableViewCell: UITableViewCell {
         delegate?.activateCamera()
     }
     
-    func storedCaptureObjectNameToAddSoundCardVC(){
+    func storedCaptureObjectNameToAddSoundCardVC(with objectName : String){
         delegate?.storedCaptureObjectName(with: objectName)
     }
     
@@ -116,8 +115,9 @@ class PreviewCaptureTableViewCell: UITableViewCell {
                     return classification.identifier
                     
                 }
-                self.objectName = descriptions[0]
+                //self.objectName = descriptions[0]
                 self.objectNameLabel.text = descriptions[0]
+                self.storedCaptureObjectNameToAddSoundCardVC(with: descriptions[0])
             }
         }
     }

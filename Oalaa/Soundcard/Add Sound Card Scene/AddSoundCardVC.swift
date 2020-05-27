@@ -12,6 +12,7 @@
 import UIKit
 import CoreML
 import Vision
+import AVFoundation
 
 class AddSoundCardVC: UITableViewController {
 
@@ -195,5 +196,15 @@ extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
     func saveCard() {
         dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func playCard() {
+        let speakThis = objectName
+        
+        let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
+        speechUtterance.voice = AVSpeechSynthesisVoice(language: "en")
+        
+        let speechSynthesizer = AVSpeechSynthesizer()
+        speechSynthesizer.speak(speechUtterance)
     }
 }
