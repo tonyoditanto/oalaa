@@ -10,17 +10,37 @@
 		5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15FC332474DA4E0029E2F0 /* AppDelegate.swift */; };
 		5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15FC352474DA4E0029E2F0 /* SceneDelegate.swift */; };
 		5A15FC382474DA4E0029E2F0 /* SoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15FC372474DA4E0029E2F0 /* SoundCardVC.swift */; };
-		5A15FC3B2474DA4E0029E2F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC392474DA4E0029E2F0 /* Main.storyboard */; };
 		5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */; };
 		5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC3F2474DA510029E2F0 /* Assets.xcassets */; };
 		5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */; };
 		5AB3E82424775E2400BC791B /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82324775E2400BC791B /* Task.storyboard */; };
 		5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82524775EBE00BC791B /* Training.storyboard */; };
 		5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E8272477610500BC791B /* AddSoundCard.storyboard */; };
+		8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */; };
+		8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */; };
+		8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */; };
+		8508A64E247810F400A340A9 /* PostCaptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */; };
+		8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64F2478114500A340A9 /* ObjectRecognitionTableViewCell.swift */; };
+		8508A6522478114500A340A9 /* ObjectRecognitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6502478114500A340A9 /* ObjectRecognitionTableViewCell.xib */; };
+		8508A656247AD78D00A340A9 /* AddSoundCardSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */; };
+		8508A65C247B67D300A340A9 /* PreviewCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A65A247B67D300A340A9 /* PreviewCaptureTableViewCell.swift */; };
+		8508A65D247B67D300A340A9 /* PreviewCaptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A65B247B67D300A340A9 /* PreviewCaptureTableViewCell.xib */; };
+		8508A661247B734800A340A9 /* FooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A65F247B734800A340A9 /* FooterTableViewCell.swift */; };
+		8508A662247B734800A340A9 /* FooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A660247B734800A340A9 /* FooterTableViewCell.xib */; };
 		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
 		D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1D12474E954002D436B /* AddCategoryVC.swift */; };
+		D06A6FFC247CCE07006337E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06A6FFB247CCE07006337E6 /* Main.storyboard */; };
+		D06A7002247CCE19006337E6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A6FFD247CCE19006337E6 /* DataManager.swift */; };
+		D06A700A247CCE6D006337E6 /* addCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7007247CCE6D006337E6 /* addCategoryCollectionViewCell.swift */; };
+		D06A700B247CCE6D006337E6 /* SoundcardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7008247CCE6D006337E6 /* SoundcardCollectionViewCell.swift */; };
+		D06A700C247CCE6D006337E6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7009247CCE6D006337E6 /* CategoryCollectionViewCell.swift */; };
+		D06A700E247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */; };
+		D06A701B247CD7F9006337E6 /* Soundcards+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7017247CD7F9006337E6 /* Soundcards+CoreDataClass.swift */; };
+		D06A701C247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7018247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift */; };
+		D06A701D247CD7F9006337E6 /* Categories+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7019247CD7F9006337E6 /* Categories+CoreDataClass.swift */; };
+		D06A701E247CD7F9006337E6 /* Categories+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A701A247CD7F9006337E6 /* Categories+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +48,6 @@
 		5A15FC332474DA4E0029E2F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A15FC352474DA4E0029E2F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5A15FC372474DA4E0029E2F0 /* SoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardVC.swift; sourceTree = "<group>"; };
-		5A15FC3A2474DA4E0029E2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A15FC3D2474DA4E0029E2F0 /* Oalaa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Oalaa.xcdatamodel; sourceTree = "<group>"; };
 		5A15FC3F2474DA510029E2F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A15FC422474DA510029E2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,10 +55,32 @@
 		5AB3E82324775E2400BC791B /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		5AB3E82524775EBE00BC791B /* Training.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
 		5AB3E8272477610500BC791B /* AddSoundCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSoundCard.storyboard; sourceTree = "<group>"; };
+		8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptureTableViewCell.swift; sourceTree = "<group>"; };
+		8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCaptureTableViewCell.xib; sourceTree = "<group>"; };
+		8508A64F2478114500A340A9 /* ObjectRecognitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRecognitionTableViewCell.swift; sourceTree = "<group>"; };
+		8508A6502478114500A340A9 /* ObjectRecognitionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectRecognitionTableViewCell.xib; sourceTree = "<group>"; };
+		8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardSection.swift; sourceTree = "<group>"; };
+		8508A659247B65F500A340A9 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		8508A65A247B67D300A340A9 /* PreviewCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCaptureTableViewCell.swift; sourceTree = "<group>"; };
+		8508A65B247B67D300A340A9 /* PreviewCaptureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewCaptureTableViewCell.xib; sourceTree = "<group>"; };
+		8508A65F247B734800A340A9 /* FooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTableViewCell.swift; sourceTree = "<group>"; };
+		8508A660247B734800A340A9 /* FooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterTableViewCell.xib; sourceTree = "<group>"; };
 		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
 		D049C1D12474E954002D436B /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
+		D06A6FFB247CCE07006337E6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D06A6FFD247CCE19006337E6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D06A7007247CCE6D006337E6 /* addCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D06A7008247CCE6D006337E6 /* SoundcardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundcardCollectionViewCell.swift; sourceTree = "<group>"; };
+		D06A7009247CCE6D006337E6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D06A7017247CD7F9006337E6 /* Soundcards+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Soundcards+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D06A7018247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Soundcards+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D06A7019247CD7F9006337E6 /* Categories+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categories+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D06A701A247CD7F9006337E6 /* Categories+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categories+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +115,7 @@
 			children = (
 				5A15FC332474DA4E0029E2F0 /* AppDelegate.swift */,
 				5A15FC352474DA4E0029E2F0 /* SceneDelegate.swift */,
-				5A15FC392474DA4E0029E2F0 /* Main.storyboard */,
+				D06A6FFB247CCE07006337E6 /* Main.storyboard */,
 				5A15FC3F2474DA510029E2F0 /* Assets.xcassets */,
 				5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */,
 				5A15FC442474DA510029E2F0 /* Info.plist */,
@@ -86,10 +127,88 @@
 			path = Oalaa;
 			sourceTree = "<group>";
 		};
+		8508A63C24780A1200A340A9 /* Add Sound Card Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8508A655247AD78D00A340A9 /* AddSoundCardSection.swift */,
+				D049C1CF2474E945002D436B /* AddSoundCardVC.swift */,
+				5AB3E8272477610500BC791B /* AddSoundCard.storyboard */,
+				8508A63D24780A6100A340A9 /* Cells */,
+			);
+			path = "Add Sound Card Scene";
+			sourceTree = "<group>";
+		};
+		8508A63D24780A6100A340A9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8508A63E24780A9E00A340A9 /* Header */,
+				8508A63F24780AB400A340A9 /* Object Recognition */,
+				8508A64024780ACD00A340A9 /* Action Button */,
+				8508A65E247B727300A340A9 /* Footer */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8508A63E24780A9E00A340A9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */,
+				8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		8508A63F24780AB400A340A9 /* Object Recognition */ = {
+			isa = PBXGroup;
+			children = (
+				8508A657247B639600A340A9 /* PreCapture */,
+				8508A658247B63B200A340A9 /* PostCapture */,
+			);
+			path = "Object Recognition";
+			sourceTree = "<group>";
+		};
+		8508A64024780ACD00A340A9 /* Action Button */ = {
+			isa = PBXGroup;
+			children = (
+				8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */,
+				8508A64C247810F400A340A9 /* PostCaptureTableViewCell.xib */,
+			);
+			path = "Action Button";
+			sourceTree = "<group>";
+		};
+		8508A657247B639600A340A9 /* PreCapture */ = {
+			isa = PBXGroup;
+			children = (
+				8508A659247B65F500A340A9 /* Resnet50.mlmodel */,
+				8508A64F2478114500A340A9 /* ObjectRecognitionTableViewCell.swift */,
+				8508A6502478114500A340A9 /* ObjectRecognitionTableViewCell.xib */,
+			);
+			path = PreCapture;
+			sourceTree = "<group>";
+		};
+		8508A658247B63B200A340A9 /* PostCapture */ = {
+			isa = PBXGroup;
+			children = (
+				8508A65A247B67D300A340A9 /* PreviewCaptureTableViewCell.swift */,
+				8508A65B247B67D300A340A9 /* PreviewCaptureTableViewCell.xib */,
+			);
+			path = PostCapture;
+			sourceTree = "<group>";
+		};
+		8508A65E247B727300A340A9 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				8508A65F247B734800A340A9 /* FooterTableViewCell.swift */,
+				8508A660247B734800A340A9 /* FooterTableViewCell.xib */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
 		D049C1D32474E961002D436B /* Training */ = {
 			isa = PBXGroup;
 			children = (
 				D049C1CB2474E918002D436B /* TrainingVC.swift */,
+				D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */,
 				5AB3E82524775EBE00BC791B /* Training.storyboard */,
 			);
 			path = Training;
@@ -108,9 +227,11 @@
 			isa = PBXGroup;
 			children = (
 				5A15FC372474DA4E0029E2F0 /* SoundCardVC.swift */,
-				D049C1CF2474E945002D436B /* AddSoundCardVC.swift */,
 				D049C1D12474E954002D436B /* AddCategoryVC.swift */,
-				5AB3E8272477610500BC791B /* AddSoundCard.storyboard */,
+				D06A7007247CCE6D006337E6 /* addCategoryCollectionViewCell.swift */,
+				D06A7009247CCE6D006337E6 /* CategoryCollectionViewCell.swift */,
+				D06A7008247CCE6D006337E6 /* SoundcardCollectionViewCell.swift */,
+				8508A63C24780A1200A340A9 /* Add Sound Card Scene */,
 			);
 			path = Soundcard;
 			sourceTree = "<group>";
@@ -118,7 +239,12 @@
 		D04C7A07247767A6004ED785 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D06A7017247CD7F9006337E6 /* Soundcards+CoreDataClass.swift */,
+				D06A7018247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift */,
+				D06A7019247CD7F9006337E6 /* Categories+CoreDataClass.swift */,
+				D06A701A247CD7F9006337E6 /* Categories+CoreDataProperties.swift */,
 				5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */,
+				D06A6FFD247CCE19006337E6 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,11 +308,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */,
+				8508A662247B734800A340A9 /* FooterTableViewCell.xib in Resources */,
+				8508A64E247810F400A340A9 /* PostCaptureTableViewCell.xib in Resources */,
+				8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */,
 				5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */,
+				D06A6FFC247CCE07006337E6 /* Main.storyboard in Resources */,
 				5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */,
 				5AB3E82424775E2400BC791B /* Task.storyboard in Resources */,
 				5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */,
-				5A15FC3B2474DA4E0029E2F0 /* Main.storyboard in Resources */,
+				8508A65D247B67D300A340A9 /* PreviewCaptureTableViewCell.xib in Resources */,
+				8508A6522478114500A340A9 /* ObjectRecognitionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,27 +329,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */,
+				D06A7002247CCE19006337E6 /* DataManager.swift in Sources */,
+				D06A700B247CCE6D006337E6 /* SoundcardCollectionViewCell.swift in Sources */,
+				D06A701D247CD7F9006337E6 /* Categories+CoreDataClass.swift in Sources */,
+				8508A656247AD78D00A340A9 /* AddSoundCardSection.swift in Sources */,
+				D06A700E247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift in Sources */,
+				8508A661247B734800A340A9 /* FooterTableViewCell.swift in Sources */,
+				8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */,
 				5A15FC382474DA4E0029E2F0 /* SoundCardVC.swift in Sources */,
+				D06A700C247CCE6D006337E6 /* CategoryCollectionViewCell.swift in Sources */,
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,
 				D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */,
+				D06A701E247CD7F9006337E6 /* Categories+CoreDataProperties.swift in Sources */,
 				D049C1CE2474E933002D436B /* TaskVC.swift in Sources */,
+				8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */,
 				5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */,
 				D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */,
+				D06A701B247CD7F9006337E6 /* Soundcards+CoreDataClass.swift in Sources */,
+				D06A700A247CCE6D006337E6 /* addCategoryCollectionViewCell.swift in Sources */,
+				8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */,
+				8508A65C247B67D300A340A9 /* PreviewCaptureTableViewCell.swift in Sources */,
 				D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */,
+				D06A701C247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5A15FC392474DA4E0029E2F0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A15FC3A2474DA4E0029E2F0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -349,7 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QCV3MFRTR4;
+				DEVELOPMENT_TEAM = 73D6FXNB5K;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,7 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QCV3MFRTR4;
+				DEVELOPMENT_TEAM = 73D6FXNB5K;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
