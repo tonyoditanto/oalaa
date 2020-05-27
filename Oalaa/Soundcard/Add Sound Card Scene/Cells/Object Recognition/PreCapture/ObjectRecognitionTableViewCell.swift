@@ -12,7 +12,6 @@ import CoreML
 import Vision
 
 protocol ObjectRecognitionTableViewCellDelegate {
-    //func previewCapture()
     func previewCapture(for captureObject : UIImage!)
 }
 

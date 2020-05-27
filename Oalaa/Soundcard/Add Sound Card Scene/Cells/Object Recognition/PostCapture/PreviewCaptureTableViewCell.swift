@@ -13,6 +13,7 @@ import Vision
 protocol PreviewCaptureTableViewCellDelegate {
     func activateCamera()
     func storedCaptureObjectName(with objectName : String)
+    func actionButtonStatus(with status : Bool)
 }
 
 class PreviewCaptureTableViewCell: UITableViewCell {
@@ -36,8 +37,6 @@ class PreviewCaptureTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureComponentDesign()
-        //storedCaptureObjectNameToAddSoundCardVC()
-        //updateClassifications(for: cardImage)
     }
     
     func configureComponentDesign(){
@@ -50,6 +49,10 @@ class PreviewCaptureTableViewCell: UITableViewCell {
     
     func storedCaptureObjectNameToAddSoundCardVC(with objectName : String){
         delegate?.storedCaptureObjectName(with: objectName)
+    }
+    
+    func setActionButtonStatus(with status : Bool){
+        delegate?.actionButtonStatus(with: status)
     }
     
     // MARK: - Image Classification
@@ -109,15 +112,27 @@ class PreviewCaptureTableViewCell: UITableViewCell {
             } else {
                 // Display top classifications ranked by confidence in the UI.
                 let topClassifications = classifications.prefix(1)
+                
+                //Fetch object Name
                 let descriptions = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                    //return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                     return classification.identifier
-                    
                 }
-                //self.objectName = descriptions[0]
-                self.objectNameLabel.text = descriptions[0]
-                self.storedCaptureObjectNameToAddSoundCardVC(with: descriptions[0])
+                
+                //Fetch confidence Rate
+                let confidenceRate = topClassifications.map { classification in return classification.confidence}
+                
+                if confidenceRate[0] < 0.5 {
+                    self.objectNameLabel.text = "Object isn't identified"
+                    self.setActionButtonStatus(with: false)
+                }
+                
+                if confidenceRate[0] >= 0.5 {
+                    self.objectNameLabel.text = descriptions[0]
+                    self.storedCaptureObjectNameToAddSoundCardVC(with: descriptions[0])
+                    self.setActionButtonStatus(with: true)
+                }
             }
         }
     }

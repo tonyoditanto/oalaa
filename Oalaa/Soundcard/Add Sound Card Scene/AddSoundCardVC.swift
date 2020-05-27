@@ -24,11 +24,12 @@ class AddSoundCardVC: UITableViewController {
     var objectName : String = ""
 	var currentActiveCategory: String = ""
     
+    var actionButtonIsEnable : Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackground(imageName: "Background Apps-01.jpg")
         setupTableView()
-        //dataManager.addNewSoundcard(name: <#T##String#>, image: <#T##UIImage#>, category: currentActiveCategory)
     }
 }
 
@@ -151,6 +152,7 @@ extension AddSoundCardVC {
     
     func makePostCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCaptureTableViewCell.cellID, for: indexPath) as! PostCaptureTableViewCell
+        cell.actionButtonIsEnable = self.actionButtonIsEnable
         cell.delegate = self
         return cell
     }
@@ -184,11 +186,22 @@ extension AddSoundCardVC : ObjectRecognitionTableViewCellDelegate{
 extension AddSoundCardVC : PreviewCaptureTableViewCellDelegate{
     func activateCamera() {
         cameraActive = true
+        self.actionButtonIsEnable = true
         self.tableView.reloadData()
     }
     
     func storedCaptureObjectName(with objectName: String) {
+        //translateObjectNameToIndonesia(with: objectName)
         self.objectName = objectName
+    }
+    
+    func translateObjectNameToIndonesia(with objectName : String){
+        //Method untuk translate ke bahasa Indonesia
+    }
+    
+    func actionButtonStatus(with status: Bool) {
+        self.actionButtonIsEnable = status
+        self.tableView.reloadData()
     }
 }
 
