@@ -16,11 +16,15 @@ class TaskVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dailyTV.delegate = self
-        dailyTV.dataSource = self
+        initDelegate()
     }
     
+    func initDelegate() {
+        dailyTV.delegate = self
+        dailyTV.dataSource = self
+        achievementCV.delegate = self
+        achievementCV.dataSource = self
+    }
 }
 
 extension TaskVC: UITableViewDelegate, UITableViewDataSource{
@@ -33,4 +37,18 @@ extension TaskVC: UITableViewDelegate, UITableViewDataSource{
         cell.nameLabel.text = "Daily \(indexPath.row)"
         return cell
     }
+}
+
+extension TaskVC: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AchievementCell", for: indexPath) as! AchievementCell
+        cell.nameLabel.text = "Achievement \(indexPath.row)"
+        return cell
+    }
+    
+    
 }
