@@ -13,6 +13,8 @@
 		5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */; };
 		5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC3F2474DA510029E2F0 /* Assets.xcassets */; };
 		5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A15FC412474DA510029E2F0 /* LaunchScreen.storyboard */; };
+		5A7D1B94247F54580077CE1A /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D1B93247F54580077CE1A /* DailyCell.swift */; };
+		5A7D1B96247F54800077CE1A /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D1B95247F54800077CE1A /* AchievementCell.swift */; };
 		5AB3E82424775E2400BC791B /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82324775E2400BC791B /* Task.storyboard */; };
 		5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82524775EBE00BC791B /* Training.storyboard */; };
 		5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E8272477610500BC791B /* AddSoundCard.storyboard */; };
@@ -54,6 +56,8 @@
 		5A15FC3F2474DA510029E2F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A15FC422474DA510029E2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A15FC442474DA510029E2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A7D1B93247F54580077CE1A /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
+		5A7D1B95247F54800077CE1A /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		5AB3E82324775E2400BC791B /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		5AB3E82524775EBE00BC791B /* Training.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
 		5AB3E8272477610500BC791B /* AddSoundCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSoundCard.storyboard; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 			children = (
 				D049C1CD2474E933002D436B /* TaskVC.swift */,
 				5AB3E82324775E2400BC791B /* Task.storyboard */,
+				5A7D1B93247F54580077CE1A /* DailyCell.swift */,
+				5A7D1B95247F54800077CE1A /* AchievementCell.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -341,12 +347,14 @@
 				D06A700E247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift in Sources */,
 				8508A661247B734800A340A9 /* FooterTableViewCell.swift in Sources */,
 				8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */,
+				5A7D1B96247F54800077CE1A /* AchievementCell.swift in Sources */,
 				5A15FC382474DA4E0029E2F0 /* SoundCardVC.swift in Sources */,
 				D06A700C247CCE6D006337E6 /* CategoryCollectionViewCell.swift in Sources */,
 				8508A664247D2E9900A340A9 /* CGImagePropertyOrientation.swift in Sources */,
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,
 				D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */,
 				D06A701E247CD7F9006337E6 /* Categories+CoreDataProperties.swift in Sources */,
+				5A7D1B94247F54580077CE1A /* DailyCell.swift in Sources */,
 				D049C1CE2474E933002D436B /* TaskVC.swift in Sources */,
 				8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */,
 				5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */,
