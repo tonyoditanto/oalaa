@@ -14,6 +14,10 @@ import CoreML
 import Vision
 import AVFoundation
 
+protocol AddSoundCardVCDelegate {
+    func refreshSoundCard()
+}
+
 class AddSoundCardVC: UITableViewController {
 
     let sectionTitles = ["header", "object recognition", "post capture", "footer"]
@@ -25,6 +29,8 @@ class AddSoundCardVC: UITableViewController {
 	var currentActiveCategory: String = ""
     
     var actionButtonIsEnable : Bool = true
+    
+    var delegate : AddSoundCardVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,7 +137,6 @@ extension AddSoundCardVC {
     
     func makeHeaderCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.cellID, for: indexPath) as! HeaderTableViewCell
-        //Insert Delegate Action Here
         return cell
     }
     
@@ -207,8 +212,28 @@ extension AddSoundCardVC : PreviewCaptureTableViewCellDelegate{
 
 extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
     func saveCard() {
-        dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
-        self.dismiss(animated: true, completion: nil)
+        var isCardExist : Bool = false
+        let activeCategory = dataManager.getCategory(CategoryName: currentActiveCategory)
+        let soundcardNames = dataManager.getAllSoundcardsNames(category: activeCategory)
+        
+        for index in 1...soundcardNames.count {
+            if soundcardNames[index-1] == self.objectName {
+                isCardExist = true
+            }
+        }
+        
+        if isCardExist == false {
+            dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
+            self.delegate?.refreshSoundCard()
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        if isCardExist == true {
+            dataManager.replaceSoundcardImage(soundcardName: objectName, newImage: captureObject)
+            self.delegate?.refreshSoundCard()
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     func playCard() {

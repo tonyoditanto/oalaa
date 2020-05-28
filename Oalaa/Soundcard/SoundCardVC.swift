@@ -158,7 +158,14 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 		if let AddSoundCardVC = segue.destination as? AddSoundCardVC {
 			let passCurrentActiveCategory: String = activeCategory.value(forKey: "categoryName") as! String
 			AddSoundCardVC.currentActiveCategory = passCurrentActiveCategory
+            AddSoundCardVC.delegate = self
 		}
 	}
+}
+
+extension SoundCardVC : AddSoundCardVCDelegate{
+    func refreshSoundCard() {
+        self.soundcardCollection.reloadData()
+    }
 }
 
