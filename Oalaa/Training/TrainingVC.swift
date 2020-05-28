@@ -39,20 +39,21 @@ class TrainingVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     // collection view part
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataManager.getTotalInstalledCategory()
+        
+        return dataManager.getCategoryTotal(installed: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! mainCategoryCollectionViewCell
         
         //cell.mainImageCategory.image = self.mainImage[indexPath.item]
-        cell.mainImageCategory.image = dataManager.getInstalledCategoryImageFor(index: indexPath.item)
+        cell.mainImageCategory.image = dataManager.getCategoryImageFor(index: indexPath.item, installed: true)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        trainingDefaultImage.image = dataManager.getInstalledCategoryImageFor(index: indexPath.item)
+        trainingDefaultImage.image = dataManager.getCategoryImageFor(index: indexPath.item, installed: true)
     }
     
     
