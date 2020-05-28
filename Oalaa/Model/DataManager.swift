@@ -220,7 +220,8 @@ class DataManager{
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	
 	/**
-	Print all or Soundcard for active .
+	Print all or Soundcard for active category .
+	- parameter category: this function will only print all soundcard for this category.
 	*/
 	func PrintAllSoundcards(category: NSManagedObject, installed: Bool) -> Void{
 		
