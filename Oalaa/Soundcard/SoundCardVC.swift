@@ -12,7 +12,7 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 	
 	var dataManager: DataManager = DataManager()
 	let defaults = UserDefaults.standard
-	lazy var activeCategory: NSManagedObject = dataManager.getCoreVocab()
+	lazy var activeCategory: NSManagedObject = dataManager.getCategory(coreVocab: true, installed: true, index: 0)
 	lazy var activeCategoryIndexPath: IndexPath = IndexPath(item: 0, section: 0)
 	@IBOutlet weak var categoryCollection: UICollectionView!
 	@IBOutlet weak var soundcardCollection: UICollectionView!
@@ -35,44 +35,41 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 		soundcardCollection.delegate = self
 		selectedCategory.text = "General"
 		
-		dataManager.PrintAllSoundcards()
+		dataManager.PrintCategories(installed: true)
+		print("-")
+		dataManager.PrintCategories(installed: false)
 	}
 	@objc func addCategoryDismissed() {
-		//dataManager.reloadAllCategory()
-		//dataManager.loadGeneralSoundcard()
-		dataManager = DataManager()
-		activeCategory = dataManager.getCoreVocab()
+		activeCategoryIndexPath = IndexPath(item: 0, section: 0)
+		activeCategory = dataManager.getCategory(coreVocab: true, installed: true, index: 0)
 		categoryCollection.reloadData()
 		soundcardCollection.reloadData()
 	}
 	@objc func addSoundcardDismissed() {
-		dataManager.reloadSoundcard(Category: activeCategory)
 		categoryCollection.reloadData()
 		soundcardCollection.reloadData()
 	}
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		if collectionView == self.categoryCollection {
-			return dataManager.getTotalInstalledCategory()+1
+			return dataManager.getCategoryTotal(installed: true)+1
 		}else{
-			return dataManager.getTotalSoundcardForThisCategory()+1
+			return dataManager.getSoundcardTotalForThisCategory(category: activeCategory)+1
 		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		if collectionView == self.categoryCollection {
-			if indexPath.item <= dataManager.getTotalInstalledCategory()-1 {
+			
+			if indexPath.item <= dataManager.getCategoryTotal(installed: true)-1 {
 				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryReuseCell", for: indexPath) as! CategoryCollectionViewCell
-				
-				if activeCategory == dataManager.getInstalledCategoryAtIndex(index: indexPath.item) {
+				if activeCategory == dataManager.getCategory(coreVocab: false, installed: true, index: indexPath.item) {
 					cell.activeIndicator1.isHidden = false
 					cell.activeIndicator2.isHidden = false
 				}else{
 					cell.activeIndicator1.isHidden = true
 					cell.activeIndicator2.isHidden = true
 				}
-				
-				cell.categoryImageView.image = dataManager.getInstalledCategoryImageFor(index: indexPath.item)
-				
+				cell.categoryImageView.image = dataManager.getCategoryImageFor(index: indexPath.item, installed: true)
 				return cell
 			}else{
 				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryReuseCell", for: indexPath) as! CategoryCollectionViewCell
@@ -83,10 +80,10 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 				return cell
 			}
 		}else{
-			if indexPath.item <= dataManager.getTotalSoundcardForThisCategory()-1 {
+			if indexPath.item <= dataManager.getSoundcardTotalForThisCategory(category: activeCategory)-1 {
 				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "soundcardReuseCell", for: indexPath) as! SoundcardCollectionViewCell
 				
-				cell.soundcardImageView.image = dataManager.getInstalledSoundcardImageFor(index: indexPath.item)
+				cell.soundcardImageView.image = dataManager.getSoundcardImageFor(category: activeCategory, index: indexPath.item)
 				
 				return cell
 			}else{
@@ -101,7 +98,7 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		if collectionView == self.categoryCollection {
-			if indexPath.item < dataManager.getTotalInstalledCategory() {
+			if indexPath.item < dataManager.getCategoryTotal(installed: true){
 				let unSelectedItem = activeCategoryIndexPath
 				let newSelectedItem = indexPath
 				if newSelectedItem != unSelectedItem{
@@ -115,7 +112,7 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 					
 					//update current active category
 					activeCategoryIndexPath = indexPath
-					activeCategory = dataManager.getInstalledCategoryAtIndex(index: indexPath.item)
+					activeCategory = dataManager.getCategory(coreVocab: false, installed: true, index: indexPath.item)
 					
 					//reload collectionview
 					self.categoryCollection.reloadItems(at: [unSelectedItem,newSelectedItem])
@@ -132,14 +129,14 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 					UIView.setAnimationsEnabled(true)
 					
 					//Update soundcard
-					let activeCategoryObject: NSManagedObject = dataManager.getInstalledCategoryAtIndex(index: indexPath.item)
+					let activeCategoryObject: NSManagedObject = dataManager.getCategory(coreVocab: false, installed: true, index: indexPath.item)
+					
 					selectedCategory.text = activeCategoryObject.value(forKey: "categoryName") as? String
-					// MARK: Update soundcard collection
-					dataManager.reloadSoundcard(Category: activeCategoryObject)
-					dataManager.PrintAllSoundcards()
+
 					let generator = UINotificationFeedbackGenerator()
 					generator.notificationOccurred(.success)
 					self.soundcardCollection.reloadData()
+					
 				}
 			}else{
 				let generator = UINotificationFeedbackGenerator()
@@ -148,11 +145,10 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 			}
 		} else {
 			// MARK: Sound card collection tapped
-			if indexPath.item < dataManager.getTotalSoundcardForThisCategory() {
+			if indexPath.item < dataManager.getSoundcardTotalForThisCategory(category: activeCategory) {
 				let generator = UINotificationFeedbackGenerator()
 				generator.notificationOccurred(.success)
-				dataManager.playSoundcard(index: indexPath.item)
-				
+				dataManager.playSoundcard(category: activeCategory, index: indexPath.item)
 			}else{
 				let generator = UINotificationFeedbackGenerator()
 				generator.notificationOccurred(.success)

@@ -21,20 +21,21 @@ class AddCategoryVC: UIViewController,UICollectionViewDataSource, UICollectionVi
 		// Do any additional setup after loading the view.
 	}
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return dataManager.getTotalCategory()-1
+		return dataManager.getCategoryTotal(installed: false)-1
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCategoryReuseCell", for: indexPath) as! addCategoryCollectionViewCell
-		let getCategoryData = dataManager.getCategory(index: indexPath.item+1)
+		let getCategoryData = dataManager.getCategory(coreVocab: false, installed: false, index: indexPath.item+1)
 		
 		if getCategoryData.value(forKey: "installed")! as! Bool {
 			cell.backgroundColor = #colorLiteral(red: 0.6356596351, green: 0.1144892648, blue: 0.2439313233, alpha: 1)
 		}else{
 			cell.backgroundColor = #colorLiteral(red: 0.9730067849, green: 1, blue: 0.9703419805, alpha: 1)
 		}
-		cell.addCategory.image = dataManager.getCategoryImageFor(index: indexPath.item+1)
+		cell.addCategory.image = dataManager.getCategoryImageFor(index: indexPath.item+1, installed: false)
+		
 		return cell
 	}
 	
