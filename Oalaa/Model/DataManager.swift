@@ -186,6 +186,25 @@ class DataManager{
 	}
 	
 	/**
+	Return Category
+	- Parameter CategoryName: return category with that name
+	*/
+	func getCategory(CategoryName: String) ->NSManagedObject {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return NSManagedObject()}
+		let managedContex = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
+		fetchRequest.predicate = NSPredicate(format: "categoryName == %@", CategoryName)
+		
+		do {
+			let result = try managedContex.fetch(fetchRequest)
+			return result[0] as! NSManagedObject
+		} catch {
+			print("Failed")
+		}
+		return NSManagedObject()
+	}
+	
+	/**
 	to install/uninstall category
 	*/
 	func toggleCategoryActivation(index: Int) -> Void {
