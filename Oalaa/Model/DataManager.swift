@@ -345,6 +345,54 @@ class DataManager{
 	}
 	
 	/**
+	Return Soundcard
+	- Parameter soundcardName: soundcard name
+	*/
+	func getSoundcard(soundcardName: String) -> NSManagedObject{
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return NSManagedObject()}
+		let managedContex = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
+		
+		fetchRequest.predicate = NSPredicate(format: "soundcardName == %@", soundcardName)
+		
+		do {
+			let result = try managedContex.fetch(fetchRequest)
+			return result[0] as! NSManagedObject
+		} catch {
+			print("Failed")
+		}
+		return NSManagedObject()
+	}
+	
+	/**
+	Replace souncard with new photo
+	- Parameter soundcardName: soundcard name
+	*/
+	func replaceSoundcardImage(soundcardName: String, newImage: UIImage){
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+		let managedContex = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
+		
+		fetchRequest.predicate = NSPredicate(format: "soundcardName == %@", soundcardName)
+		do {
+			let result = try managedContex.fetch(fetchRequest)
+			let saveThis = result[0] as! NSManagedObject
+			let imageData: NSData? = NSData(data: (newImage.pngData()!))
+			saveThis.setValue(imageData, forKey: "soundcardImage")
+			
+			do{
+				try managedContex.save()
+			}catch{
+				print(error)
+			}
+			return
+		} catch {
+			print("Failed")
+		}
+		return
+	}
+	
+	/**
 	Get Soundcard Image
 	- Parameter category: Current active category
 	- Parameter Index: soundcard index
