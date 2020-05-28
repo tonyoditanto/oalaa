@@ -10,19 +10,26 @@
 //  var currentActiveCategory: String = ""
 
 import UIKit
+import CoreML
+import Vision
+import AVFoundation
 
 class AddSoundCardVC: UITableViewController {
 
     let sectionTitles = ["header", "object recognition", "post capture", "footer"]
     var cameraActive : Bool = true
-    var captureObject : UIImage!
 	let dataManager = DataManager()
+    
+    var captureObject : UIImage!
+    var objectName : String = ""
 	var currentActiveCategory: String = ""
+    
+    var actionButtonIsEnable : Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addBackground(imageName: "Background Apps-01.jpg")
+        addBackground(imageName: "Background Apps-01.jpg")
         setupTableView()
-        //dataManager.addNewSoundcard(name: <#T##String#>, image: <#T##UIImage#>, category: currentActiveCategory)
     }
 }
 
@@ -130,13 +137,14 @@ extension AddSoundCardVC {
     
     func makeObjectRecognitionCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ObjectRecognitionTableViewCell.cellID, for: indexPath) as! ObjectRecognitionTableViewCell
-        
         cell.delegate = self
         return cell
     }
     
     func makePreviewCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PreviewCaptureTableViewCell.cellID, for: indexPath) as! PreviewCaptureTableViewCell
+        cell.cardImage = self.captureObject
+        cell.cardCategory = self.currentActiveCategory
         cell.delegate = self
         return cell
     }
@@ -144,7 +152,8 @@ extension AddSoundCardVC {
     
     func makePostCaptureCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCaptureTableViewCell.cellID, for: indexPath) as! PostCaptureTableViewCell
-        //Insert Delegate Action Here
+        cell.actionButtonIsEnable = self.actionButtonIsEnable
+        cell.delegate = self
         return cell
     }
     
@@ -167,13 +176,8 @@ extension AddSoundCardVC {
 }
 
 extension AddSoundCardVC : ObjectRecognitionTableViewCellDelegate{
-//    func previewCapture(for captureObject : UIImage) {
-//        self.captureObject = captureObject
-//        cameraActive = false
-//        self.tableView.reloadData()
-//    }
-    
-    func previewCapture() {
+    func previewCapture(for captureObject : UIImage!) {
+        self.captureObject = captureObject
         cameraActive = false
         self.tableView.reloadData()
     }
@@ -182,6 +186,38 @@ extension AddSoundCardVC : ObjectRecognitionTableViewCellDelegate{
 extension AddSoundCardVC : PreviewCaptureTableViewCellDelegate{
     func activateCamera() {
         cameraActive = true
+        self.actionButtonIsEnable = true
         self.tableView.reloadData()
+    }
+    
+    func storedCaptureObjectName(with objectName: String) {
+        //translateObjectNameToIndonesia(with: objectName)
+        self.objectName = objectName
+    }
+    
+    func translateObjectNameToIndonesia(with objectName : String){
+        //Method untuk translate ke bahasa Indonesia
+    }
+    
+    func actionButtonStatus(with status: Bool) {
+        self.actionButtonIsEnable = status
+        self.tableView.reloadData()
+    }
+}
+
+extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
+    func saveCard() {
+        dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func playCard() {
+        let speakThis = objectName
+        
+        let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
+        speechUtterance.voice = AVSpeechSynthesisVoice(language: "en")
+        
+        let speechSynthesizer = AVSpeechSynthesizer()
+        speechSynthesizer.speak(speechUtterance)
     }
 }

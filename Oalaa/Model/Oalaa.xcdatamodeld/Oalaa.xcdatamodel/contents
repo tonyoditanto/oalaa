@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Archievement" representedClassName="Archievement" syncable="YES" codeGenerationType="class">
+        <attribute name="achievementAction" optional="YES" attributeType="String"/>
         <attribute name="achievementImage" optional="YES" attributeType="String"/>
         <attribute name="achievementMaxValue" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="achievementName" optional="YES" attributeType="String"/>
@@ -17,7 +18,7 @@
         <relationship name="forCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="haveSoundcard" inverseEntity="Categories"/>
     </entity>
     <elements>
-        <element name="Archievement" positionX="15.1953125" positionY="159.3671875" width="128" height="88"/>
+        <element name="Archievement" positionX="15.1953125" positionY="159.3671875" width="128" height="103"/>
         <element name="Categories" positionX="-63" positionY="-18" width="128" height="103"/>
         <element name="Soundcards" positionX="257.90234375" positionY="-30.75" width="128" height="88"/>
     </elements>
