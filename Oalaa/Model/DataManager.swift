@@ -38,17 +38,20 @@ class DataManager{
 			[
 				//["CategoryName","AssetName","Installed"]
 				["General","CoreVocab",true],
-				["Foods","Food",true],
-				["Fruits","Fruit",true],
-				["Sports","Sport",false],
-				["Animals","Animal",false],
+				["Animals","Animal",true],
 				["Apparels","Apparel",false],
 				["Bath","BathRoom",false],
 				["Bed","BedRoom",false],
+				["Colors","Color",false],
 				["Drinks","Drink",false],
+				["Foods","Food",false],
+				["Fruits","Fruit",true],
 				["Kitchen","Kitchen",false],
+				["Schools","School",false],
+				["Sports","Sport",false],
 				["Vehicles","Vehicle",false],
-				["Schools","School",false]
+
+				
 		]
 		
 		let soundcardPreset =
@@ -58,9 +61,49 @@ class DataManager{
 				["Aku","i","General"],
 				["Suka","like","General"],
 				["Lihat","look","General"],
-				["Buah campur","Fruit","Foods"],
-				["HAHAHAHAHAHA","i","General"],
-				["Lol","i","General"]
+				["Aku","me","General"],
+				["Perlu","need","General"],
+				["Bukan","not","General"],
+				["Berhenti","stop","General"],
+				["Ini","this","General"],
+				["Apa","what","General"],
+				["Siapa","who","General"],
+				["Lebah","bee","Animals"],
+				["Burung","bird","Animals"],
+				["Kucing","cat","Animals"],
+				["Anjing","dog","Animals"],
+				["Ikan","fish","Animals"],
+				["Kuda","horse","Animals"],
+				["Cicak","lizard","Animals"],
+				["Kelinci","rabbit","Animals"],
+				["Ayam","rooster","Animals"],
+				["Ular","snake","Animals"],
+				["Apel","apple","Fruits"],
+				["Pisang","banana","Fruits"],
+				["Ceri","cherry","Fruits"],
+				["Anggur","grape","Fruits"],
+				["Melon","melon","Fruits"],
+				["Jeruk","orange","Fruits"],
+				["Pepaya","papaya","Fruits"],
+				["Nanas","pineapple","Fruits"],
+				["Stroberi","strawberry","Fruits"],
+				["Semangka","watermelon","Fruits"],
+				["Bulutangkis","badminton","Sports"],
+				["Barbel","barbel","Sports"],
+				["Kasti","baseball","Sports"],
+				["Tinju","boxing","Sports"],
+				["Sepak bola","football","Sports"],
+				["Golf","golf","Sports"],
+				["Tenis meja","pingpong","Sports"],
+				["Tenis","tennis","Sports"],
+				["Voli","volley","Sports"],
+				["Yoga","yoga","Sports"],
+				["Biru","Blue","Colors"],
+				["Hijau","Green","Colors"],
+				["Jingga","Orange","Colors"],
+				["Ungu","Purple","Colors"],
+				["Merah","Red","Colors"],
+				["Kuning","Yellow","Colors"],
 		]
 		
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
@@ -77,6 +120,7 @@ class DataManager{
 			for sc in soundcardPreset {
 				if sc[2] == item[0] as? String {
 					let soundcardContext = appDelegate.persistentContainer.viewContext
+					print(sc[1])
 					let imageData: NSData? = NSData(data: ((UIImage(named: sc[1] ))?.pngData()!)!)
 					let soundcardEntity = NSEntityDescription.entity(forEntityName: "Soundcards", in: soundcardContext)!
 					let soundcard = Soundcards(entity: soundcardEntity, insertInto: soundcardContext)
