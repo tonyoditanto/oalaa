@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "BedRoom.png",
+      "filename" : "boxing.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "BedRoom@2x.png",
+      "filename" : "boxing@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "BedRoom@3x.png",
+      "filename" : "boxing@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

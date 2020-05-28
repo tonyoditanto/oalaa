@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "BedRoom.png",
+      "filename" : "pineapple.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "BedRoom@2x.png",
+      "filename" : "pineapple@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "BedRoom@3x.png",
+      "filename" : "pineapple@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
