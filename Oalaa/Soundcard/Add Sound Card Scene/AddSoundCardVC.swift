@@ -19,7 +19,8 @@ protocol AddSoundCardVCDelegate {
 }
 
 class AddSoundCardVC: UITableViewController {
-
+    
+    var imageName : String = "Background Apps-01.jpg"
     let sectionTitles = ["header", "object recognition", "post capture", "footer"]
     var cameraActive : Bool = true
 	let dataManager = DataManager()
@@ -34,20 +35,23 @@ class AddSoundCardVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBackground(imageName: "Background Apps-01.jpg")
+        //setBackgroundImage(with: imageName)
         setupTableView()
     }
 }
 
 extension AddSoundCardVC {
     func setupTableView() {
-         
          registerHeaderCell()
          registerObjectRecognitionCell()
          registerPreviewCaptureCell()
          registerPostCaptureCell()
          registerFooterCell()
      }
+    
+    func setBackgroundImage(with imageName:String) {
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named:"Background Apps-1")!)
+    }
     
     func registerHeaderCell() {
         let nib = UINib(nibName: HeaderTableViewCell.cellID, bundle: Bundle.main)
@@ -172,12 +176,6 @@ extension AddSoundCardVC {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-}
-
-extension AddSoundCardVC {
-    func addBackground(imageName:String) {
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background Apps-01"))
-    }
 }
 
 extension AddSoundCardVC : ObjectRecognitionTableViewCellDelegate{
