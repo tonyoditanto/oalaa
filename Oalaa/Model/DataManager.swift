@@ -110,7 +110,7 @@ class DataManager{
 	func PrintCategories(installed: Bool) -> Void {
 		print(getCategoryTotal(installed: installed))
 		for index in 0 ..< getCategoryTotal(installed: installed) {
-			print("\(index)~ \(getCategory(coreVocab: false, installed: installed, index: index).value(forKey: "categoryName")!) - \(getCategory(coreVocab: false, installed: installed, index: index).value(forKey: "installed")!))")
+			print("\(index)~ \(getCategory(coreVocab: false, installed: installed, index: index).value(forKey: "categoryName")!) - \(getCategory(coreVocab: false, installed: installed, index: index).value(forKey: "installed")!)")
 		}
 	}
 	
@@ -270,7 +270,7 @@ class DataManager{
 	}
 	
 	/**
-	Play soundcard
+	Get Soundcard Image
 	- Parameter category: Current active category
 	- Parameter Index: soundcard index
 	*/
@@ -287,6 +287,14 @@ class DataManager{
 		print("Failed")
 		}
 		return UIImage()
+	}
+	
+	/**
+	Get Soundcard Image
+	- Parameter soundcard: Soundcard as input
+	*/
+	func getSoundcardImageFor(soundcard: NSManagedObject) -> UIImage {
+		return UIImage(data: (soundcard.value(forKey: "soundcardImage") as! Data)) ?? UIImage()
 	}
 	
 	/**
@@ -345,6 +353,20 @@ class DataManager{
 		} catch {
 			print("Failed")
 		}
+	}
+	
+	func getRandomInstalledSoundcard() -> NSManagedObject{
+		var soundcardList: [NSManagedObject] = []
+		for catIndex in 0 ..< getCategoryTotal(installed: true) {
+			let currentCategory = getCategory(coreVocab: false, installed: true, index: catIndex)
+			for soundcardIndex in 0 ..< getSoundcardTotalForThisCategory(category: currentCategory) {
+				let tempSoundcard = getSoundcard(category: currentCategory, index: soundcardIndex)
+				soundcardList.append(tempSoundcard)
+			}
+		}
+		let randomInt = Int.random(in: 0 ..< soundcardList.count)
+		
+		return soundcardList[randomInt]
 	}
 	
 }

@@ -34,10 +34,6 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 		categoryCollection.delegate = self
 		soundcardCollection.delegate = self
 		selectedCategory.text = "General"
-		
-		dataManager.PrintCategories(installed: true)
-		print("-")
-		dataManager.PrintCategories(installed: false)
 	}
 	@objc func addCategoryDismissed() {
 		activeCategoryIndexPath = IndexPath(item: 0, section: 0)
