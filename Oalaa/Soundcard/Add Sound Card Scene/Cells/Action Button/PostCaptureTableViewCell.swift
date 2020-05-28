@@ -8,21 +8,28 @@
 
 import UIKit
 
+protocol PostCaptureTableViewCellDelegate {
+    func saveCard()
+    func playCard()
+}
+
 class PostCaptureTableViewCell: UITableViewCell {
     static let cellID = "PostCaptureTableViewCell"
     @IBOutlet weak var speakButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
+    var actionButtonIsEnable : Bool!{
+        didSet{
+            self.speakButton.isEnabled = actionButtonIsEnable
+            self.saveButton.isEnabled = actionButtonIsEnable
+        }
+    }
+    
+    var delegate : PostCaptureTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         configureComponentDesign()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureComponentDesign(){
@@ -31,9 +38,11 @@ class PostCaptureTableViewCell: UITableViewCell {
     }
     
     @IBAction func didTapSpeakButton(_ sender: Any) {
+        delegate?.playCard()
     }
     
     @IBAction func didTapSaveButton(_ sender: Any) {
+        delegate?.saveCard()
     }
     
 }
