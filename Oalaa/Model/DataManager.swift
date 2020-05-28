@@ -223,11 +223,23 @@ class DataManager{
 	Print all or Soundcard for active category .
 	- parameter category: this function will only print all soundcard for this category.
 	*/
-	func PrintAllSoundcards(category: NSManagedObject, installed: Bool) -> Void{
+	func PrintAllSoundcards(category: NSManagedObject) -> Void{
 		
 		for index in 0 ..< getSoundcardTotalForThisCategory(category: category){
 			print("\(getSoundcard(category:category, index:index).value(forKey:"soundcardName") ?? "-")")
 		}
+	}
+	
+	/**
+	Return all or Soundcard for active category .
+	- parameter category: this function will return all soundcard for this category.
+	*/
+	func getAllSoundcardsNames(category: NSManagedObject) -> [String]{
+		var tempNames:[String] = []
+		for index in 0 ..< getSoundcardTotalForThisCategory(category: category){
+			tempNames.append("\(getSoundcard(category:category, index:index).value(forKey:"soundcardName") ?? "-")")
+		}
+		return tempNames
 	}
 	
 	/**
