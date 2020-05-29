@@ -483,6 +483,7 @@ class DataManager{
 			do{
 				try soundcardContext.save()
 				NotificationCenter.default.post(name: NSNotification.Name(rawValue: "soundcardAdded"), object: nil)
+				TaskManager.addAction(action: .capture)
 			} catch let error as NSError {
 				print("______Could not save_____. \(error), \(error.userInfo)")
 			}
