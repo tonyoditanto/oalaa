@@ -147,7 +147,6 @@ class DataManager{
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	// MARK: CATEGORY
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
-	
 	/**
 	Print all or installed caegory to the console depends the parameter
 	*/
@@ -249,7 +248,7 @@ class DataManager{
 	}
 	
 	/**
-	to install/uninstall category
+	To install/uninstall category
 	*/
 	func toggleCategoryActivation(index: Int) -> Void {
 		let oldState:Bool = getCategory(coreVocab: false, installed: false, index: index).value(forKey: "installed")! as! Bool
@@ -281,7 +280,6 @@ class DataManager{
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	// MARK: SOUNDCARD
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
-	
 	/**
 	Print all or Soundcard for active category .
 	- parameter category: this function will only print all soundcard for this category.
@@ -493,6 +491,9 @@ class DataManager{
 		}
 	}
 	
+	/**
+	fetch random soundcard for installed category
+	*/
 	func getRandomInstalledSoundcard() -> NSManagedObject{
 		var soundcardList: [NSManagedObject] = []
 		for catIndex in 0 ..< getCategoryTotal(installed: true) {
