@@ -30,7 +30,7 @@ class TrainingVC: UIViewController {
     
     @IBAction func playTrainingButton(_ sender: UIButton) {
         let utterance = AVSpeechUtterance(string: textToSpeech)
-        utterance.voice = AVSpeechSynthesisVoice(language: "id")
+        utterance.voice = AVSpeechSynthesisVoice(language: "en")
         utterance.rate = 0.5
 
         let synthesizer = AVSpeechSynthesizer()
@@ -39,11 +39,7 @@ class TrainingVC: UIViewController {
     }
         
     // text variable
-    var textToSpeech = "Hello Dion , coba katakan ini gambar apa hayoo"
-    
-    let chosenTextToSpeech = ["Let's Play Sports Category",
-                              "Let's Play Fruits and Vegetables Category",
-                              "Let's Play Automotive Category"]
+    var textToSpeech = "Hello Dion , what am I?"
     
     
     @IBAction func reloadTrainingImage(_ sender: Any) {
@@ -51,7 +47,7 @@ class TrainingVC: UIViewController {
         trainingDefaultImage.image = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
         nameOfTrainingImage.text = fetchRandomSoundcard.value(forKey: "soundcardName") as? String
         let utterance = AVSpeechUtterance(string: fetchRandomSoundcard.value(forKey: "soundcardName") as! String)
-        utterance.voice = AVSpeechSynthesisVoice(language: "id")
+        utterance.voice = AVSpeechSynthesisVoice(language: "en")
         utterance.rate = 0.5
 
         let synthesizer = AVSpeechSynthesizer()
@@ -62,14 +58,14 @@ class TrainingVC: UIViewController {
     
     @IBAction func playTheAnswerButton(_ sender: Any) {
         let utterance = AVSpeechUtterance(string: answerText)
-        utterance.voice = AVSpeechSynthesisVoice(language: "id")
+        utterance.voice = AVSpeechSynthesisVoice(language: "en")
         utterance.rate = 0.5
 
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
         
+        TaskManager.addAction(action: .speak)
 
-        
     }
     
     
