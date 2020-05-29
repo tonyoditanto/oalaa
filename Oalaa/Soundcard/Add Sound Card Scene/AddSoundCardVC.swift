@@ -14,8 +14,13 @@ import CoreML
 import Vision
 import AVFoundation
 
-class AddSoundCardVC: UITableViewController {
+protocol AddSoundCardVCDelegate {
+    func refreshSoundCard()
+}
 
+class AddSoundCardVC: UITableViewController {
+    
+    var imageName : String = "Background Apps-01.jpg"
     let sectionTitles = ["header", "object recognition", "post capture", "footer"]
     var cameraActive : Bool = true
 	let dataManager = DataManager()
@@ -26,22 +31,27 @@ class AddSoundCardVC: UITableViewController {
     
     var actionButtonIsEnable : Bool = true
     
+    var delegate : AddSoundCardVCDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBackground(imageName: "Background Apps-01.jpg")
+        //setBackgroundImage(with: imageName)
         setupTableView()
     }
 }
 
 extension AddSoundCardVC {
     func setupTableView() {
-         
          registerHeaderCell()
          registerObjectRecognitionCell()
          registerPreviewCaptureCell()
          registerPostCaptureCell()
          registerFooterCell()
      }
+    
+    func setBackgroundImage(with imageName:String) {
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named:"Background Apps-1")!)
+    }
     
     func registerHeaderCell() {
         let nib = UINib(nibName: HeaderTableViewCell.cellID, bundle: Bundle.main)
@@ -131,7 +141,6 @@ extension AddSoundCardVC {
     
     func makeHeaderCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.cellID, for: indexPath) as! HeaderTableViewCell
-        //Insert Delegate Action Here
         return cell
     }
     
@@ -169,12 +178,6 @@ extension AddSoundCardVC {
 
 }
 
-extension AddSoundCardVC {
-    func addBackground(imageName:String) {
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background Apps-01"))
-    }
-}
-
 extension AddSoundCardVC : ObjectRecognitionTableViewCellDelegate{
     func previewCapture(for captureObject : UIImage!) {
         self.captureObject = captureObject
@@ -207,8 +210,29 @@ extension AddSoundCardVC : PreviewCaptureTableViewCellDelegate{
 
 extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
     func saveCard() {
-        dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
-        self.dismiss(animated: true, completion: nil)
+        var isCardExist : Bool = false
+        let activeCategory = dataManager.getCategory(CategoryName: currentActiveCategory)
+        let soundcardNames = dataManager.getAllSoundcardsNames(category: activeCategory)
+        
+        for index in 1...soundcardNames.count {
+            if soundcardNames[index-1] == self.objectName {
+                isCardExist = true
+            }
+        }
+        
+        //let finalImage = UIImage(cgImage: captureObject.cgImage!, scale: captureObject.scale, orientation: .right)
+        if isCardExist == false { 
+            dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
+            self.delegate?.refreshSoundCard()
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        if isCardExist == true {
+            dataManager.replaceSoundcardImage(soundcardName: objectName, newImage: captureObject)
+            self.delegate?.refreshSoundCard()
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     func playCard() {
