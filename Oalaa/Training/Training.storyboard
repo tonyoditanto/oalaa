@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Say It-->
+        <!--Say the Word-->
         <scene sceneID="8H1-ve-GzR">
             <objects>
                 <viewController id="xqP-uX-yK9" customClass="TrainingVC" customModule="Oalaa" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,8 +18,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Apps-1" translatesAutoresizingMaskIntoConstraints="NO" id="02U-N8-wyD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dionTraining" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-n0-N8d">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dionTraining" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-n0-N8d">
                                 <rect key="frame" x="32" y="198" width="350" height="350"/>
+                                <color key="backgroundColor" red="0.8563066721" green="0.7270308137" blue="0.27437090870000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="I2Z-Di-3mJ"/>
                                     <constraint firstAttribute="width" constant="350" id="ShS-h7-qBa"/>
@@ -127,7 +128,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DMi-MQ-MJC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Say It" id="s7K-3n-nCV"/>
+                    <navigationItem key="navigationItem" title="Say the Word" id="s7K-3n-nCV"/>
                     <connections>
                         <outlet property="nameOfTrainingImage" destination="bXF-DI-SW8" id="53R-2w-Gkm"/>
                         <outlet property="trainingDefaultImage" destination="XXt-n0-N8d" id="VtY-Tf-AXF"/>

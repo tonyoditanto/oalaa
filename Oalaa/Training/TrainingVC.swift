@@ -44,7 +44,12 @@ class TrainingVC: UIViewController {
     
     @IBAction func reloadTrainingImage(_ sender: Any) {
         let fetchRandomSoundcard: NSManagedObject = dataManager.getRandomInstalledSoundcard()
-        trainingDefaultImage.image = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
+        
+        // resize image to fit 350 * 350
+        let originalImageSize = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
+        let newImageSize = originalImageSize.scaleImageToFitSize(size: CGSize(width: 350.0, height: 350.0))
+        trainingDefaultImage.image = newImageSize.scaleImageToFitSize(size: CGSize(width: 350.0, height: 350.0))
+        //trainingDefaultImage.image = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
         nameOfTrainingImage.text = fetchRandomSoundcard.value(forKey: "soundcardName") as? String
         let utterance = AVSpeechUtterance(string: fetchRandomSoundcard.value(forKey: "soundcardName") as! String)
         utterance.voice = AVSpeechSynthesisVoice(language: "en")
@@ -69,4 +74,24 @@ class TrainingVC: UIViewController {
     }
     
     
+}
+
+extension UIImage {
+
+    func scaledImage(withSize size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
+        return UIGraphicsGetImageFromCurrentImageContext()!
+    }
+
+    func scaleImageToFitSize(size: CGSize) -> UIImage {
+        let aspect = self.size.width / self.size.height
+        if size.width / aspect <= size.height {
+            return scaledImage(withSize: CGSize(width: size.width, height: size.width / aspect))
+        } else {
+            return scaledImage(withSize: CGSize(width: size.height * aspect, height: size.height))
+        }
+    }
+
 }
