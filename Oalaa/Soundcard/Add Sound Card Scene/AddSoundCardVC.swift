@@ -220,7 +220,8 @@ extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
             }
         }
         
-        if isCardExist == false {
+        //let finalImage = UIImage(cgImage: captureObject.cgImage!, scale: captureObject.scale, orientation: .right)
+        if isCardExist == false { 
             dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
             self.delegate?.refreshSoundCard()
             self.dismiss(animated: true, completion: nil)
