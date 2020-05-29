@@ -20,7 +20,7 @@ protocol AddSoundCardVCDelegate {
 
 class AddSoundCardVC: UITableViewController {
     
-    var imageName : String = "Background Apps-01.jpg"
+    var backgroundmageName : String = "background"
     let sectionTitles = ["header", "object recognition", "post capture", "footer"]
     var cameraActive : Bool = true
 	let dataManager = DataManager()
@@ -35,7 +35,7 @@ class AddSoundCardVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setBackgroundImage(with: imageName)
+        setBackgroundImage(with: backgroundmageName)
         setupTableView()
     }
 }
@@ -50,7 +50,7 @@ extension AddSoundCardVC {
      }
     
     func setBackgroundImage(with imageName:String) {
-        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named:"Background Apps-1")!)
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named:imageName)!)
     }
     
     func registerHeaderCell() {
