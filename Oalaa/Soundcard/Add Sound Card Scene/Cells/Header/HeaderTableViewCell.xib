@@ -30,6 +30,7 @@
                     <constraint firstAttribute="trailing" secondItem="lnG-M6-pLO" secondAttribute="trailing" constant="17" id="hhe-H3-UeK"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="137.68115942028987" y="197.20982142857142"/>
         </tableViewCell>
