@@ -28,7 +28,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZOL-vW-GUW">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZOL-vW-GUW">
                                                 <rect key="frame" x="20" y="63.5" width="374" height="270"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="270" id="Lk8-ZY-ckB"/>
@@ -42,18 +42,18 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listen sound card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXC-fy-Snw">
-                                                                    <rect key="frame" x="20" y="11" width="136.5" height="21"/>
+                                                                    <rect key="frame" x="20" y="11" width="136.5" height="23.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-oc-f6S">
-                                                                    <rect key="frame" x="20" y="40" width="334" height="20.5"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-oc-f6S">
+                                                                    <rect key="frame" x="20" y="42.5" width="334" height="18"/>
                                                                     <subviews>
                                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="KP0-lJ-nod">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="286.5" height="20.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="281.5" height="18"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="20.5" id="TkZ-uf-oh3"/>
+                                                                                <constraint firstAttribute="height" constant="18" id="TkZ-uf-oh3"/>
                                                                             </constraints>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="barHeight">
@@ -62,7 +62,7 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </progressView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99/99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIx-zi-Lc0">
-                                                                            <rect key="frame" x="286.5" y="0.0" width="47.5" height="20.5"/>
+                                                                            <rect key="frame" x="286.5" y="0.0" width="47.5" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -97,6 +97,7 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
+                                                            <outlet property="imageIV" destination="ThU-Yo-aPh" id="W7j-SN-3by"/>
                                                             <outlet property="nameLabel" destination="sXC-fy-Snw" id="cac-nl-eYj"/>
                                                             <outlet property="valueLabel" destination="gIx-zi-Lc0" id="ddH-qL-875"/>
                                                             <outlet property="valuePV" destination="KP0-lJ-nod" id="Uu1-F6-lzZ"/>
@@ -122,14 +123,14 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AchievementCell" id="B7Z-qX-byc" customClass="AchievementCell" customModule="Oalaa" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="0.0" width="150" height="251.5"/>
+                                                        <rect key="frame" x="30" y="0.0" width="150" height="249.5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x3x-l7-S1m">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="251.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="249.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SeQ-h6-apK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="251.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="249.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[AchievmentName]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXl-a5-TjO">
                                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
@@ -137,8 +138,8 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rgb-XO-gVx">
-                                                                            <rect key="frame" x="0.0" y="25.5" width="150" height="150"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rgb-XO-gVx">
+                                                                            <rect key="frame" x="0.0" y="25" width="150" height="149.5"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="150" id="Uyq-rd-qjS"/>
                                                                                 <constraint firstAttribute="width" constant="150" id="rd4-A9-f1l"/>
@@ -151,13 +152,13 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-5D-B3p">
-                                                                            <rect key="frame" x="0.0" y="206" width="150" height="20"/>
+                                                                            <rect key="frame" x="0.0" y="206" width="150" height="18"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="20" id="2q7-Lg-RoO"/>
+                                                                                <constraint firstAttribute="height" constant="18" id="2q7-Lg-RoO"/>
                                                                             </constraints>
                                                                         </progressView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Value/Max]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qce-yf-YAZ">
-                                                                            <rect key="frame" x="0.0" y="231" width="150" height="20.5"/>
+                                                                            <rect key="frame" x="0.0" y="229" width="150" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -185,6 +186,13 @@
                                                                 <constraint firstItem="SeQ-h6-apK" firstAttribute="top" secondItem="x3x-l7-S1m" secondAttribute="top" id="fw8-k6-94u"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="actionLabel" destination="qPn-lR-XuD" id="8Uj-67-LPf"/>
+                                                            <outlet property="badgeIV" destination="rgb-XO-gVx" id="DYl-gb-RPq"/>
+                                                            <outlet property="nameLabel" destination="MXl-a5-TjO" id="xUo-J0-Ppi"/>
+                                                            <outlet property="valueLabel" destination="qce-yf-YAZ" id="Vms-Mr-dCx"/>
+                                                            <outlet property="valuePV" destination="BUM-5D-B3p" id="Fh5-Uk-bde"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -259,5 +267,6 @@
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="music.house.fill" catalog="system" width="128" height="106"/>
     </resources>
 </document>
