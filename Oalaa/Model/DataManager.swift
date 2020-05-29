@@ -50,7 +50,7 @@ class DataManager{
 				["Schools","School",false],
 				["Sports","Sport",false],
 				["Vehicles","Vehicle",false],
-
+				
 				
 		]
 		
@@ -147,7 +147,6 @@ class DataManager{
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	// MARK: CATEGORY
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
-	
 	/**
 	Print all or installed caegory to the console depends the parameter
 	*/
@@ -160,7 +159,7 @@ class DataManager{
 	
 	/**
 	Return total category count.
-	 - Parameter installed: to choose all or installed category
+	- Parameter installed: to choose all or installed category
 	*/
 	func getCategoryTotal(installed: Bool) -> Int {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return 0}
@@ -249,7 +248,7 @@ class DataManager{
 	}
 	
 	/**
-	to install/uninstall category
+	To install/uninstall category
 	*/
 	func toggleCategoryActivation(index: Int) -> Void {
 		let oldState:Bool = getCategory(coreVocab: false, installed: false, index: index).value(forKey: "installed")! as! Bool
@@ -281,7 +280,6 @@ class DataManager{
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	// MARK: SOUNDCARD
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
-	
 	/**
 	Print all or Soundcard for active category .
 	- parameter category: this function will only print all soundcard for this category.
@@ -404,10 +402,10 @@ class DataManager{
 		fetchRequest.predicate = NSPredicate(format: "forCategory == %@", category)
 		
 		do {
-		let result = try managedContex.fetch(fetchRequest)
-		return UIImage(data: (result[index] as AnyObject).value(forKey: "soundcardImage") as! Data)!
+			let result = try managedContex.fetch(fetchRequest)
+			return UIImage(data: (result[index] as AnyObject).value(forKey: "soundcardImage") as! Data)!
 		} catch {
-		print("Failed")
+			print("Failed")
 		}
 		return UIImage()
 	}
@@ -437,12 +435,27 @@ class DataManager{
 			
 			let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
 			speechUtterance.voice = AVSpeechSynthesisVoice(language: "id")
-			
+			TaskManager.addAction(action: .listen)
 			let speechSynthesizer = AVSpeechSynthesizer()
 			speechSynthesizer.speak(speechUtterance)
 		} catch {
 			print("Failed")
 		}
+		return
+	}
+	/**
+	Play soundcard
+	- Parameter soundcard: give soundcard as input to play the sound
+	*/
+	func playSoundcard(soundcard: NSManagedObject) -> Void {
+		let speakThis:String = (soundcard.value(forKey: "soundcardName") as! String)
+		
+		let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
+		speechUtterance.voice = AVSpeechSynthesisVoice(language: "id")
+		TaskManager.addAction(action: .listen)
+		let speechSynthesizer = AVSpeechSynthesizer()
+		speechSynthesizer.speak(speechUtterance)
+		
 		return
 	}
 	
@@ -478,6 +491,9 @@ class DataManager{
 		}
 	}
 	
+	/**
+	fetch random soundcard for installed category
+	*/
 	func getRandomInstalledSoundcard() -> NSManagedObject{
 		var soundcardList: [NSManagedObject] = []
 		for catIndex in 0 ..< getCategoryTotal(installed: true) {

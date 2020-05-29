@@ -35,16 +35,19 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 		soundcardCollection.delegate = self
 		selectedCategory.text = "General"
 	}
+	
 	@objc func addCategoryDismissed() {
 		activeCategoryIndexPath = IndexPath(item: 0, section: 0)
 		activeCategory = dataManager.getCategory(coreVocab: true, installed: true, index: 0)
 		categoryCollection.reloadData()
 		soundcardCollection.reloadData()
 	}
+	
 	@objc func addSoundcardDismissed() {
 		categoryCollection.reloadData()
 		soundcardCollection.reloadData()
 	}
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		if collectionView == self.categoryCollection {
 			return dataManager.getCategoryTotal(installed: true)+1
@@ -128,7 +131,7 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 					let activeCategoryObject: NSManagedObject = dataManager.getCategory(coreVocab: false, installed: true, index: indexPath.item)
 					
 					selectedCategory.text = activeCategoryObject.value(forKey: "categoryName") as? String
-
+					
 					let generator = UINotificationFeedbackGenerator()
 					generator.notificationOccurred(.success)
 					self.soundcardCollection.reloadData()
