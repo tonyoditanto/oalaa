@@ -39,7 +39,7 @@ class TrainingVC: UIViewController {
     }
         
     // text variable
-    var textToSpeech = "Hello Dion , what am I?"
+    var textToSpeech = "Say the word"
     
     
     @IBAction func reloadTrainingImage(_ sender: Any) {
