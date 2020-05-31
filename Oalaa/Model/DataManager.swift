@@ -110,7 +110,7 @@ class DataManager{
 		
 		for item in categoryPreset {
 			let categoryContext = appDelegate.persistentContainer.viewContext
-			let imageData: NSData? = NSData(data: ((UIImage(named: item[1] as! String))?.pngData()!)!)
+            let imageData: NSData? = NSData(data: ((UIImage(named: item[1] as! String))?.jpegData(compressionQuality: 1.0)!)!)
 			let categoryEntity = NSEntityDescription.entity(forEntityName: "Categories", in: categoryContext)!
 			let category = Categories(entity: categoryEntity, insertInto: categoryContext)
 			category.categoryName = item[0] as? String
@@ -121,7 +121,7 @@ class DataManager{
 				if sc[2] == item[0] as? String {
 					let soundcardContext = appDelegate.persistentContainer.viewContext
 					print(sc[1])
-					let imageData: NSData? = NSData(data: ((UIImage(named: sc[1] ))?.pngData()!)!)
+                    let imageData: NSData? = NSData(data: ((UIImage(named: sc[1] ))?.jpegData(compressionQuality: 1.0)!)!)
 					let soundcardEntity = NSEntityDescription.entity(forEntityName: "Soundcards", in: soundcardContext)!
 					let soundcard = Soundcards(entity: soundcardEntity, insertInto: soundcardContext)
 					soundcard.soundcardName = sc[0]
@@ -375,7 +375,7 @@ class DataManager{
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			let saveThis = result[0] as! NSManagedObject
-			let imageData: NSData? = NSData(data: (newImage.pngData()!))
+            let imageData: NSData? = NSData(data: (newImage.jpegData(compressionQuality: 1.0)!))
 			saveThis.setValue(imageData, forKey: "soundcardImage")
 			
 			do{
@@ -474,7 +474,7 @@ class DataManager{
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			let soundcardContext = appDelegate.persistentContainer.viewContext
-			let imageData: NSData? = NSData(data: (image.pngData()!))
+            let imageData: NSData? = NSData(data: (image.jpegData(compressionQuality: 1.0)!))
 			let soundcardEntity = NSEntityDescription.entity(forEntityName: "Soundcards", in: soundcardContext)!
 			let soundcard = Soundcards(entity: soundcardEntity, insertInto: soundcardContext)
 			soundcard.soundcardName = name

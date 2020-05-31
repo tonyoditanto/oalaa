@@ -77,7 +77,7 @@ class PreviewCaptureTableViewCell: UITableViewCell {
 
     /// - Tag: PerformRequests
     func updateClassifications(for image: UIImage!) {
-
+        
         let orientation = CGImagePropertyOrientation(image.imageOrientation)
         guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
 
