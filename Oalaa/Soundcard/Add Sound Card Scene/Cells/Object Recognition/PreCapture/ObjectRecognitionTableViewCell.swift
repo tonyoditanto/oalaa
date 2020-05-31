@@ -90,6 +90,9 @@ extension ObjectRecognitionTableViewCell : AVCapturePhotoCaptureDelegate{
         guard let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) else{
         return
     }
+    
+//        let temp_image = UIImage.init(data: imageData)
+//        let capturedImage = UIImage.init(cgImage: temp_image!.cgImage!, scale: 1.0, orientation: .right)
     let capturedImage = UIImage.init(data: imageData, scale: 1.0)
     delegate?.previewCapture(for: capturedImage)
 //    if let image = capturedImage {

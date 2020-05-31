@@ -17,6 +17,7 @@
 		5A7D1B96247F54800077CE1A /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D1B95247F54800077CE1A /* AchievementCell.swift */; };
 		5A7D1B9824809BB00077CE1A /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D1B9724809BB00077CE1A /* TaskManager.swift */; };
 		5A7D1B9B2480A3AD0077CE1A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D1B9A2480A3AD0077CE1A /* UserDefaults.swift */; };
+		5A7D1B9D2480C0DA0077CE1A /* DailyMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D1B9C2480C0DA0077CE1A /* DailyMission.swift */; };
 		5AB3E82424775E2400BC791B /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82324775E2400BC791B /* Task.storyboard */; };
 		5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82524775EBE00BC791B /* Training.storyboard */; };
 		5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E8272477610500BC791B /* AddSoundCard.storyboard */; };
@@ -62,6 +63,7 @@
 		5A7D1B95247F54800077CE1A /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		5A7D1B9724809BB00077CE1A /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		5A7D1B9A2480A3AD0077CE1A /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		5A7D1B9C2480C0DA0077CE1A /* DailyMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMission.swift; sourceTree = "<group>"; };
 		5AB3E82324775E2400BC791B /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		5AB3E82524775EBE00BC791B /* Training.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
 		5AB3E8272477610500BC791B /* AddSoundCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSoundCard.storyboard; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				5A15FC3C2474DA4E0029E2F0 /* Oalaa.xcdatamodeld */,
 				D06A6FFD247CCE19006337E6 /* DataManager.swift */,
 				5A7D1B9724809BB00077CE1A /* TaskManager.swift */,
+				5A7D1B9C2480C0DA0077CE1A /* DailyMission.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			files = (
 				5A7D1B9B2480A3AD0077CE1A /* UserDefaults.swift in Sources */,
 				8508A665247D825200A340A9 /* Resnet50.mlmodel in Sources */,
+				5A7D1B9D2480C0DA0077CE1A /* DailyMission.swift in Sources */,
 				5A15FC3E2474DA4E0029E2F0 /* Oalaa.xcdatamodeld in Sources */,
 				D06A7002247CCE19006337E6 /* DataManager.swift in Sources */,
 				D06A700B247CCE6D006337E6 /* SoundcardCollectionViewCell.swift in Sources */,
@@ -517,12 +521,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T896KBRFKX;
+				DEVELOPMENT_TEAM = 73D6FXNB5K;
 				INFOPLIST_FILE = Oalaa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.m2-911.Oalaa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -535,12 +541,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T896KBRFKX;
+				DEVELOPMENT_TEAM = 73D6FXNB5K;
 				INFOPLIST_FILE = Oalaa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.m2-911.Oalaa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

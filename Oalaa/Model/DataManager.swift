@@ -57,60 +57,60 @@ class DataManager{
 		let soundcardPreset =
 			[
 				//["SoundcardName","AssetName","BelongToCategory"]
-				["Tolong","help","General"],
-				["Aku","i","General"],
-				["Suka","like","General"],
-				["Lihat","look","General"],
-				["Aku","me","General"],
-				["Perlu","need","General"],
-				["Bukan","not","General"],
-				["Berhenti","stop","General"],
-				["Ini","this","General"],
-				["Apa","what","General"],
-				["Siapa","who","General"],
-				["Lebah","bee","Animals"],
-				["Burung","bird","Animals"],
-				["Kucing","cat","Animals"],
-				["Anjing","dog","Animals"],
-				["Ikan","fish","Animals"],
-				["Kuda","horse","Animals"],
-				["Cicak","lizard","Animals"],
-				["Kelinci","rabbit","Animals"],
-				["Ayam","rooster","Animals"],
-				["Ular","snake","Animals"],
-				["Apel","apple","Fruits"],
-				["Pisang","banana","Fruits"],
-				["Ceri","cherry","Fruits"],
-				["Anggur","grape","Fruits"],
-				["Melon","melon","Fruits"],
-				["Jeruk","orange","Fruits"],
-				["Pepaya","papaya","Fruits"],
-				["Nanas","pineapple","Fruits"],
-				["Stroberi","strawberry","Fruits"],
-				["Semangka","watermelon","Fruits"],
-				["Bulutangkis","badminton","Sports"],
-				["Barbel","barbel","Sports"],
-				["Kasti","baseball","Sports"],
-				["Tinju","boxing","Sports"],
-				["Sepak bola","football","Sports"],
-				["Golf","golf","Sports"],
-				["Tenis meja","pingpong","Sports"],
-				["Tenis","tennis","Sports"],
-				["Voli","volley","Sports"],
-				["Yoga","yoga","Sports"],
-				["Biru","Blue","Colors"],
-				["Hijau","Green","Colors"],
-				["Jingga","Orange","Colors"],
-				["Ungu","Purple","Colors"],
-				["Merah","Red","Colors"],
-				["Kuning","Yellow","Colors"],
+				["hel[","help","General"],
+				["i","i","General"],
+				["like","like","General"],
+				["look","look","General"],
+				["me","me","General"],
+				["need","need","General"],
+				["not","not","General"],
+				["stop","stop","General"],
+				["this","this","General"],
+				["what","what","General"],
+				["who","who","General"],
+				["bee","bee","Animals"],
+				["bird","bird","Animals"],
+				["cat","cat","Animals"],
+				["dog","dog","Animals"],
+				["fish","fish","Animals"],
+				["horse","horse","Animals"],
+				["lizard","lizard","Animals"],
+				["rabbit","rabbit","Animals"],
+				["rooster","rooster","Animals"],
+				["snake","snake","Animals"],
+				["apple","apple","Fruits"],
+				["banana","banana","Fruits"],
+				["cherry","cherry","Fruits"],
+				["grape","grape","Fruits"],
+				["melon","melon","Fruits"],
+				["orange","orange","Fruits"],
+				["papaya","papaya","Fruits"],
+				["pineapple","pineapple","Fruits"],
+				["strawberry","strawberry","Fruits"],
+				["watermelon","watermelon","Fruits"],
+				["badminton","badminton","Sports"],
+				["barbel","barbel","Sports"],
+				["baseball","baseball","Sports"],
+				["boxing","boxing","Sports"],
+				["football","football","Sports"],
+				["golf","golf","Sports"],
+				["pingpong","pingpong","Sports"],
+				["tennis","tennis","Sports"],
+				["volley","volley","Sports"],
+				["yoga","yoga","Sports"],
+				["Blue","Blue","Colors"],
+				["Green","Green","Colors"],
+				["Orange","Orange","Colors"],
+				["Purple","Purple","Colors"],
+				["Red","Red","Colors"],
+				["Yellow","Yellow","Colors"],
 		]
 		
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 		
 		for item in categoryPreset {
 			let categoryContext = appDelegate.persistentContainer.viewContext
-			let imageData: NSData? = NSData(data: ((UIImage(named: item[1] as! String))?.pngData()!)!)
+            let imageData: NSData? = NSData(data: ((UIImage(named: item[1] as! String))?.jpegData(compressionQuality: 1.0)!)!)
 			let categoryEntity = NSEntityDescription.entity(forEntityName: "Categories", in: categoryContext)!
 			let category = Categories(entity: categoryEntity, insertInto: categoryContext)
 			category.categoryName = item[0] as? String
@@ -121,7 +121,7 @@ class DataManager{
 				if sc[2] == item[0] as? String {
 					let soundcardContext = appDelegate.persistentContainer.viewContext
 					print(sc[1])
-					let imageData: NSData? = NSData(data: ((UIImage(named: sc[1] ))?.pngData()!)!)
+                    let imageData: NSData? = NSData(data: ((UIImage(named: sc[1] ))?.jpegData(compressionQuality: 1.0)!)!)
 					let soundcardEntity = NSEntityDescription.entity(forEntityName: "Soundcards", in: soundcardContext)!
 					let soundcard = Soundcards(entity: soundcardEntity, insertInto: soundcardContext)
 					soundcard.soundcardName = sc[0]
@@ -375,7 +375,7 @@ class DataManager{
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			let saveThis = result[0] as! NSManagedObject
-			let imageData: NSData? = NSData(data: (newImage.pngData()!))
+            let imageData: NSData? = NSData(data: (newImage.jpegData(compressionQuality: 1.0)!))
 			saveThis.setValue(imageData, forKey: "soundcardImage")
 			
 			do{
@@ -434,7 +434,7 @@ class DataManager{
 			let speakThis:String = (result[index] as AnyObject).value(forKey: "soundcardName") as! String
 			
 			let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
-			speechUtterance.voice = AVSpeechSynthesisVoice(language: "id")
+			speechUtterance.voice = AVSpeechSynthesisVoice(language: "en")
 			TaskManager.addAction(action: .listen)
 			let speechSynthesizer = AVSpeechSynthesizer()
 			speechSynthesizer.speak(speechUtterance)
@@ -451,7 +451,7 @@ class DataManager{
 		let speakThis:String = (soundcard.value(forKey: "soundcardName") as! String)
 		
 		let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
-		speechUtterance.voice = AVSpeechSynthesisVoice(language: "id")
+		speechUtterance.voice = AVSpeechSynthesisVoice(language: "en")
 		TaskManager.addAction(action: .listen)
 		let speechSynthesizer = AVSpeechSynthesizer()
 		speechSynthesizer.speak(speechUtterance)
@@ -474,7 +474,7 @@ class DataManager{
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			let soundcardContext = appDelegate.persistentContainer.viewContext
-			let imageData: NSData? = NSData(data: (image.pngData()!))
+            let imageData: NSData? = NSData(data: (image.jpegData(compressionQuality: 1.0)!))
 			let soundcardEntity = NSEntityDescription.entity(forEntityName: "Soundcards", in: soundcardContext)!
 			let soundcard = Soundcards(entity: soundcardEntity, insertInto: soundcardContext)
 			soundcard.soundcardName = name
