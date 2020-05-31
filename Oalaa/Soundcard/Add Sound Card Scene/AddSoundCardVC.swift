@@ -219,20 +219,20 @@ extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
         let activeCategory = dataManager.getCategory(CategoryName: currentActiveCategory)
         let soundcardNames = dataManager.getAllSoundcardsNames(category: activeCategory)
         
+        //
         if soundcardNames.count == 0 {
                 dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
                 self.delegate?.refreshSoundCard()
                 self.dismiss(animated: true, completion: nil)
         }
         
-        if soundcardNames.count > 0 {
-            for index in 0...soundcardNames.count-1 {
-                if soundcardNames[index] == self.objectName {
+        if soundcardNames.count != 0 {
+            for index in 1...soundcardNames.count {
+                if soundcardNames[index-1] == self.objectName {
                     isCardExist = true
                 }
             }
             
-            //let finalImage = UIImage(cgImage: captureObject.cgImage!, scale: captureObject.scale, orientation: .right)
             if isCardExist == false {
                 dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
                 self.delegate?.refreshSoundCard()
@@ -243,10 +243,23 @@ extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
                 dataManager.replaceSoundcardImage(soundcardName: objectName, newImage: captureObject)
                 self.delegate?.refreshSoundCard()
                 self.dismiss(animated: true, completion: nil)
+                print("REPLACE")
             }
         }
-        
-        
+    }
+    
+    func saveSoundCard(){
+//        let finalImage = UIImage(cgImage: captureObject.cgImage!, scale: captureObject.scale, orientation: .up)
+//        dataManager.addNewSoundcard(name: objectName, image: finalImage, category: currentActiveCategory)
+        dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
+        self.delegate?.refreshSoundCard()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func replaceSoundCard() {
+        dataManager.replaceSoundcardImage(soundcardName: objectName, newImage: captureObject)
+        self.delegate?.refreshSoundCard()
+        self.dismiss(animated: true, completion: nil)
     }
     
     func playCard() {
