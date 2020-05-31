@@ -434,7 +434,7 @@ class DataManager{
 			let speakThis:String = (result[index] as AnyObject).value(forKey: "soundcardName") as! String
 			
 			let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
-			speechUtterance.voice = AVSpeechSynthesisVoice(language: "id")
+			speechUtterance.voice = AVSpeechSynthesisVoice(language: "en")
 			TaskManager.addAction(action: .listen)
 			let speechSynthesizer = AVSpeechSynthesizer()
 			speechSynthesizer.speak(speechUtterance)
