@@ -221,9 +221,7 @@ extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
         
         //
         if soundcardNames.count == 0 {
-                dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
-                self.delegate?.refreshSoundCard()
-                self.dismiss(animated: true, completion: nil)
+                saveSoundCard()
         }
         
         if soundcardNames.count != 0 {
@@ -234,16 +232,11 @@ extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
             }
             
             if isCardExist == false {
-                dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
-                self.delegate?.refreshSoundCard()
-                self.dismiss(animated: true, completion: nil)
+                saveSoundCard()
             }
             
             if isCardExist == true {
-                dataManager.replaceSoundcardImage(soundcardName: objectName, newImage: captureObject)
-                self.delegate?.refreshSoundCard()
-                self.dismiss(animated: true, completion: nil)
-                print("REPLACE")
+                replaceSoundCard()
             }
         }
     }
