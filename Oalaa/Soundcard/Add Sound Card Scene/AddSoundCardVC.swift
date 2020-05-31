@@ -35,12 +35,17 @@ class AddSoundCardVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAllowSelectionCell()
         setBackgroundImage(with: backgroundmageName)
         setupTableView()
     }
 }
 
 extension AddSoundCardVC {
+    func setAllowSelectionCell(){
+        self.tableView.allowsSelection = false
+    }
+    
     func setupTableView() {
          registerHeaderCell()
          registerObjectRecognitionCell()
