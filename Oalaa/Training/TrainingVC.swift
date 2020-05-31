@@ -31,7 +31,6 @@ class TrainingVC: UIViewController {
     }
     
     // text to speech part
-    
     @IBAction func playTrainingButton(_ sender: UIButton) {
         let utterance = AVSpeechUtterance(string: answerText)
         utterance.voice = AVSpeechSynthesisVoice(language: "en")
@@ -59,7 +58,7 @@ class TrainingVC: UIViewController {
         TaskManager.addAction(action: .speak)
         playbuttonText.setTitle("Next Card", for: .normal)
         
-        // flip animation
+        // flip animation added
         if defaultCard {
             defaultCard = false
             trainingDefaultImage.image = defaultImage
@@ -70,9 +69,6 @@ class TrainingVC: UIViewController {
             defaultImage = trainingDefaultImage.image
             UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
         }
-        
-        
     }
-    
     
 }
