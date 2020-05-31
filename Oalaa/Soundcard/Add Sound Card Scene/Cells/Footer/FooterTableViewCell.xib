@@ -27,6 +27,7 @@
                     <constraint firstAttribute="bottom" secondItem="nmo-Zu-ERj" secondAttribute="bottom" id="sSW-Tx-IQD"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </tableViewCell>

@@ -9,5 +9,10 @@
 import UIKit
 
 class AchievementCell: UICollectionViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var badgeIV: UIImageView!
+    @IBOutlet weak var actionLabel: UILabel!
+    @IBOutlet weak var valuePV: UIProgressView!
+    @IBOutlet weak var valueLabel: UILabel!
     
 }

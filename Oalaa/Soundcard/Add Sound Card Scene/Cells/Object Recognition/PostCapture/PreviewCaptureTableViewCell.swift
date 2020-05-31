@@ -129,8 +129,16 @@ class PreviewCaptureTableViewCell: UITableViewCell {
                 }
                 
                 if confidenceRate[0] >= 0.5 {
-                    self.objectNameLabel.text = descriptions[0]
-                    self.storedCaptureObjectNameToAddSoundCardVC(with: descriptions[0])
+                    let string = descriptions[0]
+                    var finalName : String = ""
+                    if string.contains(",") {
+                        let array = string.components(separatedBy: ", ")
+                        finalName = array[0]
+                    }else{
+                        finalName = string
+                    }
+                    self.objectNameLabel.text = finalName
+                    self.storedCaptureObjectNameToAddSoundCardVC(with: finalName)
                     self.setActionButtonStatus(with: true)
                 }
             }

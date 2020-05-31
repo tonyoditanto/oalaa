@@ -17,9 +17,8 @@ class AddCategoryVC: UIViewController,UICollectionViewDataSource, UICollectionVi
 		super.viewDidLoad()
 		categoryCollection.dataSource = self
 		categoryCollection.delegate = self
-		
-		// Do any additional setup after loading the view.
 	}
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return dataManager.getCategoryTotal(installed: false)-1
 	}
@@ -40,7 +39,6 @@ class AddCategoryVC: UIViewController,UICollectionViewDataSource, UICollectionVi
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		
 		dataManager.toggleCategoryActivation(index: indexPath.item+1)
 		collectionView.reloadData()
 		NotificationCenter.default.post(name: NSNotification.Name(rawValue: "categoryUpdated"), object: nil)

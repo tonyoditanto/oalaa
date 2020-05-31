@@ -9,6 +9,5 @@
 import UIKit
 
 class SoundcardCollectionViewCell: UICollectionViewCell {
-    
 	@IBOutlet weak var soundcardImageView: UIImageView!
 }

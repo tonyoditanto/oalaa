@@ -13,6 +13,7 @@ class DailyCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var valuePV: UIProgressView!
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var imageIV: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
