@@ -21,12 +21,10 @@ class TrainingVC: UIViewController {
     lazy var activeCategory: NSManagedObject = dataManager.getCategory(coreVocab: false, installed: true, index: 0)
     var answerText: String = ""
     var defaultImage = UIImage (named: "AppIcon")
-    var defaultCard = false
+    var defaultCard = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
     }
     
@@ -41,7 +39,6 @@ class TrainingVC: UIViewController {
         
     }
         
-    
     @IBAction func reloadTrainingImage(_ sender: Any) {
         let fetchRandomSoundcard: NSManagedObject = dataManager.getRandomInstalledSoundcard()
         
@@ -57,8 +54,10 @@ class TrainingVC: UIViewController {
         else {
             defaultCard = true
             trainingDefaultImage.image = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
+            
             //defaultImage = trainingDefaultImage.image
-            UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+            UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+           
             // displaying name of soundcard
             nameOfTrainingImage.text = fetchRandomSoundcard.value(forKey: "soundcardName") as? String
             
