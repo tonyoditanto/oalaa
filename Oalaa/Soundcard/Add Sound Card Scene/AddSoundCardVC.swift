@@ -35,12 +35,17 @@ class AddSoundCardVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAllowSelectionCell()
         setBackgroundImage(with: backgroundmageName)
         setupTableView()
     }
 }
 
 extension AddSoundCardVC {
+    func setAllowSelectionCell(){
+        self.tableView.allowsSelection = false
+    }
+    
     func setupTableView() {
          registerHeaderCell()
          registerObjectRecognitionCell()
@@ -214,24 +219,33 @@ extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
         let activeCategory = dataManager.getCategory(CategoryName: currentActiveCategory)
         let soundcardNames = dataManager.getAllSoundcardsNames(category: activeCategory)
         
-        for index in 1...soundcardNames.count {
-            if soundcardNames[index-1] == self.objectName {
-                isCardExist = true
+        if soundcardNames.count == 0 {
+                dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
+                self.delegate?.refreshSoundCard()
+                self.dismiss(animated: true, completion: nil)
+        }
+        
+        if soundcardNames.count > 0 {
+            for index in 0...soundcardNames.count-1 {
+                if soundcardNames[index] == self.objectName {
+                    isCardExist = true
+                }
+            }
+            
+            //let finalImage = UIImage(cgImage: captureObject.cgImage!, scale: captureObject.scale, orientation: .right)
+            if isCardExist == false {
+                dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
+                self.delegate?.refreshSoundCard()
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+            if isCardExist == true {
+                dataManager.replaceSoundcardImage(soundcardName: objectName, newImage: captureObject)
+                self.delegate?.refreshSoundCard()
+                self.dismiss(animated: true, completion: nil)
             }
         }
         
-        //let finalImage = UIImage(cgImage: captureObject.cgImage!, scale: captureObject.scale, orientation: .right)
-        if isCardExist == false { 
-            dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
-            self.delegate?.refreshSoundCard()
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-        if isCardExist == true {
-            dataManager.replaceSoundcardImage(soundcardName: objectName, newImage: captureObject)
-            self.delegate?.refreshSoundCard()
-            self.dismiss(animated: true, completion: nil)
-        }
         
     }
     
