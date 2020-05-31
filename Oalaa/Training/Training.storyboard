@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="50" id="fah-U7-hho"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <state key="normal" title="Toggle">
+                                <state key="normal" title="Play">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -69,15 +69,6 @@
                                 <color key="textColor" red="0.36391642689999998" green="0.36679574850000002" blue="0.2235026956" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbk-yT-M7d">
-                                <rect key="frame" x="0.0" y="546" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="xq0-PH-6aq"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="playTheAnswerButton:" destination="xqP-uX-yK9" eventType="touchUpInside" id="Hw4-vd-DES"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-4-1" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-94-tRk">
                                 <rect key="frame" x="-202" y="88" width="400" height="78"/>
                                 <constraints>
@@ -96,15 +87,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nN3-pL-czi" firstAttribute="top" secondItem="pPo-2T-by9" secondAttribute="bottom" constant="10" id="2jY-P2-2da"/>
-                            <constraint firstItem="mbk-yT-M7d" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="2mq-ky-ovT"/>
                             <constraint firstItem="02U-N8-wyD" firstAttribute="bottom" secondItem="DMi-MQ-MJC" secondAttribute="bottom" id="82Q-DK-Lgu"/>
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="width" secondItem="439-1A-feD" secondAttribute="height" multiplier="25:64" id="9Bb-1X-8ax"/>
                             <constraint firstItem="02U-N8-wyD" firstAttribute="leading" secondItem="439-1A-feD" secondAttribute="leading" id="Bx4-l0-EJx"/>
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="height" secondItem="439-1A-feD" secondAttribute="height" multiplier="0.390625" id="D0T-LD-kcV"/>
                             <constraint firstItem="hbE-94-tRk" firstAttribute="leading" secondItem="439-1A-feD" secondAttribute="leading" constant="-202" id="Kpo-0y-Hxz"/>
                             <constraint firstItem="02U-N8-wyD" firstAttribute="trailing" secondItem="DMi-MQ-MJC" secondAttribute="trailing" id="Lwv-5C-3iE"/>
-                            <constraint firstItem="hZp-UX-bzG" firstAttribute="width" secondItem="439-1A-feD" secondAttribute="width" multiplier="0.845411" id="TaE-jn-BNt"/>
-                            <constraint firstItem="XXt-n0-N8d" firstAttribute="width" secondItem="439-1A-feD" secondAttribute="width" multiplier="0.845411" id="Ujn-TD-Af8"/>
                             <constraint firstItem="hZp-UX-bzG" firstAttribute="width" secondItem="439-1A-feD" secondAttribute="height" multiplier="25:64" id="Uul-1H-gw4"/>
                             <constraint firstItem="hZp-UX-bzG" firstAttribute="top" secondItem="hbE-94-tRk" secondAttribute="bottom" constant="10" id="WVb-sn-V4C"/>
                             <constraint firstItem="bXF-DI-SW8" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="XNc-fn-Oa3"/>
@@ -117,18 +105,16 @@
                             <constraint firstItem="hbE-94-tRk" firstAttribute="top" secondItem="DMi-MQ-MJC" secondAttribute="top" id="mjv-vL-lNN"/>
                             <constraint firstItem="pPo-2T-by9" firstAttribute="top" secondItem="bXF-DI-SW8" secondAttribute="bottom" constant="20" id="oN6-zt-ZNR"/>
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="sdz-al-9iO"/>
-                            <constraint firstItem="DMi-MQ-MJC" firstAttribute="trailing" secondItem="mbk-yT-M7d" secondAttribute="trailing" id="tWE-ij-ypd"/>
                             <constraint firstItem="bXF-DI-SW8" firstAttribute="leading" secondItem="DMi-MQ-MJC" secondAttribute="leading" id="uJy-fc-7z5"/>
-                            <constraint firstItem="mbk-yT-M7d" firstAttribute="top" secondItem="XXt-n0-N8d" secondAttribute="bottom" constant="20" id="yUO-az-qnT"/>
                             <constraint firstAttribute="trailing" secondItem="nN3-pL-czi" secondAttribute="trailing" constant="-202" id="yaL-4h-chv"/>
                             <constraint firstItem="hZp-UX-bzG" firstAttribute="height" secondItem="439-1A-feD" secondAttribute="height" multiplier="0.390625" id="yiY-yB-ffd"/>
-                            <constraint firstItem="mbk-yT-M7d" firstAttribute="leading" secondItem="DMi-MQ-MJC" secondAttribute="leading" id="yjW-3k-AoQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DMi-MQ-MJC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Say the Word" id="s7K-3n-nCV"/>
                     <connections>
                         <outlet property="nameOfTrainingImage" destination="bXF-DI-SW8" id="53R-2w-Gkm"/>
+                        <outlet property="playbuttonText" destination="pPo-2T-by9" id="PE9-di-XCn"/>
                         <outlet property="trainingDefaultImage" destination="XXt-n0-N8d" id="VtY-Tf-AXF"/>
                     </connections>
                 </viewController>
