@@ -40,8 +40,8 @@ extension TaskVC: UITableViewDelegate, UITableViewDataSource{
         let daily = dailies[indexPath.row]
         cell.nameLabel.text = daily.name
         cell.imageIV.image = UIImage(systemName: daily.image)
-        cell.valuePV.progress = Float(daily.value) / Float(daily.maxValue)
-        cell.valueLabel.text = "\(daily.value) / \(daily.maxValue)"
+        cell.valuePV.progress =  Float(daily.value) / Float(daily.maxValue)
+        cell.valueLabel.text = (daily.value > daily.maxValue) ?  "\(daily.maxValue) / \(daily.maxValue)" : "\(daily.value) / \(daily.maxValue)"
         return cell
     }
 }
@@ -54,14 +54,13 @@ extension TaskVC: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AchievementCell", for: indexPath) as! AchievementCell
         let achievement = achievements[indexPath.row]
-        
         cell.nameLabel.text = achievement.name
         cell.actionLabel.text = achievement.actionName
         cell.badgeIV.image = UIImage(systemName: achievement.image)
         let defaults = UserDefaults.standard
         let v = defaults.integer(forKey: achievement.userDefaultKey)
         cell.valuePV.progress = Float(v) / Float(achievement.maxValue)
-        cell.valueLabel.text = "\(v) / \(achievement.maxValue)"
+        cell.valueLabel.text = (v > achievement.maxValue) ? "Completed" : "\(v) / \(achievement.maxValue)"
         return cell
     }
     
