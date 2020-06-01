@@ -48,6 +48,7 @@ class TaskManager{
             let v = defaults.integer(forKey: key) + 1
             defaults.set(v, forKey: key)
         }
+        achievementKey.removeAll()
     }
     
     static func getAllDailyMissions() -> [DailyMission]{
