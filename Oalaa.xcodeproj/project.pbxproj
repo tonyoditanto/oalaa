@@ -21,6 +21,7 @@
 		5AB3E82424775E2400BC791B /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82324775E2400BC791B /* Task.storyboard */; };
 		5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82524775EBE00BC791B /* Training.storyboard */; };
 		5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E8272477610500BC791B /* AddSoundCard.storyboard */; };
+		5AC514462480E82800BB3230 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC514452480E82800BB3230 /* Achievement.swift */; };
 		8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */; };
 		8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */; };
 		8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */; };
@@ -67,6 +68,7 @@
 		5AB3E82324775E2400BC791B /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		5AB3E82524775EBE00BC791B /* Training.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
 		5AB3E8272477610500BC791B /* AddSoundCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSoundCard.storyboard; sourceTree = "<group>"; };
+		5AC514452480E82800BB3230 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptureTableViewCell.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				D06A6FFD247CCE19006337E6 /* DataManager.swift */,
 				5A7D1B9724809BB00077CE1A /* TaskManager.swift */,
 				5A7D1B9C2480C0DA0077CE1A /* DailyMission.swift */,
+				5AC514452480E82800BB3230 /* Achievement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,
 				D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */,
 				D06A701E247CD7F9006337E6 /* Categories+CoreDataProperties.swift in Sources */,
+				5AC514462480E82800BB3230 /* Achievement.swift in Sources */,
 				5A7D1B94247F54580077CE1A /* DailyCell.swift in Sources */,
 				D049C1CE2474E933002D436B /* TaskVC.swift in Sources */,
 				8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */,

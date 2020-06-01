@@ -12,60 +12,75 @@ import CoreData
 class TaskManager{
     private static let defaults = UserDefaults.standard
     private static let dailyMaxValue = 5
-    static let listen_key = "listen"
-    static let speak_key = "speak"
-    static let capture_key = "capture"
+    static let daily_listen_key = "listen"
+    static let daily_speak_key = "speak"
+    static let daily_capture_key = "capture"
     
     enum Action{
         case listen, speak, capture
     }
     
-    private static func checkAllKeyExist(){
-        if !UserDefaults.exists(key: listen_key) {
-            defaults.set(0, forKey: listen_key)
-        } else if !UserDefaults.exists(key: speak_key){
-            defaults.set(0, forKey: speak_key)
-        } else if !UserDefaults.exists(key: capture_key){
-            defaults.set(0, forKey: capture_key)
-        }
-    }
-    
     static func addAction(action: Action){
         switch action {
         case .listen:
-            addDailyValue(key: listen_key)
+            addDailyValue(key: daily_listen_key)
         case .speak:
-            addDailyValue(key: speak_key)
+            addDailyValue(key: daily_speak_key)
         case .capture:
-            addDailyValue(key: capture_key)
+            addDailyValue(key: daily_capture_key)
         }
+        addAchievementValue(action: action)
     }
     
     private static func addDailyValue(key: String) {
-        if UserDefaults.exists(key: key) {
             let v = defaults.integer(forKey: key) + 1
             defaults.set(v, forKey: key)
-        } else {
-            defaults.set(0, forKey: key)
+    }
+    
+    private static func addAchievementValue(action: Action){
+        let filteredAchievement = self.getAllAchievement().filter{ $0.actionIdentifier == action}
+        var achievementKey = [String]()
+        for achievement in filteredAchievement{
+            achievementKey.append(achievement.userDefaultKey)
+        }
+        
+        for key in achievementKey{
+            let v = defaults.integer(forKey: key) + 1
+            defaults.set(v, forKey: key)
         }
     }
     
     static func getAllDailyMissions() -> [DailyMission]{
-        checkAllKeyExist()
         return [DailyMission(name: "Listen an soundcard",
-                             value: defaults.integer(forKey: listen_key),
+                             value: defaults.integer(forKey: daily_listen_key),
                              maxValue: dailyMaxValue, image: "music.note",
-                             userDefaultKey: listen_key),
+                             userDefaultKey: daily_listen_key),
                 DailyMission(name: "Speak something",
-                             value: defaults.integer(forKey: speak_key),
+                             value: defaults.integer(forKey: daily_speak_key),
                              maxValue: dailyMaxValue,
                              image: "bubble.left.and.bubble.right.fill",
-                             userDefaultKey: speak_key),
+                             userDefaultKey: daily_speak_key),
                 DailyMission(name: "Capture an object",
-                             value: defaults.integer(forKey: capture_key),
+                             value: defaults.integer(forKey: daily_capture_key),
                              maxValue: dailyMaxValue,
                              image: "camera.fill",
-                             userDefaultKey: capture_key)]
+                             userDefaultKey: daily_capture_key)]
+    }
+    
+    static func getAllAchievement() -> [Achievement]{
+        return[Achievement(name: "Talkative",
+                           image: "bubble.left.and.bubble.right.fill",
+                           actionName: "Speak something",
+                           maxValue: 500,
+                           actionIdentifier: .speak,
+                           userDefaultKey: "achv_speak_0"),
+               Achievement(name: "Photographer",
+                           image: "camera.fill",
+                           actionName: "Capture an object",
+                           maxValue: 500,
+                           actionIdentifier: .capture,
+                           userDefaultKey: "achv_capture_0")
+        ]
     }
     
 }

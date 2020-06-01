@@ -13,11 +13,14 @@ class TaskVC: UIViewController {
     @IBOutlet weak var dailyTV: UITableView!
     @IBOutlet weak var achievementCV: UICollectionView!
     var dailies = [DailyMission]()
+    var achievements = [Achievement]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initDelegate()
+        TaskManager.addAction(action: .speak)
         dailies = TaskManager.getAllDailyMissions()
+        achievements = TaskManager.getAllAchievement()
     }
     
     func initDelegate() {
@@ -46,12 +49,20 @@ extension TaskVC: UITableViewDelegate, UITableViewDataSource{
 
 extension TaskVC: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return achievements.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AchievementCell", for: indexPath) as! AchievementCell
-        cell.nameLabel.text = "Achievement \(indexPath.row)"
+        let achievement = achievements[indexPath.row]
+        
+        cell.nameLabel.text = achievement.name
+        cell.actionLabel.text = achievement.actionName
+        cell.badgeIV.image = UIImage(systemName: achievement.image)
+        let defaults = UserDefaults.standard
+        let v = defaults.integer(forKey: achievement.userDefaultKey)
+        cell.valuePV.progress = Float(v) / Float(achievement.maxValue)
+        cell.valueLabel.text = "\(v) / \(achievement.maxValue)"
         return cell
     }
     
