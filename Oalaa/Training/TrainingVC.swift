@@ -30,7 +30,7 @@ class TrainingVC: UIViewController {
     
     // text to speech part
     @IBAction func playTrainingButton(_ sender: UIButton) {
-        let utterance = AVSpeechUtterance(string: answerText)
+        let utterance = AVSpeechUtterance(string: "Please say ," + answerText + ", I'm Listening")
         utterance.voice = AVSpeechSynthesisVoice(language: "en")
         utterance.rate = 0.5
 
@@ -42,23 +42,10 @@ class TrainingVC: UIViewController {
     @IBAction func reloadTrainingImage(_ sender: Any) {
         let fetchRandomSoundcard: NSManagedObject = dataManager.getRandomInstalledSoundcard()
         
-        // flip animation added
-        if defaultCard {
-            defaultCard = false
-            trainingDefaultImage.image = defaultImage
             UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
             
-            playbuttonText.setTitle("Next Card", for: .normal)
-            nameOfTrainingImage.text = ""
-        }
-        else {
-            defaultCard = true
             trainingDefaultImage.image = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
             
-            //defaultImage = trainingDefaultImage.image
-            UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-           
-            // displaying name of soundcard
             nameOfTrainingImage.text = fetchRandomSoundcard.value(forKey: "soundcardName") as? String
             
             let utterance = AVSpeechUtterance(string: fetchRandomSoundcard.value(forKey: "soundcardName") as! String)
@@ -70,7 +57,6 @@ class TrainingVC: UIViewController {
             
             TaskManager.addAction(action: .speak)
             playbuttonText.setTitle("Next Card", for: .normal)
-        }
     }
     
 }
