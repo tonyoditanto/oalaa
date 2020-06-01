@@ -82,12 +82,12 @@
                             <constraint firstItem="bXF-DI-SW8" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="XNc-fn-Oa3"/>
                             <constraint firstItem="bXF-DI-SW8" firstAttribute="top" secondItem="XXt-n0-N8d" secondAttribute="bottom" constant="20" id="a8z-ou-GBy"/>
                             <constraint firstItem="hZp-UX-bzG" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="bt6-Pg-y9L"/>
+                            <constraint firstItem="XXt-n0-N8d" firstAttribute="top" secondItem="DMi-MQ-MJC" secondAttribute="top" constant="65" id="cYU-pF-nnw"/>
                             <constraint firstItem="02U-N8-wyD" firstAttribute="top" secondItem="439-1A-feD" secondAttribute="top" id="d4T-6y-JXD"/>
                             <constraint firstItem="pPo-2T-by9" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="gfL-V8-pH9"/>
                             <constraint firstItem="DMi-MQ-MJC" firstAttribute="trailing" secondItem="bXF-DI-SW8" secondAttribute="trailing" id="i2R-Me-7AV"/>
                             <constraint firstItem="pPo-2T-by9" firstAttribute="top" secondItem="bXF-DI-SW8" secondAttribute="bottom" constant="20" id="oN6-zt-ZNR"/>
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="sdz-al-9iO"/>
-                            <constraint firstItem="XXt-n0-N8d" firstAttribute="top" secondItem="DMi-MQ-MJC" secondAttribute="top" constant="65" id="tZA-GE-QY1"/>
                             <constraint firstItem="bXF-DI-SW8" firstAttribute="leading" secondItem="DMi-MQ-MJC" secondAttribute="leading" id="uJy-fc-7z5"/>
                             <constraint firstItem="hZp-UX-bzG" firstAttribute="height" secondItem="439-1A-feD" secondAttribute="height" multiplier="0.390625" id="yiY-yB-ffd"/>
                         </constraints>
@@ -125,6 +125,6 @@
     </scenes>
     <resources>
         <image name="Background Apps-1" width="2588" height="4600"/>
-        <image name="dionTraining" width="1844" height="1844"/>
+        <image name="dionTraining" width="1024" height="1024"/>
     </resources>
 </document>

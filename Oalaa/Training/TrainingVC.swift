@@ -20,8 +20,8 @@ class TrainingVC: UIViewController {
     var dataManager: DataManager = DataManager()
     lazy var activeCategory: NSManagedObject = dataManager.getCategory(coreVocab: false, installed: true, index: 0)
     var answerText: String = ""
-    var defaultImage = UIImage (named: "AppIcon")
-    var defaultCard = true
+    var defaultImage = UIImage (named: "dionTraining")
+    var defaultCard = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
