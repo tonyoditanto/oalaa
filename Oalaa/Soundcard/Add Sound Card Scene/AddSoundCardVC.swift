@@ -21,7 +21,7 @@ protocol AddSoundCardVCDelegate {
 class AddSoundCardVC: UITableViewController {
     
     var backgroundmageName : String = "background"
-    let sectionTitles = ["header", "object recognition", "post capture", "footer"]
+    let sectionTitles = ["header", "object recognition", "post capture"]
     var cameraActive : Bool = true
 	let dataManager = DataManager()
     
@@ -85,9 +85,9 @@ extension AddSoundCardVC {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         if cameraActive == true {
-            return 3
+            return 2
         }
-        return self.sectionTitles.count
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

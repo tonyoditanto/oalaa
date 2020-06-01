@@ -15,24 +15,10 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-4-1" translatesAutoresizingMaskIntoConstraints="NO" id="nmo-Zu-ERj">
-                        <rect key="frame" x="0.0" y="0.0" width="313" height="80"/>
-                    </imageView>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="nmo-Zu-ERj" secondAttribute="trailing" constant="101" id="0jF-9p-4WY"/>
-                    <constraint firstItem="nmo-Zu-ERj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Kej-sk-LHo"/>
-                    <constraint firstItem="nmo-Zu-ERj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="l5v-EV-QCd"/>
-                    <constraint firstAttribute="bottom" secondItem="nmo-Zu-ERj" secondAttribute="bottom" id="sSW-Tx-IQD"/>
-                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Untitled-4-1" width="1587" height="245"/>
-    </resources>
 </document>
