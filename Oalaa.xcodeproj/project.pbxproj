@@ -20,8 +20,9 @@
 		5A7D1B9B2480A3AD0077CE1A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D1B9A2480A3AD0077CE1A /* UserDefaults.swift */; };
 		5A7D1B9D2480C0DA0077CE1A /* DailyMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D1B9C2480C0DA0077CE1A /* DailyMission.swift */; };
 		5AB3E82424775E2400BC791B /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82324775E2400BC791B /* Task.storyboard */; };
-		5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E82524775EBE00BC791B /* Training.storyboard */; };
 		5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E8272477610500BC791B /* AddSoundCard.storyboard */; };
+		5ABC4D6224858974005E466F /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC4D6024858974005E466F /* TrainingVC.swift */; };
+		5ABC4D6324858974005E466F /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ABC4D6124858974005E466F /* Training.storyboard */; };
 		8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */; };
 		8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */; };
 		8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */; };
@@ -35,7 +36,6 @@
 		8508A662247B734800A340A9 /* FooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A660247B734800A340A9 /* FooterTableViewCell.xib */; };
 		8508A664247D2E9900A340A9 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A663247D2E9900A340A9 /* CGImagePropertyOrientation.swift */; };
 		8508A665247D825200A340A9 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8508A659247B65F500A340A9 /* Resnet50.mlmodel */; };
-		D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CB2474E918002D436B /* TrainingVC.swift */; };
 		D049C1CE2474E933002D436B /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CD2474E933002D436B /* TaskVC.swift */; };
 		D049C1D02474E945002D436B /* AddSoundCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1CF2474E945002D436B /* AddSoundCardVC.swift */; };
 		D049C1D22474E954002D436B /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049C1D12474E954002D436B /* AddCategoryVC.swift */; };
@@ -44,7 +44,6 @@
 		D06A700A247CCE6D006337E6 /* addCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7007247CCE6D006337E6 /* addCategoryCollectionViewCell.swift */; };
 		D06A700B247CCE6D006337E6 /* SoundcardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7008247CCE6D006337E6 /* SoundcardCollectionViewCell.swift */; };
 		D06A700C247CCE6D006337E6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7009247CCE6D006337E6 /* CategoryCollectionViewCell.swift */; };
-		D06A700E247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */; };
 		D06A701B247CD7F9006337E6 /* Soundcards+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7017247CD7F9006337E6 /* Soundcards+CoreDataClass.swift */; };
 		D06A701C247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7018247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift */; };
 		D06A701D247CD7F9006337E6 /* Categories+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A7019247CD7F9006337E6 /* Categories+CoreDataClass.swift */; };
@@ -67,8 +66,9 @@
 		5A7D1B9A2480A3AD0077CE1A /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		5A7D1B9C2480C0DA0077CE1A /* DailyMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMission.swift; sourceTree = "<group>"; };
 		5AB3E82324775E2400BC791B /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
-		5AB3E82524775EBE00BC791B /* Training.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
 		5AB3E8272477610500BC791B /* AddSoundCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSoundCard.storyboard; sourceTree = "<group>"; };
+		5ABC4D6024858974005E466F /* TrainingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
+		5ABC4D6124858974005E466F /* Training.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
 		8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptureTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,7 +82,6 @@
 		8508A65F247B734800A340A9 /* FooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTableViewCell.swift; sourceTree = "<group>"; };
 		8508A660247B734800A340A9 /* FooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterTableViewCell.xib; sourceTree = "<group>"; };
 		8508A663247D2E9900A340A9 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
-		D049C1CB2474E918002D436B /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		D049C1CD2474E933002D436B /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D049C1CF2474E945002D436B /* AddSoundCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundCardVC.swift; sourceTree = "<group>"; };
 		D049C1D12474E954002D436B /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 		D06A7007247CCE6D006337E6 /* addCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D06A7008247CCE6D006337E6 /* SoundcardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundcardCollectionViewCell.swift; sourceTree = "<group>"; };
 		D06A7009247CCE6D006337E6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D06A7017247CD7F9006337E6 /* Soundcards+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Soundcards+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D06A7018247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Soundcards+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D06A7019247CD7F9006337E6 /* Categories+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categories+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -232,9 +230,8 @@
 		D049C1D32474E961002D436B /* Training */ = {
 			isa = PBXGroup;
 			children = (
-				D049C1CB2474E918002D436B /* TrainingVC.swift */,
-				D06A700D247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift */,
-				5AB3E82524775EBE00BC791B /* Training.storyboard */,
+				5ABC4D6124858974005E466F /* Training.storyboard */,
+				5ABC4D6024858974005E466F /* TrainingVC.swift */,
 			);
 			path = Training;
 			sourceTree = "<group>";
@@ -341,11 +338,11 @@
 				8508A662247B734800A340A9 /* FooterTableViewCell.xib in Resources */,
 				8508A64E247810F400A340A9 /* PostCaptureTableViewCell.xib in Resources */,
 				8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */,
-				5AB3E82624775EBE00BC791B /* Training.storyboard in Resources */,
 				D06A6FFC247CCE07006337E6 /* Main.storyboard in Resources */,
 				5A15FC432474DA510029E2F0 /* LaunchScreen.storyboard in Resources */,
 				5AB3E82424775E2400BC791B /* Task.storyboard in Resources */,
 				5A15FC402474DA510029E2F0 /* Assets.xcassets in Resources */,
+				5ABC4D6324858974005E466F /* Training.storyboard in Resources */,
 				8508A65D247B67D300A340A9 /* PreviewCaptureTableViewCell.xib in Resources */,
 				8508A6522478114500A340A9 /* ObjectRecognitionTableViewCell.xib in Resources */,
 			);
@@ -366,7 +363,6 @@
 				D06A700B247CCE6D006337E6 /* SoundcardCollectionViewCell.swift in Sources */,
 				D06A701D247CD7F9006337E6 /* Categories+CoreDataClass.swift in Sources */,
 				8508A656247AD78D00A340A9 /* AddSoundCardSection.swift in Sources */,
-				D06A700E247CCF8C006337E6 /* mainCategoryCollectionViewCell.swift in Sources */,
 				8508A661247B734800A340A9 /* FooterTableViewCell.swift in Sources */,
 				8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */,
 				5A7D1B96247F54800077CE1A /* AchievementCell.swift in Sources */,
@@ -378,6 +374,7 @@
 				D06A701E247CD7F9006337E6 /* Categories+CoreDataProperties.swift in Sources */,
 				5A308D00248586E50031F979 /* Achievement.swift in Sources */,
 				5A7D1B94247F54580077CE1A /* DailyCell.swift in Sources */,
+				5ABC4D6224858974005E466F /* TrainingVC.swift in Sources */,
 				D049C1CE2474E933002D436B /* TaskVC.swift in Sources */,
 				8508A6512478114500A340A9 /* ObjectRecognitionTableViewCell.swift in Sources */,
 				5A15FC362474DA4E0029E2F0 /* SceneDelegate.swift in Sources */,
@@ -386,7 +383,6 @@
 				D06A700A247CCE6D006337E6 /* addCategoryCollectionViewCell.swift in Sources */,
 				8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */,
 				8508A65C247B67D300A340A9 /* PreviewCaptureTableViewCell.swift in Sources */,
-				D049C1CC2474E918002D436B /* TrainingVC.swift in Sources */,
 				5A7D1B9824809BB00077CE1A /* TaskManager.swift in Sources */,
 				D06A701C247CD7F9006337E6 /* Soundcards+CoreDataProperties.swift in Sources */,
 			);
@@ -525,7 +521,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73D6FXNB5K;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = T896KBRFKX;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -545,7 +542,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73D6FXNB5K;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = T896KBRFKX;
 				INFOPLIST_FILE = Oalaa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
