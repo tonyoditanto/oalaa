@@ -71,7 +71,6 @@ class TrainingVC: UIViewController {
             synthesizer.speak(utterance)
             answerText = "Please say ," + nameOfTrainingImage.text! + ", I'm Listening"
             
-            TaskManager.addAction(action: .speak)
             //playbuttonText.setTitle("Next Card", for: .normal)
             countDownLabel.isHidden = false
             playbuttonText.isHidden = true
@@ -127,7 +126,6 @@ class TrainingVC: UIViewController {
             synthesizer.speak(utterance)
             answerText = "Please say ," + nameOfTrainingImage.text! + ", I'm Listening"
             
-            TaskManager.addAction(action: .speak)
             playbuttonText.setTitle("Next Card", for: .normal)
             playbuttonText.isHidden = true
         
@@ -214,6 +212,7 @@ class TrainingVC: UIViewController {
             if result != nil {
 
                 self.lblText.text = result?.bestTranscription.formattedString
+             
                 isFinal = (result?.isFinal)!
             }
 
@@ -224,7 +223,7 @@ class TrainingVC: UIViewController {
 
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
-
+                TaskManager.addAction(action: .speak)
                 self.btnStart.isEnabled = true
             }
         })

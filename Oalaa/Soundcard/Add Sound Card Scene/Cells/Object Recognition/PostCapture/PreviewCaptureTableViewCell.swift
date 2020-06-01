@@ -79,7 +79,7 @@ class PreviewCaptureTableViewCell: UITableViewCell {
     func updateClassifications(for image: UIImage!) {
         
         let orientation = CGImagePropertyOrientation(image.imageOrientation)
-        guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
+        guard let ciImage = CIImage(image: image) else { fatalError("Unable to create image.") }
 
         DispatchQueue.global(qos: .userInitiated).async {
             let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
@@ -101,7 +101,7 @@ class PreviewCaptureTableViewCell: UITableViewCell {
     func processClassifications(for request: VNRequest, error: Error?) {
         DispatchQueue.main.async {
             guard let results = request.results else {
-                self.objectNameLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
+                self.objectNameLabel.text = "Unable to classify image."
                 return
             }
             // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
