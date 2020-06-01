@@ -57,7 +57,7 @@ class DataManager{
 		let soundcardPreset =
 			[
 				//["SoundcardName","AssetName","BelongToCategory"]
-				["hel[","help","General"],
+				["help","help","General"],
 				["i","i","General"],
 				["like","like","General"],
 				["look","look","General"],
