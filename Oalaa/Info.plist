@@ -22,8 +22,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Need Camera Access</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microphone will use for talking</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Need photo gallery access</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Please allow to use your mic</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
