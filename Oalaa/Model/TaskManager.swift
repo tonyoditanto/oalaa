@@ -12,9 +12,10 @@ import CoreData
 class TaskManager{
     private static let defaults = UserDefaults.standard
     private static let dailyMaxValue = 5
-    static let daily_listen_key = "listen"
-    static let daily_speak_key = "speak"
-    static let daily_capture_key = "capture"
+    static let dailyListenKey = "listen"
+    static let dailySpeakKey = "speak"
+    static let dailyCaptureKey = "capture"
+    static let dateResetKey = "date_reset"
     
     enum Action{
         case listen, speak, capture
@@ -23,11 +24,11 @@ class TaskManager{
     static func addAction(action: Action){
         switch action {
         case .listen:
-            addDailyValue(key: daily_listen_key)
+            addDailyValue(key: dailyListenKey)
         case .speak:
-            addDailyValue(key: daily_speak_key)
+            addDailyValue(key: dailySpeakKey)
         case .capture:
-            addDailyValue(key: daily_capture_key)
+            addDailyValue(key: dailyCaptureKey)
         }
         addAchievementValue(action: action)
     }
@@ -43,7 +44,6 @@ class TaskManager{
         for achievement in filteredAchievement{
             achievementKey.append(achievement.userDefaultKey)
         }
-        
         for key in achievementKey{
             let v = defaults.integer(forKey: key) + 1
             defaults.set(v, forKey: key)
@@ -51,21 +51,39 @@ class TaskManager{
         achievementKey.removeAll()
     }
     
+    static func checkResetDaily(){
+        var calender = Calendar.current
+        calender.timeZone = TimeZone.current
+        let today = Date()
+        let savedDate = defaults.object(forKey: dateResetKey) as! Date
+        let result = calender.isDate(today, inSameDayAs: savedDate)
+        if !result {
+            resetDaily()
+            defaults.set(today, forKey: dateResetKey)
+        }
+    }
+    
+    private static func resetDaily(){
+        defaults.set(0, forKey: dailySpeakKey)
+        defaults.set(0, forKey: dailyListenKey)
+        defaults.set(0, forKey: dailyCaptureKey)
+    }
+    
     static func getAllDailyMissions() -> [DailyMission]{
         return [DailyMission(name: "Listen an soundcard",
-                             value: defaults.integer(forKey: daily_listen_key),
+                             value: defaults.integer(forKey: dailyListenKey),
                              maxValue: dailyMaxValue, image: "music.note",
-                             userDefaultKey: daily_listen_key),
+                             userDefaultKey: dailyListenKey),
                 DailyMission(name: "Speak something",
-                             value: defaults.integer(forKey: daily_speak_key),
+                             value: defaults.integer(forKey: dailySpeakKey),
                              maxValue: dailyMaxValue,
                              image: "bubble.left.and.bubble.right.fill",
-                             userDefaultKey: daily_speak_key),
+                             userDefaultKey: dailySpeakKey),
                 DailyMission(name: "Capture an object",
-                             value: defaults.integer(forKey: daily_capture_key),
+                             value: defaults.integer(forKey: dailyCaptureKey),
                              maxValue: dailyMaxValue,
                              image: "camera.fill",
-                             userDefaultKey: daily_capture_key)]
+                             userDefaultKey: dailyCaptureKey)]
     }
     
     static func getAllAchievement() -> [Achievement]{

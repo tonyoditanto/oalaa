@@ -18,7 +18,6 @@ class TaskVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initDelegate()
-        TaskManager.addAction(action: .speak)
         dailies = TaskManager.getAllDailyMissions()
         achievements = TaskManager.getAllAchievement()
     }
