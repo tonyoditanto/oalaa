@@ -23,6 +23,7 @@
 		5AB3E8282477610500BC791B /* AddSoundCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB3E8272477610500BC791B /* AddSoundCard.storyboard */; };
 		5ABC4D6224858974005E466F /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC4D6024858974005E466F /* TrainingVC.swift */; };
 		5ABC4D6324858974005E466F /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ABC4D6124858974005E466F /* Training.storyboard */; };
+		5AE72C522486120700BF928B /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE72C512486120700BF928B /* CustomProgressView.swift */; };
 		8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */; };
 		8508A6462478100A00A340A9 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */; };
 		8508A64D247810F400A340A9 /* PostCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */; };
@@ -69,6 +70,7 @@
 		5AB3E8272477610500BC791B /* AddSoundCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSoundCard.storyboard; sourceTree = "<group>"; };
 		5ABC4D6024858974005E466F /* TrainingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		5ABC4D6124858974005E466F /* Training.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
+		5AE72C512486120700BF928B /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		8508A6432478100A00A340A9 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8508A6442478100A00A340A9 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		8508A64B247810F400A340A9 /* PostCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptureTableViewCell.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7D1B9A2480A3AD0077CE1A /* UserDefaults.swift */,
+				5AE72C512486120700BF928B /* CustomProgressView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				8508A6452478100A00A340A9 /* HeaderTableViewCell.swift in Sources */,
 				5A7D1B96247F54800077CE1A /* AchievementCell.swift in Sources */,
 				5A15FC382474DA4E0029E2F0 /* SoundCardVC.swift in Sources */,
+				5AE72C522486120700BF928B /* CustomProgressView.swift in Sources */,
 				D06A700C247CCE6D006337E6 /* CategoryCollectionViewCell.swift in Sources */,
 				8508A664247D2E9900A340A9 /* CGImagePropertyOrientation.swift in Sources */,
 				5A15FC342474DA4E0029E2F0 /* AppDelegate.swift in Sources */,

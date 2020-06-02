@@ -37,6 +37,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="270" id="Lk8-ZY-ckB"/>
                                                 </constraints>
+                                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DailyCell" id="2xw-Se-XCD" customClass="DailyCell" customModule="Oalaa" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="374" height="70.5"/>
@@ -129,16 +130,16 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AchievementCell" id="B7Z-qX-byc" customClass="AchievementCell" customModule="Oalaa" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="0.0" width="150" height="249.5"/>
+                                                        <rect key="frame" x="30" y="0.0" width="150" height="270"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x3x-l7-S1m">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="249.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="270"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SeQ-h6-apK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="249.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="270"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[AchievmentName]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXl-a5-TjO">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[AchievmentName]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXl-a5-TjO">
                                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
@@ -152,21 +153,21 @@
                                                                                 <constraint firstAttribute="width" constant="150" id="rd4-A9-f1l"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[AchievmentAction]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPn-lR-XuD">
-                                                                            <rect key="frame" x="0.0" y="180.5" width="150" height="20.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[AchievmentAction]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPn-lR-XuD">
+                                                                            <rect key="frame" x="0.0" y="180.5" width="150" height="41"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-5D-B3p">
-                                                                            <rect key="frame" x="0.0" y="206" width="150" height="18"/>
+                                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-5D-B3p" customClass="CustomProgressView" customModule="Oalaa" customModuleProvider="target">
+                                                                            <rect key="frame" x="5" y="226.5" width="140" height="18"/>
                                                                             <color key="tintColor" red="0.92240256070000004" green="0.80269360540000001" blue="0.55672824379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="18" id="2q7-Lg-RoO"/>
                                                                             </constraints>
                                                                         </progressView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Value/Max]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qce-yf-YAZ">
-                                                                            <rect key="frame" x="0.0" y="229" width="150" height="20.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Value/Max]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qce-yf-YAZ">
+                                                                            <rect key="frame" x="0.0" y="249.5" width="150" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -176,14 +177,14 @@
                                                                         <constraint firstItem="qPn-lR-XuD" firstAttribute="leading" secondItem="SeQ-h6-apK" secondAttribute="leading" id="36K-qT-4b9"/>
                                                                         <constraint firstAttribute="trailing" secondItem="qce-yf-YAZ" secondAttribute="trailing" id="3c8-2w-VcF"/>
                                                                         <constraint firstItem="qce-yf-YAZ" firstAttribute="leading" secondItem="SeQ-h6-apK" secondAttribute="leading" id="COE-mm-3LO"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="BUM-5D-B3p" secondAttribute="trailing" id="DEq-fM-cht"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="BUM-5D-B3p" secondAttribute="trailing" constant="5" id="DEq-fM-cht"/>
                                                                         <constraint firstAttribute="trailing" secondItem="rgb-XO-gVx" secondAttribute="trailing" id="DRa-tC-G92"/>
                                                                         <constraint firstAttribute="trailing" secondItem="MXl-a5-TjO" secondAttribute="trailing" id="FFZ-jB-mLm"/>
                                                                         <constraint firstItem="rgb-XO-gVx" firstAttribute="leading" secondItem="SeQ-h6-apK" secondAttribute="leading" id="RgY-dC-fPF"/>
                                                                         <constraint firstItem="MXl-a5-TjO" firstAttribute="leading" secondItem="SeQ-h6-apK" secondAttribute="leading" id="bcV-ZC-m1I"/>
                                                                         <constraint firstItem="MXl-a5-TjO" firstAttribute="top" secondItem="SeQ-h6-apK" secondAttribute="top" id="bzy-Lk-wFb"/>
                                                                         <constraint firstAttribute="trailing" secondItem="qPn-lR-XuD" secondAttribute="trailing" id="swr-tS-bq1"/>
-                                                                        <constraint firstItem="BUM-5D-B3p" firstAttribute="leading" secondItem="SeQ-h6-apK" secondAttribute="leading" id="tN0-G1-Tgc"/>
+                                                                        <constraint firstItem="BUM-5D-B3p" firstAttribute="leading" secondItem="SeQ-h6-apK" secondAttribute="leading" constant="5" id="tN0-G1-Tgc"/>
                                                                     </constraints>
                                                                 </stackView>
                                                             </subviews>

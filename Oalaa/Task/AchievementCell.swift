@@ -15,4 +15,14 @@ class AchievementCell: UICollectionViewCell {
     @IBOutlet weak var valuePV: UIProgressView!
     @IBOutlet weak var valueLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.cornerRadius = 10
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowRadius = 1
+        layer.masksToBounds = false
+    }
 }
