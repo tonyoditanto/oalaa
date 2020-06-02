@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DailyCell: UITableViewCell {
+class DailyCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var valuePV: UIProgressView!
@@ -18,12 +18,12 @@ class DailyCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        self.layer.cornerRadius = 10
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowRadius = 1
+        self.layer.masksToBounds = false
     }
 
 }

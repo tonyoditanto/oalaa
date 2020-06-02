@@ -98,7 +98,25 @@ class TaskManager{
                            actionName: "Capture an object",
                            maxValue: 500,
                            actionIdentifier: .capture,
-                           userDefaultKey: "achv_capture_0")
+                           userDefaultKey: "achv_capture_0"),
+               Achievement(name: "Great Listener",
+                           image: "music.note",
+                           actionName: "Listen an soundcard",
+                           maxValue: 500,
+                           actionIdentifier: .listen,
+                           userDefaultKey: "achv_listen_0"),
+               Achievement(name: "Chit-chatter",
+                           image: "bubble.left.and.bubble.right.fill",
+                           actionName: "Speak something",
+                           maxValue: 5000,
+                           actionIdentifier: .speak,
+                           userDefaultKey: "achv_speak_1"),
+               Achievement(name: "Object Hunter",
+                           image: "camera.fill",
+                           actionName: "Capture an object",
+                           maxValue: 5000,
+                           actionIdentifier: .capture,
+                           userDefaultKey: "achv_capture_1"),
         ]
     }
     
