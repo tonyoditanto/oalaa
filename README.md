@@ -2,9 +2,9 @@
 A native iOS App that enhance user’s communication skill for ASD patients in their early ages by take input from the camera and can recognise the object and output the object name as text and voice which can also be saved as a personal dictionary of common used things. This is a solution to the challenge because ASD patient put more attention to visual than literal so AAC(Augmentative and Alternative Communication) method is more efficient  to implemented because it use symbols, selection techniques, and strategies to enhance communication.
 
 ## Get this app
-![Download on testflight](testflightQR.png "Download on testflight")
+<img src="testflightQR.png" width="225" height="225">
 
-[TestFlight](google.com)
+[TestFlight](https://testflight.apple.com/join/t6AUzV16)
 
 ## Feature
 ### Soundcard
