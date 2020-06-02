@@ -42,7 +42,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QEk-So-KvW">
                                                     <size key="itemSize" width="155" height="270"/>
-                                                    <size key="estimatedItemSize" width="155" height="270"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -51,7 +50,7 @@
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AchievementCell" id="B7Z-qX-byc" customClass="AchievementCell" customModule="Oalaa" customModuleProvider="target">
                                                         <rect key="frame" x="15" y="0.0" width="155" height="270"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x3x-l7-S1m">
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ss2-HJ-c5w">
                                                             <rect key="frame" x="0.0" y="0.0" width="155" height="270"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
@@ -89,25 +88,22 @@
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="qPn-lR-XuD" firstAttribute="leading" secondItem="x3x-l7-S1m" secondAttribute="leading" constant="5" id="EzA-te-R50"/>
+                                                                <constraint firstItem="qPn-lR-XuD" firstAttribute="leading" secondItem="Ss2-HJ-c5w" secondAttribute="leading" constant="5" id="EzA-te-R50"/>
                                                                 <constraint firstAttribute="trailing" secondItem="qce-yf-YAZ" secondAttribute="trailing" constant="5" id="Pcq-vW-dRh"/>
                                                                 <constraint firstAttribute="bottom" secondItem="qce-yf-YAZ" secondAttribute="bottom" constant="10" id="PgG-eF-cpA"/>
-                                                                <constraint firstItem="qPn-lR-XuD" firstAttribute="width" secondItem="rgb-XO-gVx" secondAttribute="width" id="SeZ-Fs-2UQ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="BUM-5D-B3p" secondAttribute="trailing" constant="5" id="XoH-Hc-dzA"/>
                                                                 <constraint firstItem="qce-yf-YAZ" firstAttribute="top" secondItem="BUM-5D-B3p" secondAttribute="bottom" constant="5" id="ZwL-s6-cbw"/>
                                                                 <constraint firstAttribute="trailing" secondItem="rgb-XO-gVx" secondAttribute="trailing" constant="5" id="aF4-cz-OA6"/>
                                                                 <constraint firstAttribute="trailing" secondItem="qPn-lR-XuD" secondAttribute="trailing" constant="5" id="bvc-Rq-xc2"/>
-                                                                <constraint firstItem="rgb-XO-gVx" firstAttribute="height" secondItem="x3x-l7-S1m" secondAttribute="height" multiplier="0.405556" id="cDd-nd-XDS"/>
-                                                                <constraint firstItem="MXl-a5-TjO" firstAttribute="leading" secondItem="x3x-l7-S1m" secondAttribute="leading" constant="5" id="ctl-ON-0lX"/>
+                                                                <constraint firstItem="MXl-a5-TjO" firstAttribute="leading" secondItem="Ss2-HJ-c5w" secondAttribute="leading" constant="5" id="ctl-ON-0lX"/>
                                                                 <constraint firstItem="rgb-XO-gVx" firstAttribute="top" secondItem="MXl-a5-TjO" secondAttribute="bottom" constant="5" id="d2F-HC-z2M"/>
                                                                 <constraint firstAttribute="trailing" secondItem="MXl-a5-TjO" secondAttribute="trailing" constant="5" id="dWJ-dc-4by"/>
-                                                                <constraint firstItem="BUM-5D-B3p" firstAttribute="leading" secondItem="x3x-l7-S1m" secondAttribute="leading" constant="5" id="j40-6c-2hZ"/>
-                                                                <constraint firstItem="qce-yf-YAZ" firstAttribute="leading" secondItem="x3x-l7-S1m" secondAttribute="leading" constant="5" id="p43-Wt-aVQ"/>
-                                                                <constraint firstItem="rgb-XO-gVx" firstAttribute="leading" secondItem="x3x-l7-S1m" secondAttribute="leading" constant="5" id="p8L-zx-Qqz"/>
+                                                                <constraint firstItem="BUM-5D-B3p" firstAttribute="leading" secondItem="Ss2-HJ-c5w" secondAttribute="leading" constant="5" id="j40-6c-2hZ"/>
+                                                                <constraint firstItem="qce-yf-YAZ" firstAttribute="leading" secondItem="Ss2-HJ-c5w" secondAttribute="leading" constant="5" id="p43-Wt-aVQ"/>
+                                                                <constraint firstItem="rgb-XO-gVx" firstAttribute="leading" secondItem="Ss2-HJ-c5w" secondAttribute="leading" constant="5" id="p8L-zx-Qqz"/>
                                                                 <constraint firstItem="qPn-lR-XuD" firstAttribute="top" secondItem="rgb-XO-gVx" secondAttribute="bottom" constant="5" id="t97-qL-FHc"/>
                                                                 <constraint firstItem="BUM-5D-B3p" firstAttribute="top" secondItem="qPn-lR-XuD" secondAttribute="bottom" constant="5" id="v9K-Ao-eG2"/>
-                                                                <constraint firstItem="rgb-XO-gVx" firstAttribute="width" secondItem="x3x-l7-S1m" secondAttribute="width" multiplier="0.935484" id="vrK-4R-bTP"/>
-                                                                <constraint firstItem="MXl-a5-TjO" firstAttribute="top" secondItem="x3x-l7-S1m" secondAttribute="top" constant="10" id="zBz-ri-qCv"/>
+                                                                <constraint firstItem="MXl-a5-TjO" firstAttribute="top" secondItem="Ss2-HJ-c5w" secondAttribute="top" constant="10" id="zBz-ri-qCv"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
