@@ -55,7 +55,7 @@ class TaskManager{
         var calender = Calendar.current
         calender.timeZone = TimeZone.current
         let today = Date()
-        let savedDate = defaults.object(forKey: dateResetKey) as! Date
+        let savedDate = (defaults.object(forKey: dateResetKey) ?? Date()) as! Date
         let result = calender.isDate(today, inSameDayAs: savedDate)
         if !result {
             resetDaily()

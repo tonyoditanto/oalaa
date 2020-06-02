@@ -20,6 +20,7 @@ class TaskVC: UIViewController {
         initDelegate()
         dailies = TaskManager.getAllDailyMissions()
         achievements = TaskManager.getAllAchievement()
+		navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func initDelegate() {

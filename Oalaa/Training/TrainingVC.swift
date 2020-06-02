@@ -39,7 +39,7 @@ class TrainingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSpeech()
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         btnStart.isHidden = true
     }
     
