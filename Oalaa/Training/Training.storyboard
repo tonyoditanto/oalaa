@@ -82,7 +82,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-mV-sY5">
-                                <rect key="frame" x="184" y="734.5" width="46" height="30"/>
+                                <rect key="frame" x="184" y="809.5" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="btnStartSpeechToText:" destination="xqP-uX-yK9" eventType="touchUpInside" id="ZgH-gk-HTs"/>
@@ -108,7 +108,7 @@
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="top" secondItem="DMi-MQ-MJC" secondAttribute="top" constant="65" id="cYU-pF-nnw"/>
                             <constraint firstItem="02U-N8-wyD" firstAttribute="top" secondItem="439-1A-feD" secondAttribute="top" id="d4T-6y-JXD"/>
                             <constraint firstItem="pPo-2T-by9" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="gfL-V8-pH9"/>
-                            <constraint firstItem="PNA-mV-sY5" firstAttribute="top" secondItem="KoQ-L9-Mcg" secondAttribute="bottom" constant="25" id="hOE-ng-ZBi"/>
+                            <constraint firstItem="PNA-mV-sY5" firstAttribute="top" secondItem="KoQ-L9-Mcg" secondAttribute="bottom" constant="100" id="hOE-ng-ZBi"/>
                             <constraint firstItem="DMi-MQ-MJC" firstAttribute="trailing" secondItem="bXF-DI-SW8" secondAttribute="trailing" id="i2R-Me-7AV"/>
                             <constraint firstItem="PNA-mV-sY5" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="nlF-Ik-CWM"/>
                             <constraint firstItem="pPo-2T-by9" firstAttribute="top" secondItem="bXF-DI-SW8" secondAttribute="bottom" constant="20" id="oN6-zt-ZNR"/>
