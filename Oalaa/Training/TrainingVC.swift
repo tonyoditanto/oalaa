@@ -64,7 +64,7 @@ class TrainingVC: UIViewController {
             
             nameOfTrainingImage.text = fetchRandomSoundcard.value(forKey: "soundcardName") as? String
             
-            let utterance = AVSpeechUtterance(string: fetchRandomSoundcard.value(forKey: "soundcardName") as! String)
+            let utterance = AVSpeechUtterance(string: "")
             utterance.voice = AVSpeechSynthesisVoice(language: "en")
             utterance.rate = 0.5
             let synthesizer = AVSpeechSynthesizer()
@@ -90,7 +90,16 @@ class TrainingVC: UIViewController {
             
                 self.countDownLabel.text = String(timeLeft)
                 print(timeLeft)
-            
+                
+
+                let phrase:String = self.lblText.text ?? ""
+                let textToCompare:String = self.nameOfTrainingImage.text?.uppercased() ?? ""
+                if phrase.contains(textToCompare)   {
+                    timer.invalidate()
+                    self.autoCardReload()
+                    
+                }
+                    
             if(timeLeft==0){
                         timer.invalidate()
                 //self.autoCardReload()
@@ -106,28 +115,18 @@ class TrainingVC: UIViewController {
     }
     
    
-    
-    
     // auto reload function will be called from speech recognition
     
     func autoCardReload () {
         let fetchRandomSoundcard: NSManagedObject = dataManager.getRandomInstalledSoundcard()
-        
             UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
-            
+            TaskManager.addAction(action: .speak)
             trainingDefaultImage.image = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
-            
             nameOfTrainingImage.text = fetchRandomSoundcard.value(forKey: "soundcardName") as? String
-            
-            let utterance = AVSpeechUtterance(string: fetchRandomSoundcard.value(forKey: "soundcardName") as! String)
-            utterance.voice = AVSpeechSynthesisVoice(language: "en")
-            utterance.rate = 0.5
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speak(utterance)
             answerText = "Please say ," + nameOfTrainingImage.text! + ", I'm Listening"
-            
             playbuttonText.setTitle("Next Card", for: .normal)
             playbuttonText.isHidden = true
+            timer()
         
     }
     
@@ -136,6 +135,15 @@ class TrainingVC: UIViewController {
         if audioEngine.isRunning {
             self.audioEngine.stop()
             self.recognitionRequest?.endAudio()
+            let audioSession = AVAudioSession.sharedInstance()
+            do {
+
+                try audioSession.setCategory(AVAudioSession.Category.playback)
+                try audioSession.setMode(AVAudioSession.Mode.default)
+
+            } catch {
+                print("audioSession properties weren't set because of an error.")
+            }
             self.btnStart.isEnabled = false
             self.btnStart.setTitle("Start Recording", for: .normal)
         } else {
@@ -208,10 +216,10 @@ class TrainingVC: UIViewController {
         self.recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
 
             var isFinal = false
-
+            
             if result != nil {
 
-                self.lblText.text = result?.bestTranscription.formattedString
+                self.lblText.text = result?.bestTranscription.formattedString.uppercased()
              
                 isFinal = (result?.isFinal)!
             }
@@ -223,7 +231,7 @@ class TrainingVC: UIViewController {
 
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
-                TaskManager.addAction(action: .speak)
+                //TaskManager.addAction(action: .speak)
                 self.btnStart.isEnabled = true
             }
         })
