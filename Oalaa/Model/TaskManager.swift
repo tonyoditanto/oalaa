@@ -52,21 +52,31 @@ class TaskManager{
     }
     
     static func checkResetDaily(){
+		print("1")
         var calender = Calendar.current
         calender.timeZone = TimeZone.current
         let today = Date()
         let savedDate = (defaults.object(forKey: dateResetKey) ?? Date()) as! Date
         let result = calender.isDate(today, inSameDayAs: savedDate)
+		print("2")
         if !result {
+			print("3")
             resetDaily()
+			print("4")
             defaults.set(today, forKey: dateResetKey)
+			print("5")
         }
+		print("6")
     }
     
     private static func resetDaily(){
+		print("-1")
         defaults.set(0, forKey: dailySpeakKey)
+		print("-2")
         defaults.set(0, forKey: dailyListenKey)
+		print("-3")
         defaults.set(0, forKey: dailyCaptureKey)
+		print("-4")
     }
     
     static func getAllDailyMissions() -> [DailyMission]{
