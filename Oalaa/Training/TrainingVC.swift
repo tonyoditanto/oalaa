@@ -101,13 +101,13 @@ class TrainingVC: UIViewController {
                 }
                     
             if(timeLeft==0){
-                        timer.invalidate()
-                //self.autoCardReload()
+                timer.invalidate()
                 self.playbuttonText.isHidden = false
                 self.countDownLabel.isHidden = true
                 self.countDownLabel.text = String("10")
                 self.audioEngine.stop()
                 self.recognitionRequest?.endAudio()
+                self.audioEngine.inputNode.removeTap(onBus: 0)
                 self.btnStart.isEnabled = false
                 self.btnStart.setTitle("Start Recording", for: .normal)
                     }
