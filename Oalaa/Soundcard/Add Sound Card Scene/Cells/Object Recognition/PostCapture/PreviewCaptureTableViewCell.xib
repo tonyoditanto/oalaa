@@ -22,8 +22,8 @@
                             <constraint firstAttribute="width" secondItem="HOT-tL-F98" secondAttribute="height" multiplier="1:1" id="W9c-fg-LmM"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="objectNameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlD-Yf-pkw">
-                        <rect key="frame" x="36" y="415" width="342" height="34"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlD-Yf-pkw">
+                        <rect key="frame" x="169.5" y="415" width="75.5" height="34"/>
                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                         <color key="textColor" red="0.58431372550000005" green="0.17254901959999999" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -45,18 +45,30 @@
                             <action selector="didTapRetryButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e8i-Sh-ygG"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFZ-oN-jQJ">
+                        <rect key="frame" x="373" y="415" width="21" height="34"/>
+                        <state key="normal" image="square.and.pencil" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            </preferredSymbolConfiguration>
+                        </state>
+                        <connections>
+                            <action selector="didTapEditObjectName:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hSA-A8-Pmi"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="wlD-Yf-pkw" firstAttribute="top" secondItem="HOT-tL-F98" secondAttribute="bottom" constant="8" id="7xC-1b-UfQ"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="wlD-Yf-pkw" secondAttribute="trailing" constant="16" id="9pi-cw-PMP"/>
-                    <constraint firstItem="wlD-Yf-pkw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="BMY-iL-CBi"/>
                     <constraint firstAttribute="bottom" secondItem="wAD-Kj-GDb" secondAttribute="bottom" constant="8" id="Ipd-dS-wSd"/>
+                    <constraint firstItem="wlD-Yf-pkw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Mnm-0l-Afm"/>
                     <constraint firstAttribute="trailing" secondItem="HOT-tL-F98" secondAttribute="trailing" constant="12" id="OQp-ab-TeE"/>
                     <constraint firstItem="HOT-tL-F98" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="QEr-YN-WWN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HFZ-oN-jQJ" secondAttribute="trailing" id="WHC-5J-lsX"/>
                     <constraint firstAttribute="trailing" secondItem="wAD-Kj-GDb" secondAttribute="trailing" constant="12" id="Wc2-PM-3D8"/>
                     <constraint firstItem="wAD-Kj-GDb" firstAttribute="top" secondItem="wlD-Yf-pkw" secondAttribute="bottom" constant="27" id="bCo-sU-CdD"/>
                     <constraint firstItem="HOT-tL-F98" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="c83-fm-jbY"/>
-                    <constraint firstItem="wAD-Kj-GDb" firstAttribute="top" secondItem="wlD-Yf-pkw" secondAttribute="bottom" constant="27" id="r8v-q0-CUa"/>
+                    <constraint firstItem="HFZ-oN-jQJ" firstAttribute="top" secondItem="HOT-tL-F98" secondAttribute="bottom" constant="8" id="p6Z-Q2-aPX"/>
+                    <constraint firstItem="wAD-Kj-GDb" firstAttribute="top" secondItem="HFZ-oN-jQJ" secondAttribute="bottom" constant="27" id="rTY-Rg-RFV"/>
                     <constraint firstItem="wAD-Kj-GDb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="ygo-t9-V2g"/>
                 </constraints>
             </tableViewCellContentView>
@@ -72,5 +84,6 @@
     </objects>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
     </resources>
 </document>

@@ -24,14 +24,15 @@ class AddSoundCardVC: UITableViewController {
     let sectionTitles = ["header", "object recognition", "post capture"]
     var cameraActive : Bool = true
 	let dataManager = DataManager()
-    
     var captureObject : UIImage!
-    var objectName : String = ""
+    var objectName : String = "Object isn't identified"
 	var currentActiveCategory: String = ""
-    
     var actionButtonIsEnable : Bool = true
-    
     var delegate : AddSoundCardVCDelegate?
+    var objectNameTextField = UITextField()
+    
+    
+    @IBOutlet weak var closeButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,11 @@ class AddSoundCardVC: UITableViewController {
         setBackgroundImage(with: backgroundmageName)
         setupTableView()
     }
+    
+    @IBAction func didTapCloseButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension AddSoundCardVC {
@@ -96,7 +102,7 @@ extension AddSoundCardVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == AddSoundCardSection.SECTION_HEADER {
-            return 120
+            return 0
         }
 
         if indexPath.section == AddSoundCardSection.SECTION_OBJECT_RECOGNITION || indexPath.section == AddSoundCardSection.SECTION_OBJECT_CAPTURED{
@@ -199,7 +205,6 @@ extension AddSoundCardVC : PreviewCaptureTableViewCellDelegate{
     }
     
     func storedCaptureObjectName(with objectName: String) {
-        //translateObjectNameToIndonesia(with: objectName)
         self.objectName = objectName
     }
     
@@ -215,35 +220,85 @@ extension AddSoundCardVC : PreviewCaptureTableViewCellDelegate{
 
 extension AddSoundCardVC : PostCaptureTableViewCellDelegate{
     func saveCard() {
-        var isCardExist : Bool = false
+        if self.objectName == "Object isn't identified" || self.objectName == ""{
+            showAlert()
+        } else{
+            storedToDataManager()
+        }
+    }
+    
+    func storedToDataManager(){
+        switch didCardExist() {
+        case true: replaceSoundCard()
+        default: saveSoundCard()
+        }
+    }
+    
+    func didCardExist()->Bool{
         let activeCategory = dataManager.getCategory(CategoryName: currentActiveCategory)
         let soundcardNames = dataManager.getAllSoundcardsNames(category: activeCategory)
-        
-        //
-        if soundcardNames.count == 0 {
-                saveSoundCard()
-        }
         
         if soundcardNames.count != 0 {
             for index in 1...soundcardNames.count {
                 if soundcardNames[index-1] == self.objectName {
-                    isCardExist = true
+                    return true
                 }
             }
-            
-            if isCardExist == false {
-                saveSoundCard()
-            }
-            
-            if isCardExist == true {
-                replaceSoundCard()
-            }
         }
+        return false
     }
     
+func showAlert(){
+    present(makeAlertController(), animated: true, completion: nil)
+    //self.tableView.reloadData()
+}
+
+func makeAlertController() -> UIAlertController {
+    
+    let alertController = UIAlertController(title: "Soundcard Name", message: "Input the object name here", preferredStyle: .alert)
+    
+    let saveAction = UIAlertAction(title: "Save", style: .default, handler: {(action) in
+        var didCardExist = false
+        let activeCategory = self.dataManager.getCategory(CategoryName: self.currentActiveCategory)
+        let soundcardNames = self.dataManager.getAllSoundcardsNames(category: activeCategory)
+
+        if soundcardNames.count != 0 {
+            for index in 1...soundcardNames.count {
+                if soundcardNames[index-1] == self.objectName {
+                    didCardExist = true
+                }
+            }
+        }
+
+        switch didCardExist{
+        case true:
+            self.dataManager.replaceSoundcardImage(soundcardName: self.objectNameTextField.text!, newImage: self.captureObject)
+            self.delegate?.refreshSoundCard()
+            self.dismiss(animated: true, completion: nil)
+        default:
+            self.dataManager.addNewSoundcard(name: self.objectNameTextField.text!, image: self.captureObject, category: self.currentActiveCategory)
+            self.delegate?.refreshSoundCard()
+            self.dismiss(animated: true, completion: nil)
+        }
+
+    })
+    
+    alertController.addTextField { (textField) in
+        self.objectNameTextField = textField
+        textField.placeholder = "Input here..."
+        //print(self.objectNameTextField?.text)
+    }
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    
+    alertController.addAction(saveAction)
+    alertController.addAction(cancelAction)
+    
+    
+    return alertController
+}
+    
     func saveSoundCard(){
-//        let finalImage = UIImage(cgImage: captureObject.cgImage!, scale: captureObject.scale, orientation: .up)
-//        dataManager.addNewSoundcard(name: objectName, image: finalImage, category: currentActiveCategory)
         dataManager.addNewSoundcard(name: objectName, image: captureObject, category: currentActiveCategory)
         self.delegate?.refreshSoundCard()
         self.dismiss(animated: true, completion: nil)

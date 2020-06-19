@@ -241,7 +241,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xZg-aL-Ltb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Task" largeTitleDisplayMode="never" id="7OC-0h-Vkd"/>
+                    <navigationItem key="navigationItem" title="Task" largeTitleDisplayMode="never" id="7OC-0h-Vkd">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="6F2-Nh-Wcb"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="achievementCV" destination="YGW-IV-8bB" id="9kf-Sh-uov"/>
                         <outlet property="dailyCV" destination="xx1-ZC-ABK" id="NPe-l5-hvM"/>

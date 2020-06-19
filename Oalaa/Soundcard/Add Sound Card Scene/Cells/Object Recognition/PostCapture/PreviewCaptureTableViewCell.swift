@@ -14,6 +14,7 @@ protocol PreviewCaptureTableViewCellDelegate {
     func activateCamera()
     func storedCaptureObjectName(with objectName : String)
     func actionButtonStatus(with status : Bool)
+    func showAlert()
 }
 
 class PreviewCaptureTableViewCell: UITableViewCell {
@@ -125,7 +126,8 @@ class PreviewCaptureTableViewCell: UITableViewCell {
                 
                 if confidenceRate[0] < 0.5 {
                     self.objectNameLabel.text = "Object isn't identified"
-                    self.setActionButtonStatus(with: false)
+                    //self.storedCaptureObjectNameToAddSoundCardVC(with: "Object isn't identified")
+                    self.setActionButtonStatus(with: true)
                 }
                 
                 if confidenceRate[0] >= 0.5 {
@@ -143,5 +145,9 @@ class PreviewCaptureTableViewCell: UITableViewCell {
                 }
             }
         }
+    }
+    
+    @IBAction func didTapEditObjectName(_ sender: Any) {
+        self.delegate?.showAlert()
     }
 }
