@@ -131,7 +131,7 @@ class TrainingVC: UIViewController {
             trainingDefaultImage.image = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
             nameOfTrainingImage.text = fetchRandomSoundcard.value(forKey: "soundcardName") as? String
             answerText = "Please say ," + nameOfTrainingImage.text! + ", I'm Listening"
-            playbuttonText.setTitle("Next Card", for: .normal)
+            playbuttonText.setTitle("Time is up, Next Card", for: .normal)
             playbuttonText.isHidden = true
             //timer()
         
@@ -143,6 +143,7 @@ class TrainingVC: UIViewController {
         UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
         trainingDefaultImage.image = defaultImage
         nameOfTrainingImage.text = "Wow, You Rock"
+        lblText.text = "Next Card, are You Ready?"
         lblText.isHidden = true
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         //self.btnStartSpeechToText(self)
