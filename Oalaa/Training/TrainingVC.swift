@@ -39,7 +39,7 @@ class TrainingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSpeech()
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         btnStart.isHidden = true
     }
     
@@ -81,7 +81,7 @@ class TrainingVC: UIViewController {
     
     // ================= Count Down Timer ================
     func timer() {
-    var timeLeft = 10
+    var timeLeft = 11
           self.playbuttonText.setTitle("Time is up, Next Card", for: .normal)
           Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                  print("timer fired!")
@@ -93,11 +93,18 @@ class TrainingVC: UIViewController {
                 
 
                 let phrase:String = self.lblText.text ?? ""
-                let textToCompare:String = self.nameOfTrainingImage.text?.uppercased() ?? ""
+                let textToCompare:String = self.nameOfTrainingImage.text?.lowercased() ?? ""
                 if phrase.contains(textToCompare)   {
                     timer.invalidate()
-                    self.autoCardReload()
-                    
+                    TaskManager.addAction(action: .speak)
+                    self.audioEngine.stop()
+                    self.recognitionRequest?.endAudio()
+                    self.audioEngine.inputNode.removeTap(onBus: 0)
+                    self.btnStart.isEnabled = false
+                    self.btnStart.setTitle("Start Recording", for: .normal)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.youAreDoingGreat()
+                    }
                 }
                     
             if(timeLeft==0){
@@ -120,18 +127,45 @@ class TrainingVC: UIViewController {
     func autoCardReload () {
         let fetchRandomSoundcard: NSManagedObject = dataManager.getRandomInstalledSoundcard()
             UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
-            TaskManager.addAction(action: .speak)
+            //TaskManager.addAction(action: .speak)
             trainingDefaultImage.image = dataManager.getSoundcardImageFor(soundcard: fetchRandomSoundcard)
             nameOfTrainingImage.text = fetchRandomSoundcard.value(forKey: "soundcardName") as? String
             answerText = "Please say ," + nameOfTrainingImage.text! + ", I'm Listening"
             playbuttonText.setTitle("Next Card", for: .normal)
             playbuttonText.isHidden = true
-            timer()
+            //timer()
         
     }
     
+    func youAreDoingGreat() {
+        var timeLeft = 4
+        countDownLabel.isHidden = true
+        UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+        trainingDefaultImage.image = defaultImage
+        nameOfTrainingImage.text = "Wow, You Rock"
+        lblText.isHidden = true
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        //self.btnStartSpeechToText(self)
+            
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            print("timer fired!")
+            self.countDownLabel.isHidden = false
+            timeLeft -= 1
+        
+            self.countDownLabel.text = String(timeLeft)
+            print(timeLeft)
+            
+            if(timeLeft==0){
+                timer.invalidate()
+                self.btnStartSpeechToText(self)
+                self.countDownLabel.isHidden = false
+           }
+        }
+        
+    }
     
     @IBAction func btnStartSpeechToText(_ sender: Any) {
+        self.countDownLabel.text = "GO"
         if audioEngine.isRunning {
             self.audioEngine.stop()
             self.recognitionRequest?.endAudio()
@@ -149,6 +183,11 @@ class TrainingVC: UIViewController {
         } else {
             self.startRecording()
             self.btnStart.setTitle("Stop Recording", for: .normal)
+            timer()
+            autoCardReload()
+            countDownLabel.isHidden = false
+            nameOfTrainingImage.isHidden = false
+            lblText.isHidden = false
         }
     }
     
@@ -219,7 +258,7 @@ class TrainingVC: UIViewController {
             
             if result != nil {
 
-                self.lblText.text = result?.bestTranscription.formattedString.uppercased()
+                self.lblText.text = result?.bestTranscription.formattedString.lowercased()
              
                 isFinal = (result?.isFinal)!
             }
