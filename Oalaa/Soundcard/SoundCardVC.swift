@@ -81,15 +81,21 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 		}else{
 			if indexPath.item <= dataManager.getSoundcardTotalForThisCategory(category: activeCategory)-1 {
 				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "soundcardReuseCell", for: indexPath) as! SoundcardCollectionViewCell
+				let fetchedData: NSManagedObject = dataManager.getSoundcard(category: activeCategory, index: indexPath.item)
 				
 				cell.soundcardImageView.image = dataManager.getSoundcardImageFor(category: activeCategory, index: indexPath.item)
-				
+				cell.soundcardNameLabel.text = fetchedData.value(forKey: "soundcardName") as? String
+				cell.soundcardNameBackground.layer.cornerRadius = 8
+				cell.soundcardNameBackground.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+				cell.soundcardNameLabel.isHidden = false
+				cell.soundcardNameBackground.isHidden = false
 				return cell
 			}else{
 				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "soundcardReuseCell", for: indexPath) as! SoundcardCollectionViewCell
 				
 				cell.soundcardImageView.image = UIImage(named: "plus button")
-				
+				cell.soundcardNameLabel.isHidden = true
+				cell.soundcardNameBackground.isHidden = true
 				return cell
 			}
 		}

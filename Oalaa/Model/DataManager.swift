@@ -479,6 +479,7 @@ class DataManager{
 			TaskManager.addAction(action: .listen)
 			let speechSynthesizer = AVSpeechSynthesizer()
 			speechSynthesizer.speak(speechUtterance)
+			
 		} catch {
 			print("Failed")
 		}
@@ -490,13 +491,11 @@ class DataManager{
 	*/
 	func playSoundcard(soundcard: NSManagedObject) -> Void {
 		let speakThis:String = (soundcard.value(forKey: "soundcardName") as! String)
-		
 		let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
 		speechUtterance.voice = AVSpeechSynthesisVoice(language: "en")
 		TaskManager.addAction(action: .listen)
 		let speechSynthesizer = AVSpeechSynthesizer()
 		speechSynthesizer.speak(speechUtterance)
-		
 		return
 	}
 	
