@@ -256,12 +256,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-a1-yt6">
-                                <rect key="frame" x="20" y="20" width="124" height="41"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ryj-28-5Jg">
                                 <rect key="frame" x="20" y="69" width="374" height="739"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -303,20 +297,33 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmb-Jc-GWw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+                                <items>
+                                    <navigationItem title="My Cards" id="n7l-Ns-n1m">
+                                        <barButtonItem key="rightBarButtonItem" title="Close" id="J4C-tQ-ERO">
+                                            <connections>
+                                                <action selector="didTapCloseButton:" destination="eyI-CA-LL2" id="1fe-pv-6a2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="1Lr-a1-yt6" firstAttribute="top" secondItem="EwY-hA-DIB" secondAttribute="top" constant="20" id="211-Jt-sDE"/>
                             <constraint firstItem="Ryj-28-5Jg" firstAttribute="trailing" secondItem="Bou-0s-ztc" secondAttribute="trailingMargin" id="2VV-eD-bU2"/>
+                            <constraint firstItem="xmb-Jc-GWw" firstAttribute="leading" secondItem="wIi-ck-21b" secondAttribute="leading" id="BPL-Wp-Dqf"/>
+                            <constraint firstItem="Ryj-28-5Jg" firstAttribute="top" secondItem="EwY-hA-DIB" secondAttribute="top" constant="69" id="Ic5-JN-lop"/>
                             <constraint firstItem="wIi-ck-21b" firstAttribute="trailing" secondItem="EwY-hA-DIB" secondAttribute="trailing" id="M3l-JK-88f"/>
+                            <constraint firstItem="xmb-Jc-GWw" firstAttribute="top" secondItem="EwY-hA-DIB" secondAttribute="top" id="Qah-ZL-Hrb"/>
+                            <constraint firstItem="Ryj-28-5Jg" firstAttribute="centerX" secondItem="wIi-ck-21b" secondAttribute="centerX" id="Uka-Ti-SdJ"/>
                             <constraint firstAttribute="bottom" secondItem="wIi-ck-21b" secondAttribute="bottom" id="XWU-C2-zIp"/>
                             <constraint firstItem="wIi-ck-21b" firstAttribute="leading" secondItem="EwY-hA-DIB" secondAttribute="leading" id="Y77-uE-gW4"/>
-                            <constraint firstItem="Ryj-28-5Jg" firstAttribute="leading" secondItem="1Lr-a1-yt6" secondAttribute="leading" id="cMz-yc-MJV"/>
                             <constraint firstItem="Ryj-28-5Jg" firstAttribute="bottom" secondItem="EwY-hA-DIB" secondAttribute="bottom" id="fI7-G3-2fG"/>
                             <constraint firstItem="wIi-ck-21b" firstAttribute="top" secondItem="EwY-hA-DIB" secondAttribute="top" id="nOh-oH-Ife"/>
-                            <constraint firstItem="Ryj-28-5Jg" firstAttribute="top" secondItem="1Lr-a1-yt6" secondAttribute="bottom" constant="8" id="qPS-6n-ZAf"/>
-                            <constraint firstItem="1Lr-a1-yt6" firstAttribute="leading" secondItem="EwY-hA-DIB" secondAttribute="leading" constant="20" id="vPh-nx-Na0"/>
-                            <constraint firstItem="EwY-hA-DIB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Lr-a1-yt6" secondAttribute="trailing" symbolic="YES" id="zyQ-Qs-iYf"/>
+                            <constraint firstItem="xmb-Jc-GWw" firstAttribute="trailing" secondItem="wIi-ck-21b" secondAttribute="trailing" id="rK1-Qg-26Q"/>
+                            <constraint firstItem="Ryj-28-5Jg" firstAttribute="top" secondItem="xmb-Jc-GWw" secondAttribute="bottom" constant="8" id="xBD-n8-YwP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EwY-hA-DIB"/>
                     </view>

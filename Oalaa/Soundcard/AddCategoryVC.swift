@@ -19,7 +19,11 @@ class AddCategoryVC: UIViewController,UICollectionViewDataSource, UICollectionVi
 		categoryCollection.delegate = self
 	}
 	
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    @IBAction func didTapCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return dataManager.getCategoryTotal(installed: false)-1
 	}
 	

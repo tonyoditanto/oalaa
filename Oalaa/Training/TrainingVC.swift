@@ -43,6 +43,11 @@ class TrainingVC: UIViewController {
         btnStart.isHidden = true
     }
     
+    @IBAction func didTapCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     // text to speech part
     @IBAction func playTrainingButton(_ sender: UIButton) {
         let utterance = AVSpeechUtterance(string: answerText)
