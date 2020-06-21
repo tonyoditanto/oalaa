@@ -158,12 +158,32 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let AddSoundCardVC = segue.destination as? AddSoundCardVC {
-			let passCurrentActiveCategory: String = activeCategory.value(forKey: "categoryName") as! String
-			AddSoundCardVC.currentActiveCategory = passCurrentActiveCategory
-            AddSoundCardVC.delegate = self
-		}
+//		if let AddSoundCardVC = segue.destination as? AddSoundCardVC {
+//			let passCurrentActiveCategory: String = activeCategory.value(forKey: "categoryName") as! String
+//			AddSoundCardVC.currentActiveCategory = passCurrentActiveCategory
+//
+//		}
+        
+        let segueID = segue.identifier ?? ""
+
+        switch segueID
+        {
+            case "getTotalSoundcardForThisCategory":
+                let nc = segue.destination as! AddSoundcardNavigationVC
+                let destinationVC = nc.topViewController as! AddSoundCardVC
+                let passCurrentActiveCategory: String = activeCategory.value(forKey: "categoryName") as! String
+                destinationVC.currentActiveCategory = passCurrentActiveCategory
+                destinationVC.delegate = self
+            default:
+                break
+        }
+        
 	}
+    //addSoundcardSegue
+    
+    
+    
+    
 }
 
 extension SoundCardVC : AddSoundCardVCDelegate{
