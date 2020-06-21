@@ -14,7 +14,6 @@ protocol PreviewCaptureTableViewCellDelegate {
     func activateCamera()
     func storedCaptureObjectName(with objectName : String)
     func actionButtonStatus(with status : Bool)
-    func showAlert()
 }
 
 class PreviewCaptureTableViewCell: UITableViewCell {
@@ -145,9 +144,5 @@ class PreviewCaptureTableViewCell: UITableViewCell {
                 }
             }
         }
-    }
-    
-    @IBAction func didTapEditObjectName(_ sender: Any) {
-        self.delegate?.showAlert()
     }
 }

@@ -264,7 +264,7 @@ func makeAlertController() -> UIAlertController {
 
         if soundcardNames.count != 0 {
             for index in 1...soundcardNames.count {
-                if soundcardNames[index-1] == self.objectName {
+                if soundcardNames[index-1] == self.objectNameTextField.text ?? "" {
                     didCardExist = true
                 }
             }
