@@ -14,7 +14,7 @@ import AVFoundation
 This class for managing Category and soundcard
 * category have installed key that tell if that category is installed ir not. installed mean the user will see the category in the main view.
 */
-class DataManager{
+class DataManager {
 	let defaults = UserDefaults.standard
 	
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
@@ -29,126 +29,124 @@ class DataManager{
 			defaults.set(true, forKey: "alreadyInstallCategory")
 		}
 	}
-	
+
 	/**
 	this function where the preset data and will run on app first launch
 	*/
-	func initialInstallation() -> Void {
+	func initialInstallation() {
 		let categoryPreset =
 			[
-				//["CategoryName","AssetName","Installed"]
-				["General","CoreVocab",true],
-				["Animals","Animal",true],
-				["Apparels","Apparel",false],
-				["Bathroom","BathRoom",false],
-				["Bedroom","BedRoom",false],
-				["Colors","Color",false],
-				["Drinks","Drink",false],
-				["Foods","Food",false],
-				["Fruits","Fruit",true],
-				["Kitchen","Kitchen",false],
-				["Schools","School",false],
-				["Sports","Sport",false],
-				["Vehicles","Vehicle",false],
-				
+				//["CategoryName", "AssetName", "Installed"]
+				["General", "CoreVocab", true],
+				["Animals", "Animal", true],
+				["Apparels", "Apparel", false],
+				["Bathroom", "BathRoom", false],
+				["Bedroom", "BedRoom", false],
+				["Colors", "Color", false],
+				["Drinks", "Drink", false],
+				["Foods", "Food", false],
+				["Fruits", "Fruit", true],
+				["Kitchen", "Kitchen", false],
+				["Schools", "School", false],
+				["Sports", "Sport", false],
+				["Vehicles", "Vehicle", false]
 				
 		]
-		
+
 		let soundcardPreset =
 			[
-				//["SoundcardName","AssetName","BelongToCategory"]
-				["help","help","General"],
-				["i","i","General"],
-				["like","like","General"],
-				["look","look","General"],
-				["me","me","General"],
-				["need","need","General"],
-				["not","not","General"],
-				["stop","stop","General"],
-				["this","this","General"],
-				["what","what","General"],
-				["who","who","General"],
-				["bee","bee","Animals"],
-				["bird","bird","Animals"],
-				["cat","cat","Animals"],
-				["dog","dog","Animals"],
-				["fish","fish","Animals"],
-				["horse","horse","Animals"],
-				["lizard","lizard","Animals"],
-				["rabbit","rabbit","Animals"],
-				["rooster","rooster","Animals"],
-				["snake","snake","Animals"],
-				["apple","apple","Fruits"],
-				["banana","banana","Fruits"],
-				["cherry","cherry","Fruits"],
-				["grape","grape","Fruits"],
-				["melon","melon","Fruits"],
-				["orange","orange","Fruits"],
-				["papaya","papaya","Fruits"],
-				["pineapple","pineapple","Fruits"],
-				["strawberry","strawberry","Fruits"],
-				["watermelon","watermelon","Fruits"],
-				["badminton","badminton","Sports"],
-				["barbel","barbel","Sports"],
-				["baseball","baseball","Sports"],
-				["boxing","boxing","Sports"],
-				["football","football","Sports"],
-				["golf","golf","Sports"],
-				["pingpong","pingpong","Sports"],
-				["tennis","tennis","Sports"],
-				["volley","volley","Sports"],
-				["yoga","yoga","Sports"],
-				["Blue","Blue","Colors"],
-				["Green","Green","Colors"],
-				["Orange","Orange","Colors"],
-				["Purple","Purple","Colors"],
-				["Red","Red","Colors"],
-				["Yellow","Yellow","Colors"],
-				["hat","hat","Apparels"],
-				["pants","pants","Apparels"],
-				["shoes","shoes","Apparels"],
-				["socks","socks","Apparels"],
-				["sweater","sweater","Apparels"],
-				["aromatherapy","aromatherapy","Bathroom"],
-				["glass","glass","Bathroom"],
-				["laundry","laundry","Bathroom"],
-				["soap","soap","Bathroom"],
-				["toothbrush","toothbrush","Bathroom"],
-				["towel","towel","Bathroom"],
-				["bed","bed","Bedroom"],
-				["blanket","blanket","Bedroom"],
-				["carpet","carpet","Bedroom"],
-				["lamp","lamp","Bedroom"],
-				["pillow","pillow","Bedroom"],
-				["coffee","coffee","Drinks"],
-				["icecream","icecream","Drinks"],
-				["milk","milk","Drinks"],
-				["tea","tea","Drinks"],
-				["water","water","Drinks"],
-				["burger","burger","Foods"],
-				["fries","fries","Foods"],
-				["popcorn","popcorn","Foods"],
-				["rice","rice","Foods"],
-				["salad","salad","Foods"],
-				["glass","glass","Kitchen"],
-				["ketchup","ketchup","Kitchen"],
-				["knife","knife","Kitchen"],
-				["plate","plate","Kitchen"],
-				["spoon","spoon","Kitchen"],
-				["bag","bag","Schools"],
-				["paper","paper","Schools"],
-				["pencil","pencil","Schools"],
-				["pencilcase","pencilcase","Schools"],
-				["ruler","ruler","Schools"],
-				["bike","bike","Vehicles"],
-				["car","car","Vehicles"],
-				["motorcycle","motorcycle","Vehicles"],
-				["plane","plane","Vehicles"],
-				["truck","truck","Vehicles"],
+				//["SoundcardName", "AssetName", "BelongToCategory"]
+				["help", "help", "General"],
+				["i", "i", "General"],
+				["like", "like", "General"],
+				["look", "look", "General"],
+				["me", "me", "General"],
+				["need", "need", "General"],
+				["not", "not", "General"],
+				["stop", "stop", "General"],
+				["this", "this", "General"],
+				["what", "what", "General"],
+				["who", "who", "General"],
+				["bee", "bee", "Animals"],
+				["bird", "bird", "Animals"],
+				["cat", "cat", "Animals"],
+				["dog", "dog", "Animals"],
+				["fish", "fish", "Animals"],
+				["horse", "horse", "Animals"],
+				["lizard", "lizard", "Animals"],
+				["rabbit", "rabbit", "Animals"],
+				["rooster", "rooster", "Animals"],
+				["snake", "snake", "Animals"],
+				["apple", "apple", "Fruits"],
+				["banana", "banana", "Fruits"],
+				["cherry", "cherry", "Fruits"],
+				["grape", "grape", "Fruits"],
+				["melon", "melon", "Fruits"],
+				["orange", "orange", "Fruits"],
+				["papaya", "papaya", "Fruits"],
+				["pineapple", "pineapple", "Fruits"],
+				["strawberry", "strawberry", "Fruits"],
+				["watermelon", "watermelon", "Fruits"],
+				["badminton", "badminton", "Sports"],
+				["barbel", "barbel", "Sports"],
+				["baseball", "baseball", "Sports"],
+				["boxing", "boxing", "Sports"],
+				["football", "football", "Sports"],
+				["golf", "golf", "Sports"],
+				["pingpong", "pingpong", "Sports"],
+				["tennis", "tennis", "Sports"],
+				["volley", "volley", "Sports"],
+				["yoga", "yoga", "Sports"],
+				["Blue", "Blue", "Colors"],
+				["Green", "Green", "Colors"],
+				["Orange", "Orange", "Colors"],
+				["Purple", "Purple", "Colors"],
+				["Red", "Red", "Colors"],
+				["Yellow", "Yellow", "Colors"],
+				["hat", "hat", "Apparels"],
+				["pants", "pants", "Apparels"],
+				["shoes", "shoes", "Apparels"],
+				["socks", "socks", "Apparels"],
+				["sweater", "sweater", "Apparels"],
+				["aromatherapy", "aromatherapy", "Bathroom"],
+				["glass", "glass", "Bathroom"],
+				["laundry", "laundry", "Bathroom"],
+				["soap", "soap", "Bathroom"],
+				["toothbrush", "toothbrush", "Bathroom"],
+				["towel", "towel", "Bathroom"],
+				["bed", "bed", "Bedroom"],
+				["blanket", "blanket", "Bedroom"],
+				["carpet", "carpet", "Bedroom"],
+				["lamp", "lamp", "Bedroom"],
+				["pillow", "pillow", "Bedroom"],
+				["coffee", "coffee", "Drinks"],
+				["icecream", "icecream", "Drinks"],
+				["milk", "milk", "Drinks"],
+				["tea", "tea", "Drinks"],
+				["water", "water", "Drinks"],
+				["burger", "burger", "Foods"],
+				["fries", "fries", "Foods"],
+				["popcorn", "popcorn", "Foods"],
+				["rice", "rice", "Foods"],
+				["salad", "salad", "Foods"],
+				["glass", "glass", "Kitchen"],
+				["ketchup", "ketchup", "Kitchen"],
+				["knife", "knife", "Kitchen"],
+				["plate", "plate", "Kitchen"],
+				["spoon", "spoon", "Kitchen"],
+				["bag", "bag", "Schools"],
+				["paper", "paper", "Schools"],
+				["pencil", "pencil", "Schools"],
+				["pencilcase", "pencilcase", "Schools"],
+				["ruler", "ruler", "Schools"],
+				["bike", "bike", "Vehicles"],
+				["car", "car", "Vehicles"],
+				["motorcycle", "motorcycle", "Vehicles"],
+				["plane", "plane", "Vehicles"],
+				["truck", "truck", "Vehicles"]
 		]
-		
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-		
+
 		for item in categoryPreset {
 			let categoryContext = appDelegate.persistentContainer.viewContext
             let imageData: NSData? = NSData(data: ((UIImage(named: item[1] as! String))?.jpegData(compressionQuality: 1.0)!)!)
@@ -157,47 +155,46 @@ class DataManager{
 			category.categoryName = item[0] as? String
 			category.categoryImage = imageData as Data?
 			category.installed = item[2] as! Bool
-			
-			for sc in soundcardPreset {
-				if sc[2] == item[0] as? String {
+
+			for soundCard in soundcardPreset {
+				if soundCard[2] == item[0] as? String {
 					let soundcardContext = appDelegate.persistentContainer.viewContext
-					print(sc[1])
-                    let imageData: NSData? = NSData(data: ((UIImage(named: sc[1] ))?.jpegData(compressionQuality: 1.0)!)!)
+					print(soundCard[1])
+                    let imageData: NSData? = NSData(data: ((UIImage(named: soundCard[1] ))?.jpegData(compressionQuality: 1.0)!)!)
 					let soundcardEntity = NSEntityDescription.entity(forEntityName: "Soundcards", in: soundcardContext)!
 					let soundcard = Soundcards(entity: soundcardEntity, insertInto: soundcardContext)
-					soundcard.soundcardName = sc[0]
+					soundcard.soundcardName = soundCard[0]
 					soundcard.soundcardImage = imageData as Data?
 					category.addToHaveSoundcard(soundcard)
-					do{
+					do {
 						try soundcardContext.save()
 					} catch let error as NSError {
 						print("______Could not save_____. \(error), \(error.userInfo)")
 					}
 				}
-				
 			}
-			
-			do{
+
+			do {
 				try categoryContext.save()
 			} catch let error as NSError {
 				print("______Could not save_____. \(error), \(error.userInfo)")
 			}
 		}
 	}
-	
+
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	// MARK: CATEGORY
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	/**
 	Print all or installed caegory to the console depends the parameter
 	*/
-	func PrintCategories(installed: Bool) -> Void {
+	func printCategories(installed: Bool) {
 		print(getCategoryTotal(installed: installed))
 		for index in 0 ..< getCategoryTotal(installed: installed) {
 			print("\(index)~ \(getCategory(coreVocab: false, installed: installed, index: index).value(forKey: "categoryName")!) - \(getCategory(coreVocab: false, installed: installed, index: index).value(forKey: "installed")!)")
 		}
 	}
-	
+
 	/**
 	Return total category count.
 	- Parameter installed: to choose all or installed category
@@ -217,13 +214,13 @@ class DataManager{
 		}
 		return 0
 	}
-	
+
 	/**
 	Return UIImage for category.
 	- Parameter index: return image for that index
 	- Parameter installed: to choose all or installed category
 	*/
-	func getCategoryImageFor(index: Int,installed: Bool) -> UIImage {
+	func getCategoryImageFor(index: Int, installed: Bool) -> UIImage {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return UIImage()}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
@@ -238,47 +235,45 @@ class DataManager{
 		}
 		return UIImage()
 	}
-	
+
 	/**
 	Return Category
 	- Parameter coreVocab: return coreVocab
 	- Parameter installed: to choose all or installed category
 	- Parameter index: return Category for that index
 	*/
-	func getCategory(coreVocab: Bool, installed: Bool, index: Int) ->NSManagedObject {
+	func getCategory(coreVocab: Bool, installed: Bool, index: Int) -> NSManagedObject {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return NSManagedObject()}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
 		if coreVocab {
 			fetchRequest.predicate = NSPredicate(format: "categoryName == %@", "General")
-		}else if installed {
+		} else if installed {
 			fetchRequest.predicate = NSPredicate(format: "installed == 1")
-			
 		}
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			if coreVocab {
 				return result[0] as! NSManagedObject
-			}else{
+			} else {
 				return result[index] as! NSManagedObject
 			}
-			
 		} catch {
 			print("Failed")
 		}
 		return NSManagedObject()
 	}
-	
+
 	/**
 	Return Category
 	- Parameter CategoryName: return category with that name
 	*/
-	func getCategory(CategoryName: String) ->NSManagedObject {
+	func getCategory(CategoryName: String) -> NSManagedObject {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return NSManagedObject()}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
 		fetchRequest.predicate = NSPredicate(format: "categoryName == %@", CategoryName)
-		
+
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			return result[0] as! NSManagedObject
@@ -287,37 +282,34 @@ class DataManager{
 		}
 		return NSManagedObject()
 	}
-	
+
 	/**
 	To install/uninstall category
 	*/
-	func toggleCategoryActivation(index: Int) -> Void {
-		let oldState:Bool = getCategory(coreVocab: false, installed: false, index: index).value(forKey: "installed")! as! Bool
+	func toggleCategoryActivation(index: Int) {
+		let oldState: Bool = getCategory(coreVocab: false, installed: false, index: index).value(forKey: "installed")! as! Bool
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
 		fetchRequest.predicate = NSPredicate(format: "categoryName == %@", "\(String(describing: getCategory(coreVocab: false, installed: false, index: index).value(forKey: "categoryName")!))")
-		do{
+		do {
 			let result = try managedContex.fetch(fetchRequest)
-			
 			let newData = result[0] as! NSManagedObject
-			
 			if oldState {
-				newData.setValue(false ,forKey: "installed")
-			}else{
-				newData.setValue(true ,forKey: "installed")
+				newData.setValue(false, forKey: "installed")
+			} else {
+				newData.setValue(true, forKey: "installed")
 			}
-			do{
+			do {
 				try managedContex.save()
-			}catch{
+			} catch {
 				print("Error!")
 			}
-			
 		} catch {
 			print("Error!")
 		}
 	}
-	
+
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
 	// MARK: SOUNDCARD
 	//◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️
@@ -325,25 +317,24 @@ class DataManager{
 	Print all or Soundcard for active category .
 	- parameter category: this function will only print all soundcard for this category.
 	*/
-	func PrintAllSoundcards(category: NSManagedObject) -> Void{
-		
-		for index in 0 ..< getSoundcardTotalForThisCategory(category: category){
-			print("\(getSoundcard(category:category, index:index).value(forKey:"soundcardName") ?? "-")")
+	func printAllSoundcards(category: NSManagedObject) {
+		for index in 0 ..< getSoundcardTotalForThisCategory(category: category) {
+			print("\(getSoundcard(category:category, index: index).value(forKey: "soundcardName") ?? "-")")
 		}
 	}
-	
+
 	/**
 	Return all or Soundcard for active category .
 	- parameter category: this function will return all soundcard for this category.
 	*/
-	func getAllSoundcardsNames(category: NSManagedObject) -> [String]{
-		var tempNames:[String] = []
-		for index in 0 ..< getSoundcardTotalForThisCategory(category: category){
-			tempNames.append("\(getSoundcard(category:category, index:index).value(forKey:"soundcardName") ?? "-")")
+	func getAllSoundcardsNames(category: NSManagedObject) -> [String] {
+		var tempNames: [String] = []
+		for index in 0 ..< getSoundcardTotalForThisCategory(category: category) {
+			tempNames.append("\(getSoundcard(category: category, index: index).value(forKey: "soundcardName") ?? "-")")
 		}
 		return tempNames
 	}
-	
+
 	/**
 	return total soundcard that linked to category
 	- Parameter category: Current active category
@@ -359,21 +350,19 @@ class DataManager{
 		} catch {
 			print("Failed")
 		}
-		
 		return 0
 	}
-	
+
 	/**
 	Return Soundcard
 	- Parameter category: Active Category
 	*/
-	func getSoundcard(category: NSManagedObject, index: Int) -> NSManagedObject{
+	func getSoundcard(category: NSManagedObject, index: Int) -> NSManagedObject {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return NSManagedObject()}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
-		
 		fetchRequest.predicate = NSPredicate(format: "forCategory == %@", category)
-		
+
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			return result[index] as! NSManagedObject
@@ -382,18 +371,16 @@ class DataManager{
 		}
 		return NSManagedObject()
 	}
-	
+
 	/**
 	Return Soundcard
 	- Parameter soundcardName: soundcard name
 	*/
-	func getSoundcard(soundcardName: String) -> NSManagedObject{
+	func getSoundcard(soundcardName: String) -> NSManagedObject {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return NSManagedObject()}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
-		
 		fetchRequest.predicate = NSPredicate(format: "soundcardName == %@", soundcardName)
-		
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			return result[0] as! NSManagedObject
@@ -402,26 +389,24 @@ class DataManager{
 		}
 		return NSManagedObject()
 	}
-	
+
 	/**
 	Replace souncard with new photo
 	- Parameter soundcardName: soundcard name
 	*/
-	func replaceSoundcardImage(soundcardName: String, newImage: UIImage){
+	func replaceSoundcardImage(soundcardName: String, newImage: UIImage) {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
-		
 		fetchRequest.predicate = NSPredicate(format: "soundcardName == %@", soundcardName)
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			let saveThis = result[0] as! NSManagedObject
             let imageData: NSData? = NSData(data: (newImage.jpegData(compressionQuality: 1.0)!))
 			saveThis.setValue(imageData, forKey: "soundcardImage")
-			
-			do{
+			do {
 				try managedContex.save()
-			}catch{
+			} catch {
 				print(error)
 			}
 			return
@@ -430,7 +415,7 @@ class DataManager{
 		}
 		return
 	}
-	
+
 	/**
 	Get Soundcard Image
 	- Parameter category: Current active category
@@ -441,7 +426,7 @@ class DataManager{
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
 		fetchRequest.predicate = NSPredicate(format: "forCategory == %@", category)
-		
+
 		do {
 			let result = try managedContex.fetch(fetchRequest)
 			return UIImage(data: (result[index] as AnyObject).value(forKey: "soundcardImage") as! Data)!
@@ -450,7 +435,7 @@ class DataManager{
 		}
 		return UIImage()
 	}
-	
+
 	/**
 	Get Soundcard Image
 	- Parameter soundcard: Soundcard as input
@@ -458,28 +443,26 @@ class DataManager{
 	func getSoundcardImageFor(soundcard: NSManagedObject) -> UIImage {
 		return UIImage(data: (soundcard.value(forKey: "soundcardImage") as! Data)) ?? UIImage()
 	}
-	
+
 	/**
 	Play soundcard
 	- Parameter category: Current active category
 	- Parameter Index: soundcard index
 	*/
-	func playSoundcard(category: NSManagedObject, index: Int) -> Void {
+	func playSoundcard(category: NSManagedObject, index: Int) {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Soundcards")
 		fetchRequest.predicate = NSPredicate(format: "forCategory == %@", category)
-		
+
 		do {
 			let result = try managedContex.fetch(fetchRequest)
-			let speakThis:String = (result[index] as AnyObject).value(forKey: "soundcardName") as! String
-			
+			let speakThis: String = (result[index] as AnyObject).value(forKey: "soundcardName") as! String
 			let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
 			speechUtterance.voice = AVSpeechSynthesisVoice(language: "en")
 			TaskManager.addAction(action: .listen)
 			let speechSynthesizer = AVSpeechSynthesizer()
 			speechSynthesizer.speak(speechUtterance)
-			
 		} catch {
 			print("Failed")
 		}
@@ -489,8 +472,8 @@ class DataManager{
 	Play soundcard
 	- Parameter soundcard: give soundcard as input to play the sound
 	*/
-	func playSoundcard(soundcard: NSManagedObject) -> Void {
-		let speakThis:String = (soundcard.value(forKey: "soundcardName") as! String)
+	func playSoundcard(soundcard: NSManagedObject) {
+		let speakThis: String = (soundcard.value(forKey: "soundcardName") as! String)
 		let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: speakThis)
 		speechUtterance.voice = AVSpeechSynthesisVoice(language: "en")
 		TaskManager.addAction(action: .listen)
@@ -498,14 +481,14 @@ class DataManager{
 		speechSynthesizer.speak(speechUtterance)
 		return
 	}
-	
+
 	/**
 	Adding new soundcard
 	- Parameter name: Name for the soundcard
 	- Parameter image: UIImage for the soundcard
 	- Parameter category: Parent category fot the soundcard
 	*/
-	func addNewSoundcard(name: String,image: UIImage, category: String){
+	func addNewSoundcard(name: String, image: UIImage, category: String) {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 		let managedContex = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
@@ -520,7 +503,7 @@ class DataManager{
 			soundcard.soundcardName = name
 			soundcard.soundcardImage = imageData as Data?
 			soundcard.forCategory = (result[0] as! Categories)
-			do{
+			do {
 				try soundcardContext.save()
 				NotificationCenter.default.post(name: NSNotification.Name(rawValue: "soundcardAdded"), object: nil)
 				TaskManager.addAction(action: .capture)
@@ -531,11 +514,11 @@ class DataManager{
 			print("Failed")
 		}
 	}
-	
+
 	/**
 	fetch random soundcard for installed category
 	*/
-	func getRandomInstalledSoundcard() -> NSManagedObject{
+	func getRandomInstalledSoundcard() -> NSManagedObject {
 		var soundcardList: [NSManagedObject] = []
 		for catIndex in 0 ..< getCategoryTotal(installed: true) {
 			let currentCategory = getCategory(coreVocab: false, installed: true, index: catIndex)
@@ -545,8 +528,7 @@ class DataManager{
 			}
 		}
 		let randomInt = Int.random(in: 0 ..< soundcardList.count)
-		
+
 		return soundcardList[randomInt]
 	}
-	
 }

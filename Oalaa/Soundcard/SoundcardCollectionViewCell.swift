@@ -12,5 +12,4 @@ class SoundcardCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var soundcardImageView: UIImageView!
 	@IBOutlet weak var soundcardNameBackground: UIImageView!
 	@IBOutlet weak var soundcardNameLabel: UILabel!
-	
 }

@@ -1,0 +1,9 @@
+line_length: 300
+function_body_length: 200
+
+disabled_rules:
+  - force_cast
+  - force_try
+
+identifier_name:
+  validates_start_with_lowercase: false
