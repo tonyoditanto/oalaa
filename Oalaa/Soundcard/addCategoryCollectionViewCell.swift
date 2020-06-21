@@ -8,6 +8,8 @@
 
 import UIKit
 
-class addCategoryCollectionViewCell: UICollectionViewCell {
+class AddCategoryCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var addCategory: UIImageView!
+	@IBOutlet weak var categoryNameLabel: UILabel!
+	@IBOutlet weak var categoryLabelBg: UIView!
 }
