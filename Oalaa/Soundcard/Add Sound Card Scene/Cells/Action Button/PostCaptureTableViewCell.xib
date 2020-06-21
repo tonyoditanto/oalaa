@@ -27,9 +27,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" image="speaker.3" catalog="system">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                            </preferredSymbolConfiguration>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="45"/>
                         </state>
                         <connections>
                             <action selector="didTapSpeakButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="H0G-wT-Cam"/>
@@ -44,10 +42,10 @@
                             <constraint firstAttribute="width" secondItem="sqc-Ry-d4a" secondAttribute="height" multiplier="37:18" id="tSv-2g-AEa"/>
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="square.and.arrow.down" catalog="system">
+                        <state key="normal" image="save">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             </preferredSymbolConfiguration>
                         </state>
                         <connections>
@@ -74,7 +72,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="save" width="52" height="51"/>
         <image name="speaker.3" catalog="system" width="128" height="90"/>
-        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
     </resources>
 </document>
