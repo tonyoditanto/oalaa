@@ -67,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say something, I'm listening" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoQ-L9-Mcg">
-                                <rect key="frame" x="0.0" y="633" width="414" height="31.5"/>
+                                <rect key="frame" x="10" y="633" width="394" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -80,13 +80,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXF-DI-SW8">
-                                <rect key="frame" x="0.0" y="98" width="414" height="50"/>
+                                <rect key="frame" x="30" y="98" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="oqc-KM-x7A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" red="0.36391642689999998" green="0.36679574850000002" blue="0.2235026956" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -96,9 +101,10 @@
                             <constraint firstItem="02U-N8-wyD" firstAttribute="bottom" secondItem="DMi-MQ-MJC" secondAttribute="bottom" id="82Q-DK-Lgu"/>
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="width" secondItem="439-1A-feD" secondAttribute="height" multiplier="25:64" id="9Bb-1X-8ax"/>
                             <constraint firstItem="02U-N8-wyD" firstAttribute="leading" secondItem="439-1A-feD" secondAttribute="leading" id="Bx4-l0-EJx"/>
+                            <constraint firstItem="bXF-DI-SW8" firstAttribute="leading" secondItem="DMi-MQ-MJC" secondAttribute="leading" constant="30" id="CQR-Mf-TQ5"/>
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="height" secondItem="439-1A-feD" secondAttribute="height" multiplier="0.390625" id="D0T-LD-kcV"/>
                             <constraint firstItem="KoQ-L9-Mcg" firstAttribute="top" secondItem="0xA-Zd-c3s" secondAttribute="bottom" constant="25" id="Ee7-7g-v0Y"/>
-                            <constraint firstItem="DMi-MQ-MJC" firstAttribute="trailing" secondItem="KoQ-L9-Mcg" secondAttribute="trailing" id="KY1-aM-OFA"/>
+                            <constraint firstItem="DMi-MQ-MJC" firstAttribute="trailing" secondItem="KoQ-L9-Mcg" secondAttribute="trailing" constant="10" id="HOQ-WL-lHX"/>
                             <constraint firstItem="02U-N8-wyD" firstAttribute="trailing" secondItem="DMi-MQ-MJC" secondAttribute="trailing" id="Lwv-5C-3iE"/>
                             <constraint firstItem="bXF-DI-SW8" firstAttribute="top" secondItem="DMi-MQ-MJC" secondAttribute="top" constant="10" id="NiE-HS-XrC"/>
                             <constraint firstItem="KoQ-L9-Mcg" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="SSN-76-VLi"/>
@@ -109,13 +115,12 @@
                             <constraint firstItem="02U-N8-wyD" firstAttribute="top" secondItem="439-1A-feD" secondAttribute="top" id="d4T-6y-JXD"/>
                             <constraint firstItem="pPo-2T-by9" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="gfL-V8-pH9"/>
                             <constraint firstItem="PNA-mV-sY5" firstAttribute="top" secondItem="KoQ-L9-Mcg" secondAttribute="bottom" constant="100" id="hOE-ng-ZBi"/>
-                            <constraint firstItem="DMi-MQ-MJC" firstAttribute="trailing" secondItem="bXF-DI-SW8" secondAttribute="trailing" id="i2R-Me-7AV"/>
+                            <constraint firstItem="KoQ-L9-Mcg" firstAttribute="leading" secondItem="DMi-MQ-MJC" secondAttribute="leading" constant="10" id="iLz-r7-9ry"/>
+                            <constraint firstItem="DMi-MQ-MJC" firstAttribute="trailing" secondItem="bXF-DI-SW8" secondAttribute="trailing" constant="30" id="mPh-vd-Zno"/>
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="top" secondItem="bXF-DI-SW8" secondAttribute="bottom" constant="10" id="n55-Pw-tK8"/>
                             <constraint firstItem="PNA-mV-sY5" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="nlF-Ik-CWM"/>
-                            <constraint firstItem="KoQ-L9-Mcg" firstAttribute="leading" secondItem="DMi-MQ-MJC" secondAttribute="leading" id="puR-Jj-a9x"/>
                             <constraint firstItem="0xA-Zd-c3s" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="rIq-fN-JUe"/>
                             <constraint firstItem="XXt-n0-N8d" firstAttribute="centerX" secondItem="DMi-MQ-MJC" secondAttribute="centerX" id="sdz-al-9iO"/>
-                            <constraint firstItem="bXF-DI-SW8" firstAttribute="leading" secondItem="DMi-MQ-MJC" secondAttribute="leading" id="uJy-fc-7z5"/>
                             <constraint firstItem="hZp-UX-bzG" firstAttribute="height" secondItem="439-1A-feD" secondAttribute="height" multiplier="0.390625" id="yiY-yB-ffd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DMi-MQ-MJC"/>

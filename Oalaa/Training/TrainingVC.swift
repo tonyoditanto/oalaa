@@ -102,6 +102,7 @@ class TrainingVC: UIViewController {
                     self.audioEngine.inputNode.removeTap(onBus: 0)
                     self.btnStart.isEnabled = false
                     self.btnStart.setTitle("Start Recording", for: .normal)
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     self.youAreDoingGreat()
                     }
@@ -138,15 +139,21 @@ class TrainingVC: UIViewController {
     }
     
     func youAreDoingGreat() {
-        var timeLeft = 4
+        var timeLeft = 1
         countDownLabel.isHidden = true
         UIView.transition(with: trainingDefaultImage, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
         trainingDefaultImage.image = defaultImage
-        nameOfTrainingImage.text = "Wow, You Rock"
+        nameOfTrainingImage.text = "Amazing !!!"
+        
+        let utterance = AVSpeechUtterance(string: nameOfTrainingImage.text ?? "")
+        utterance.voice = AVSpeechSynthesisVoice(language: "en")
+        utterance.rate = 0.4
+
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
+        
         lblText.text = "Next Card, are You Ready?"
         lblText.isHidden = true
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        //self.btnStartSpeechToText(self)
             
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             print("timer fired!")
