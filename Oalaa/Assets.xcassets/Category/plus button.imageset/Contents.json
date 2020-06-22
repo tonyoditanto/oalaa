@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "addd-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "addd-01@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "plus button@3x.png",
+      "filename" : "addd-01@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
