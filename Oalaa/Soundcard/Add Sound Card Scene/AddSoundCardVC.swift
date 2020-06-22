@@ -200,6 +200,7 @@ extension AddSoundCardVC : ObjectRecognitionTableViewCellDelegate{
 extension AddSoundCardVC : PreviewCaptureTableViewCellDelegate{
     func activateCamera() {
         cameraActive = true
+        self.objectName = ""
         self.actionButtonIsEnable = true
         self.tableView.reloadData()
     }

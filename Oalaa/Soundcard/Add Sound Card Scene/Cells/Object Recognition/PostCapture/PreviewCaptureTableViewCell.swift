@@ -125,7 +125,7 @@ class PreviewCaptureTableViewCell: UITableViewCell {
                 
                 if confidenceRate[0] < 0.5 {
                     self.objectNameLabel.text = "Object isn't identified"
-                    //self.storedCaptureObjectNameToAddSoundCardVC(with: "Object isn't identified")
+                    self.storedCaptureObjectNameToAddSoundCardVC(with: "Object isn't identified")
                     self.setActionButtonStatus(with: true)
                 }
                 
