@@ -34,6 +34,14 @@ class SoundCardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 		categoryCollection.delegate = self
 		soundcardCollection.delegate = self
 		selectedCategory.text = "General"
+		if defaults.bool(forKey: "alreadyShowFirstInstallationWarning") == false {
+			let alert = UIAlertController(title: "A Kind Reminder", message: "Soundcard will not working if the phone is muted!", preferredStyle: .alert)
+			
+			alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+			
+			present(alert, animated: true)
+			defaults.set(true, forKey: "alreadyShowFirstInstallationWarning")
+		}
 	}
 
 	@objc func addCategoryDismissed() {
