@@ -30,6 +30,11 @@ class TaskVC: UIViewController {
         achievementCV.delegate = self
         achievementCV.dataSource = self
     }
+    
+    @IBAction func didTapCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension TaskVC: UICollectionViewDelegate, UICollectionViewDataSource{

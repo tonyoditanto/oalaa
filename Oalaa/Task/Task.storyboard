@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dXv-ik-lkZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KCw-uE-jiP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlF-f6-ur3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lS8-TA-4Ar">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Apps-1" translatesAutoresizingMaskIntoConstraints="NO" id="bDx-zU-GRv">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
@@ -219,13 +219,28 @@
                                             <constraint firstItem="XKj-It-8WP" firstAttribute="top" secondItem="xx1-ZC-ABK" secondAttribute="bottom" constant="10" id="tXv-5N-GQB"/>
                                         </constraints>
                                     </view>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1w-6x-fVn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <items>
+                                            <navigationItem title="Task" id="bHJ-Em-wQu">
+                                                <barButtonItem key="rightBarButtonItem" title="Close" id="BSf-2k-Rm1">
+                                                    <connections>
+                                                        <action selector="didTapCloseButton:" destination="KCw-uE-jiP" id="ZCF-ug-7Cz"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="lS8-TA-4Ar" firstAttribute="leading" secondItem="wZ6-Ai-eia" secondAttribute="leading" id="0G0-4x-0OD"/>
                                     <constraint firstItem="lS8-TA-4Ar" firstAttribute="trailing" secondItem="wZ6-Ai-eia" secondAttribute="trailing" id="4jM-3z-qTf"/>
                                     <constraint firstItem="lS8-TA-4Ar" firstAttribute="width" secondItem="85H-He-tgN" secondAttribute="width" id="SO8-PS-fBW"/>
-                                    <constraint firstItem="lS8-TA-4Ar" firstAttribute="top" secondItem="wZ6-Ai-eia" secondAttribute="top" id="Vos-t6-pER"/>
                                     <constraint firstItem="lS8-TA-4Ar" firstAttribute="bottom" secondItem="wZ6-Ai-eia" secondAttribute="bottom" id="Xq4-mb-gye"/>
+                                    <constraint firstItem="lS8-TA-4Ar" firstAttribute="top" secondItem="FlF-f6-ur3" secondAttribute="top" constant="44" id="YZB-V5-gSB"/>
+                                    <constraint firstItem="J1w-6x-fVn" firstAttribute="top" secondItem="wZ6-Ai-eia" secondAttribute="top" id="jmN-Ti-nDq"/>
+                                    <constraint firstAttribute="trailing" secondItem="J1w-6x-fVn" secondAttribute="trailing" id="th1-2Z-eZQ"/>
+                                    <constraint firstItem="J1w-6x-fVn" firstAttribute="leading" secondItem="wZ6-Ai-eia" secondAttribute="leading" id="yQz-Od-rma"/>
                                     <constraint firstItem="lS8-TA-4Ar" firstAttribute="bottom" secondItem="85H-He-tgN" secondAttribute="bottom" id="ySQ-zE-OLu"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="wZ6-Ai-eia"/>
@@ -241,7 +256,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xZg-aL-Ltb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Task" largeTitleDisplayMode="never" id="7OC-0h-Vkd"/>
+                    <navigationItem key="navigationItem" title="Task" largeTitleDisplayMode="never" id="7OC-0h-Vkd">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="6F2-Nh-Wcb"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="achievementCV" destination="YGW-IV-8bB" id="9kf-Sh-uov"/>
                         <outlet property="dailyCV" destination="xx1-ZC-ABK" id="NPe-l5-hvM"/>
@@ -250,24 +267,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iom-5X-yXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4097.1014492753629" y="498.88392857142856"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FzB-zv-Nuo">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dXv-ik-lkZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nua-ER-YTA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="KCw-uE-jiP" kind="relationship" relationship="rootViewController" id="Caf-eR-Rti"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S65-PD-bO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3186.9565217391305" y="498.88392857142856"/>
         </scene>
     </scenes>
     <resources>

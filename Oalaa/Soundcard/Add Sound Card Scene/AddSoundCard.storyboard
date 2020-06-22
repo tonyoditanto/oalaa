@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xhi-3W-Ncc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LcB-ht-aTa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Card-->
+        <!--New Soundcard-->
         <scene sceneID="1aO-k1-L7t">
             <objects>
                 <tableViewController id="Xhi-3W-Ncc" customClass="AddSoundCardVC" customModule="Oalaa" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,9 +30,36 @@
                             <outlet property="delegate" destination="Xhi-3W-Ncc" id="Y7E-XT-uCT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Card" id="QrD-ds-CXJ"/>
+                    <navigationItem key="navigationItem" title="New Soundcard" id="QrD-ds-CXJ">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="Zq6-td-q3S">
+                            <connections>
+                                <action selector="didTapCloseButton:" destination="Xhi-3W-Ncc" id="iT3-Q4-eRj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closeButton" destination="Zq6-td-q3S" id="JiD-Q9-6d7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4a-QZ-d9u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3588.4057971014495" y="893.97321428571422"/>
+        </scene>
+        <!--Add Soundcard NavigationVC-->
+        <scene sceneID="fIu-2v-6f3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LcB-ht-aTa" customClass="AddSoundcardNavigationVC" customModule="Oalaa" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jwe-C8-w12">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xhi-3W-Ncc" kind="relationship" relationship="rootViewController" id="pLl-VD-rvZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caZ-9B-rhp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2678.2608695652175" y="893.97321428571422"/>
         </scene>

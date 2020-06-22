@@ -125,7 +125,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DMi-MQ-MJC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Say the Word" id="s7K-3n-nCV"/>
+                    <navigationItem key="navigationItem" title="Say the Word" id="s7K-3n-nCV">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="yok-qp-rqQ">
+                            <connections>
+                                <action selector="didTapCloseButton:" destination="xqP-uX-yK9" id="Fso-3C-gBW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnStart" destination="PNA-mV-sY5" id="3BN-g5-qOP"/>
                         <outlet property="countDownLabel" destination="0xA-Zd-c3s" id="c02-Oh-Iqu"/>
